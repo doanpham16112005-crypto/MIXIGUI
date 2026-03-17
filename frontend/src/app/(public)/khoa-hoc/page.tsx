@@ -72,8 +72,20 @@ export default async function KhoaHocPage() {
 
       <main>
         {/* ── HERO ── */}
-        <section className="border-b bg-gradient-to-r from-blue-700 to-blue-500 py-14 text-white">
-          <div className="mx-auto max-w-7xl px-4">
+        <section className="relative overflow-hidden border-b py-14 text-white">
+          {/* Video background */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 h-full w-full object-cover"
+            src="https://res.cloudinary.com/ddaryoz5b/video/upload/v1773729146/T%E1%BA%A1o_Video_T%E1%BB%AB_%E1%BA%A2nh_d7urwo.mp4"
+          />
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/50" />
+          {/* Content */}
+          <div className="relative z-10 mx-auto max-w-7xl px-4">
             <nav aria-label="Breadcrumb" className="mb-4 text-sm text-blue-200">
               <Link href="/" className="hover:text-white">Trang chủ</Link>
               <span className="mx-2">/</span>
