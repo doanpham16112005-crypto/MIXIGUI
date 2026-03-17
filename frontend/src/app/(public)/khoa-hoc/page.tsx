@@ -74,14 +74,16 @@ export default async function KhoaHocPage() {
         {/* ── HERO ── */}
         <section className="relative border-b text-white">
           {/* Video — full width, natural height (no crop) */}
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="block w-full"
-            src="https://res.cloudinary.com/ddaryoz5b/video/upload/v1773729146/T%E1%BA%A1o_Video_T%E1%BB%AB_%E1%BA%A2nh_d7urwo.mp4"
-          />
+          <div className="leading-[0]">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full align-top"
+              src="https://res.cloudinary.com/ddaryoz5b/video/upload/v1773729146/T%E1%BA%A1o_Video_T%E1%BB%AB_%E1%BA%A2nh_d7urwo.mp4"
+            />
+          </div>
           {/* Dark overlay */}
           <div className="absolute inset-0 bg-black/45" />
           {/* Content — centered over video */}
