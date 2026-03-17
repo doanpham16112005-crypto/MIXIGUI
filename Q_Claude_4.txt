@@ -1,0 +1,44 @@
+VAI TRÒ: Bạn là một Senior Software Engineer (Lập trình viên bậc cao). Tôi là vinh viên năm 3, ngành thương mại điện tử chuẩn bị  làm đồ án môn cho  môn học Tối ưu hóa công cụ tìm kiếm trong Thương mại điện tử - EC304.Q21 cho đề tài 'website dạy đàn online - MIXIGUI'.
+
+
+MỤC TIÊU:
+	Đề tài web 'website dạy đàn online - MIXIGUI' cho môn  với đề bài được giao là nội dung trong các tấm ảnh tôi cung cấp cho bạn.
+
+NGỮ CẢNH:
+	- Đọc nội dung trong set project instrutor tôi đã viết.
+	- Tham khảo database hiện tại của tôi trong file database.txt
+NGUỒN:
+
+NỘI DUNG CẦN TẠO:
+	1 Nhiệm vụ của bạn là Tạo tài liệu:
+		1.1 Tài liệu "MIXIGUI_PROJECT_SETUP_GUIDE.md" hướng dẫn tôi khởi tạo dự án MIXIGUI tương tự như file tạo dự án cho GoatWeddings là "GOATWEDDINGS_PROJECT_SETUP_GUIDE.md" với tiêu chuẩn:
+			1.1.0 MIXIGUI  không phải là web đa nền tảng với nhiều 
+			1.1.1 Có Bước cơ bản : khởi tạo backend ; khởi tạo fontend (yêu cầu tổ chức thư mục để code theo chuẩn hiện đại và cực xịn).
+			1.1.2 Có Bước nâng cao : hãy nghĩ thêm cho tôi vì tôi không biết
+
+YÊU CẦU:
+	-MIXIGUI là web cá nhân tức là do 1 admin quản lý các giảng viên , học sinh chứ ko phải là theo dạng nhiều chi nhánh tenants- sas
+	- Các yêu cầu kỹ thuật bắt buộc (Constraints):
+		## Thông tin dự án
+
+		| Thuộc tính | Giá trị |
+		|------------|---------|
+		| Dự án | MIXIGUI |
+		| Kiến trúc | Modular Monolith, |
+		| Backend | Spring Boot 3.4.x (Java) |
+		| Frontend | Next.js 15 (App Router) |
+		| Database | Supabase  |
+		| IDE | Visual Studio Code |
+		| Java Version | JDK 21 |
+		| OS | Windows 10 |
+	- Nghiên cứu mạng internet để trả về những giá trị thiết thực.
+ĐỊNH DẠNG:
+- Trả về nội dung trong cuộc trò chuyện
+- Heading rõ ràng
+- Có bảng minh họa
+- Không markdown, không văn phong tự nhiên.
+
+RÀNG BUỘC:
+- Tiếng Việt sử dụng chính , Tiếng Anh cho thuật ngữ chuyên ngành.
+- Không lan man
+- Không dùng emoji

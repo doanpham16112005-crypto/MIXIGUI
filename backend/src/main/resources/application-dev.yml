@@ -1,0 +1,45 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  datasource:
+    url: jdbc:postgresql://aws-1-ap-southeast-1.pooler.supabase.com:5432/postgres
+    username: postgres.vcomczhnpnejndojrqcd
+    password: phamcongdoan
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+supabase:
+  url: https://vcomczhnpnejndojrqcd.supabase.co
+  anon-key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZjb21jemhucG5lam5kb2pycWNkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzOTAxODgsImV4cCI6MjA4ODk2NjE4OH0.tsVt311kQngMfzl9l7Dvg_JvRjD3Ij7qp7enNacHqzM
+  service-role-key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZjb21jemhucG5lam5kb2pycWNkIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MzM5MDE4OCwiZXhwIjoyMDg4OTY2MTg4fQ.noXdw0OHXfM7Gj_bvGfC4PdD0pCSJTA3i7SfGg6CgGw
+
+jwt:
+  secret: ${JWT_SECRET:mixigui-256-bit-secret-key-must-be-at-least-32-characters-long}
+  expiration: 86400000
+  refresh-expiration: 604800000
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+logging:
+  level:
+    com.mixigui: DEBUG
+    org.springframework.security: DEBUG
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html

@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js
+frontend/.next/
+frontend/out/
+frontend/build/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+frontend/.env.local
+backend/.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Java / Maven
+backend/target/
+backend/*.jar
+*.class
+
+# Test
+coverage/
+.nyc_output
