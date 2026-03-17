@@ -226,13 +226,23 @@ export default async function HomePage() {
         </section>
 
         {/* ── ABOUT ── */}
-        <section aria-labelledby="about-heading" className="border-t bg-white py-16">
-          <div className="mx-auto max-w-4xl px-4 text-center">
+        <section
+          aria-labelledby="about-heading"
+          className="relative border-t py-16"
+          style={{
+            backgroundImage: 'url(https://res.cloudinary.com/ddaryoz5b/image/upload/v1773731924/Gemini_Generated_Image_bzddftbzddftbzdd_vtsvqs.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          {/* Overlay trắng mờ để chữ dễ đọc */}
+          <div className="absolute inset-0 bg-white/70" />
+          <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
             <h2 id="about-heading" className="mb-4 text-3xl font-bold text-gray-900">MixiGui là gì?</h2>
-            <p className="text-lg leading-relaxed text-gray-600">
+            <p className="text-lg leading-relaxed text-gray-700">
               <strong>MixiGui</strong> là nền tảng học nhạc trực tuyến và cửa hàng nhạc cụ chính hãng tại Việt Nam, được thành lập với sứ mệnh <em>giúp mọi người tiếp cận âm nhạc dễ dàng và hiệu quả hơn</em>. Chúng tôi cung cấp các khóa học guitar, piano, trống, ukulele được thiết kế bởi giảng viên có hơn 10 năm kinh nghiệm biểu diễn và giảng dạy chuyên nghiệp.
             </p>
-            <p className="mt-4 text-lg leading-relaxed text-gray-600">
+            <p className="mt-4 text-lg leading-relaxed text-gray-700">
               Bên cạnh đó, cửa hàng nhạc cụ MixiGui cung cấp đầy đủ các dòng sản phẩm từ <strong>Yamaha, Roland, Casio, Fender, Gibson</strong> — tất cả đều là hàng chính hãng, có tem bảo hành và hóa đơn VAT rõ ràng. Dù bạn là người mới bắt đầu hay nhạc sĩ chuyên nghiệp, MixiGui đều có sản phẩm và dịch vụ phù hợp với nhu cầu của bạn.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
