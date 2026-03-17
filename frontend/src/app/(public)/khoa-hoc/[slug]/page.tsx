@@ -17,6 +17,16 @@ type Course = {
   is_published: boolean
 }
 
+type RelatedCourse = {
+  id: string
+  title: string
+  slug: string
+  thumbnail_url: string | null
+  price: number
+  discount_price: number | null
+  level: string | null
+}
+
 const levelLabel: Record<string, string> = {
   BEGINNER: 'Cơ bản',
   INTERMEDIATE: 'Trung cấp',
@@ -58,7 +68,7 @@ export default function KhoaHocDetailPage() {
   const slug = params.slug as string
 
   const [course, setCourse] = useState<Course | null>(null)
-  const [related, setRelated] = useState<Course[]>([])
+  const [related, setRelated] = useState<RelatedCourse[]>([])
   const [loading, setLoading] = useState(true)
   const [enrolled, setEnrolled] = useState(false)
   const [openSection, setOpenSection] = useState<number | null>(0)

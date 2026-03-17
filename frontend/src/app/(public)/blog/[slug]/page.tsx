@@ -16,6 +16,15 @@ type Post = {
   is_published: boolean
 }
 
+type RelatedPost = {
+  id: string
+  title: string
+  slug: string
+  excerpt: string | null
+  thumbnail_url: string | null
+  published_at: string
+}
+
 function formatDate(d: string) {
   return new Date(d).toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' })
 }
@@ -31,7 +40,7 @@ export default function BlogDetailPage() {
   const slug = params.slug as string
 
   const [post, setPost] = useState<Post | null>(null)
-  const [related, setRelated] = useState<Post[]>([])
+  const [related, setRelated] = useState<RelatedPost[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {

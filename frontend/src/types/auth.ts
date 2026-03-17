@@ -1,10 +1,12 @@
 export interface User {
-  id: number
+  id: string | number
   email: string
-  fullName: string
+  fullName?: string
+  full_name?: string
   role: 'STUDENT' | 'ADMIN' | 'INSTRUCTOR'
   avatarUrl?: string
-  createdAt: string
+  avatar_url?: string
+  createdAt?: string
 }
 
 export interface AuthTokens {

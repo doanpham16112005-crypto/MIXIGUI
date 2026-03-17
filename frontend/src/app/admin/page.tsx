@@ -11,7 +11,7 @@ async function getStats() {
     supabase.from('products').select('id', { count: 'exact', head: true }),
     supabase.from('blog_posts').select('id', { count: 'exact', head: true }),
     supabase.from('users').select('id', { count: 'exact', head: true }),
-    supabase.from('orders').select('id', { count: 'exact', head: true }).then(r => r).catch(() => ({ count: 0 })),
+    supabase.from('orders').select('id', { count: 'exact', head: true }),
   ])
   return {
     courses: courses.count ?? 0,

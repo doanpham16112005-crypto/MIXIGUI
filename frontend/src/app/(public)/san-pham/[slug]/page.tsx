@@ -18,12 +18,22 @@ type Product = {
   is_published: boolean
 }
 
+type RelatedProduct = {
+  id: string
+  name: string
+  slug: string
+  images: string[]
+  price: number
+  discount_price: number | null
+  brand: string | null
+}
+
 export default function SanPhamDetailPage() {
   const params = useParams()
   const slug = params.slug as string
 
   const [product, setProduct] = useState<Product | null>(null)
-  const [related, setRelated] = useState<Product[]>([])
+  const [related, setRelated] = useState<RelatedProduct[]>([])
   const [loading, setLoading] = useState(true)
   const [activeImg, setActiveImg] = useState(0)
   const [qty, setQty] = useState(1)

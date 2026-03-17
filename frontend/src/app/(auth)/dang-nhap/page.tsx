@@ -39,8 +39,8 @@ export default function DangNhapPage() {
       .eq('email', authData.user.email)
       .single()
 
-    const profile = userData ?? { id: authData.user.id, email: authData.user.email!, role: 'STUDENT' }
-    setAuth(profile, authData.session?.access_token ?? '')
+    const profile = userData ?? { id: authData.user.id, email: authData.user.email!, role: 'STUDENT' as const }
+    setAuth(profile as Parameters<typeof setAuth>[0], authData.session?.access_token ?? '')
     if (profile.role === 'ADMIN') router.push('/admin')
     else if (profile.role === 'INSTRUCTOR') router.push('/admin')
     else router.push('/hoc-vien')

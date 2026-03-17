@@ -35,7 +35,7 @@ export function Header() {
               ) : (
                 <Link href="/hoc-vien" className="text-sm text-gray-600 hover:text-blue-600">Tài khoản</Link>
               )}
-              <span className="text-sm font-medium text-gray-700">{user.full_name || user.email}</span>
+              <span className="text-sm font-medium text-gray-700">{user.full_name || user.fullName || user.email}</span>
               <button onClick={handleLogout} className="rounded-md border px-3 py-1.5 text-sm text-gray-600 hover:bg-gray-50">
                 Đăng xuất
               </button>
