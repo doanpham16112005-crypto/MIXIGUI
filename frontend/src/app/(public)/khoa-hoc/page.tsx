@@ -72,33 +72,35 @@ export default async function KhoaHocPage() {
 
       <main>
         {/* ── HERO ── */}
-        <section className="relative overflow-hidden border-b py-14 text-white">
-          {/* Video background */}
+        <section className="relative border-b text-white">
+          {/* Video — full width, natural height (no crop) */}
           <video
             autoPlay
             muted
             loop
             playsInline
-            className="absolute inset-0 h-full w-full object-cover"
+            className="block w-full"
             src="https://res.cloudinary.com/ddaryoz5b/video/upload/v1773729146/T%E1%BA%A1o_Video_T%E1%BB%AB_%E1%BA%A2nh_d7urwo.mp4"
           />
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/50" />
-          {/* Content */}
-          <div className="relative z-10 mx-auto max-w-7xl px-4">
-            <nav aria-label="Breadcrumb" className="mb-4 text-sm text-blue-200">
-              <Link href="/" className="hover:text-white">Trang chủ</Link>
-              <span className="mx-2">/</span>
-              <span className="text-white">Khóa học</span>
-            </nav>
-            <h1 className="text-4xl font-extrabold">Khóa Học Nhạc Online</h1>
-            <p className="mt-3 max-w-2xl text-lg text-blue-100">
-              Học guitar, piano, trống và nhiều nhạc cụ khác từ giảng viên chuyên nghiệp — mọi cấp độ, mọi lứa tuổi, học theo tốc độ của bạn.
-            </p>
-            <div className="mt-5 flex flex-wrap gap-3 text-sm">
-              {['🎓 50+ khóa học', '⏱ Học trọn đời', '📱 Mọi thiết bị', '💰 Từ 399.000₫', '✅ Hoàn tiền 7 ngày'].map((b) => (
-                <span key={b} className="rounded-full bg-white/20 px-3 py-1">{b}</span>
-              ))}
+          <div className="absolute inset-0 bg-black/45" />
+          {/* Content — centered over video */}
+          <div className="absolute inset-0 z-10 flex flex-col justify-center px-4">
+            <div className="mx-auto w-full max-w-7xl">
+              <nav aria-label="Breadcrumb" className="mb-4 text-sm text-blue-200">
+                <Link href="/" className="hover:text-white">Trang chủ</Link>
+                <span className="mx-2">/</span>
+                <span className="text-white">Khóa học</span>
+              </nav>
+              <h1 className="text-4xl font-extrabold">Khóa Học Nhạc Online</h1>
+              <p className="mt-3 max-w-2xl text-lg text-blue-100">
+                Học guitar, piano, trống và nhiều nhạc cụ khác từ giảng viên chuyên nghiệp — mọi cấp độ, mọi lứa tuổi, học theo tốc độ của bạn.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3 text-sm">
+                {['🎓 50+ khóa học', '⏱ Học trọn đời', '📱 Mọi thiết bị', '💰 Từ 399.000₫', '✅ Hoàn tiền 7 ngày'].map((b) => (
+                  <span key={b} className="rounded-full bg-white/20 px-3 py-1">{b}</span>
+                ))}
+              </div>
             </div>
           </div>
         </section>
