@@ -1,3 +1,5 @@
+'use client'
+
 import { PageHeader } from '@/components/shared/page-header'
 import { ProductForm } from '@/components/shop/product-form'
 
