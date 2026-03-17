@@ -431,41 +431,109 @@ export default async function HomePage() {
         </section>
 
         {/* ── LỘ TRÌNH HỌC NHẠC ── */}
-        <section aria-labelledby="roadmap-heading" className="bg-white py-16">
-          <div className="mx-auto max-w-5xl px-4">
-            <h2 id="roadmap-heading" className="mb-3 text-center text-3xl font-bold text-gray-900">Lộ trình học nhạc từ 0 đến chuyên nghiệp</h2>
-            <p className="mb-10 text-center text-gray-500 max-w-2xl mx-auto">
-              Dù bạn chưa biết gì về âm nhạc, MixiGui có lộ trình học rõ ràng giúp bạn tiến bộ nhanh chóng và đúng hướng — không bị lạc hay nản chí giữa chừng.
+        <section aria-labelledby="roadmap-heading" className="bg-gradient-to-b from-white to-blue-50 py-20">
+          <div className="mx-auto max-w-6xl px-4">
+            <div className="mb-4 flex justify-center">
+              <span className="rounded-full bg-blue-100 px-4 py-1 text-sm font-semibold text-blue-700">Lộ trình học</span>
+            </div>
+            <h2 id="roadmap-heading" className="mb-3 text-center text-3xl font-bold text-gray-900">
+              Từ 0 đến chuyên nghiệp — chỉ 7 tháng
+            </h2>
+            <p className="mb-14 text-center text-gray-500 max-w-2xl mx-auto">
+              Lộ trình được thiết kế khoa học, từng bước rõ ràng — không bị lạc hay nản chí giữa chừng.
             </p>
+
+            {/* Timeline ngang */}
             <div className="relative">
-              <div className="absolute left-1/2 top-0 hidden h-full w-0.5 -translate-x-1/2 bg-blue-100 lg:block" />
-              <div className="space-y-8">
+              {/* Đường kẻ ngang nối các bước */}
+              <div className="absolute left-0 right-0 top-10 hidden h-0.5 bg-gradient-to-r from-blue-200 via-blue-400 to-blue-200 lg:block" />
+
+              <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
                 {[
-                  { phase: 'Giai đoạn 1', title: 'Làm quen nhạc cụ (Tuần 1–4)', icon: '🌱', side: 'left', points: ['Tư thế ngồi, cầm đàn đúng cách', 'Các nốt nhạc cơ bản và cách đọc', 'Bài tập ngón tay linh hoạt', 'Chơi giai điệu đơn giản đầu tiên'] },
-                  { phase: 'Giai đoạn 2', title: 'Hợp âm & nhịp điệu (Tháng 2–3)', icon: '🎵', side: 'right', points: ['Hợp âm cơ bản Am, Em, C, G, D, F', 'Strumming pattern và fingerpicking', 'Chuyển hợp âm mượt mà', 'Đệm hát bài nhạc đầu tiên hoàn chỉnh'] },
-                  { phase: 'Giai đoạn 3', title: 'Nâng cao kỹ thuật (Tháng 4–6)', icon: '🎸', side: 'left', points: ['Kỹ thuật barre chord, power chord', 'Fingerstyle cơ bản và nâng cao', 'Cách đọc tab nhạc và sheet music', 'Chơi được 10+ bài nhạc yêu thích'] },
-                  { phase: 'Giai đoạn 4', title: 'Biểu diễn & sáng tác (Tháng 7+)', icon: '🌟', side: 'right', points: ['Xây dựng phong cách cá nhân', 'Kỹ thuật improvisation cơ bản', 'Sáng tác giai điệu đơn giản', 'Tự tin biểu diễn trước khán giả'] },
-                ].map((item) => (
-                  <div key={item.phase} className={`flex items-start gap-6 lg:w-1/2 ${item.side === 'right' ? 'lg:ml-auto' : ''}`}>
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-100 text-2xl">{item.icon}</div>
-                    <div className="rounded-xl border bg-white p-5 shadow-sm flex-1">
-                      <span className="text-xs font-semibold uppercase tracking-wide text-blue-500">{item.phase}</span>
-                      <h3 className="mt-1 font-bold text-gray-800">{item.title}</h3>
-                      <ul className="mt-3 space-y-1.5">
+                  {
+                    step: '01',
+                    phase: 'Tuần 1–4',
+                    title: 'Làm quen nhạc cụ',
+                    icon: '🌱',
+                    color: 'from-green-400 to-emerald-500',
+                    bg: 'bg-green-50',
+                    border: 'border-green-200',
+                    badge: 'text-green-700 bg-green-100',
+                    points: ['Tư thế, cầm đàn đúng cách', 'Nốt nhạc cơ bản', 'Bài tập ngón tay', 'Giai điệu đầu tiên'],
+                  },
+                  {
+                    step: '02',
+                    phase: 'Tháng 2–3',
+                    title: 'Hợp âm & nhịp điệu',
+                    icon: '🎵',
+                    color: 'from-blue-400 to-cyan-500',
+                    bg: 'bg-blue-50',
+                    border: 'border-blue-200',
+                    badge: 'text-blue-700 bg-blue-100',
+                    points: ['Hợp âm Am, Em, C, G, D, F', 'Strumming & fingerpicking', 'Chuyển hợp âm mượt mà', 'Đệm hát bài hoàn chỉnh'],
+                  },
+                  {
+                    step: '03',
+                    phase: 'Tháng 4–6',
+                    title: 'Nâng cao kỹ thuật',
+                    icon: '🎸',
+                    color: 'from-purple-400 to-violet-500',
+                    bg: 'bg-purple-50',
+                    border: 'border-purple-200',
+                    badge: 'text-purple-700 bg-purple-100',
+                    points: ['Barre chord, power chord', 'Fingerstyle cơ bản → nâng cao', 'Đọc tab & sheet music', 'Chơi 10+ bài yêu thích'],
+                  },
+                  {
+                    step: '04',
+                    phase: 'Tháng 7+',
+                    title: 'Biểu diễn & sáng tác',
+                    icon: '🌟',
+                    color: 'from-orange-400 to-rose-500',
+                    bg: 'bg-orange-50',
+                    border: 'border-orange-200',
+                    badge: 'text-orange-700 bg-orange-100',
+                    points: ['Phong cách cá nhân', 'Improvisation cơ bản', 'Sáng tác giai điệu', 'Biểu diễn tự tin'],
+                  },
+                ].map((item, i) => (
+                  <div key={item.step} className="relative flex flex-col items-center text-center">
+                    {/* Step circle */}
+                    <div className={`relative z-10 mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br ${item.color} shadow-lg`}>
+                      <span className="text-3xl">{item.icon}</span>
+                      <span className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white text-xs font-bold text-gray-700 shadow">
+                        {item.step}
+                      </span>
+                    </div>
+
+                    {/* Card */}
+                    <div className={`w-full rounded-2xl border ${item.border} ${item.bg} p-5 shadow-sm`}>
+                      <span className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold ${item.badge}`}>
+                        {item.phase}
+                      </span>
+                      <h3 className="mt-2 text-base font-bold text-gray-800">{item.title}</h3>
+                      <ul className="mt-4 space-y-2 text-left">
                         {item.points.map((p) => (
                           <li key={p} className="flex items-start gap-2 text-sm text-gray-600">
-                            <span className="mt-0.5 shrink-0 text-green-500">✓</span>{p}
+                            <svg className="mt-0.5 h-4 w-4 shrink-0 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                            </svg>
+                            {p}
                           </li>
                         ))}
                       </ul>
                     </div>
+
+                    {/* Arrow between steps (mobile) */}
+                    {i < 3 && (
+                      <div className="my-2 text-2xl text-blue-300 lg:hidden">↓</div>
+                    )}
                   </div>
                 ))}
               </div>
             </div>
-            <div className="mt-10 text-center">
-              <Link href="/khoa-hoc" className="inline-block rounded-full bg-blue-600 px-8 py-3 font-semibold text-white shadow transition hover:bg-blue-700">
-                Bắt đầu lộ trình học ngay
+
+            <div className="mt-12 text-center">
+              <Link href="/khoa-hoc" className="inline-block rounded-full bg-gradient-to-r from-blue-600 to-blue-500 px-8 py-3 font-semibold text-white shadow-md transition hover:shadow-lg hover:from-blue-700 hover:to-blue-600">
+                Bắt đầu lộ trình học ngay →
               </Link>
             </div>
           </div>
