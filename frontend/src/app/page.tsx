@@ -236,10 +236,10 @@ export default async function HomePage() {
           }}
         >
           {/* Overlay trắng mờ để chữ dễ đọc */}
-          <div className="absolute inset-0 bg-white/70" />
+          <div className="absolute inset-0 bg-white/40" />
           <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
             <h2 id="about-heading" className="mb-4 text-3xl font-bold text-gray-900">MixiGui là gì?</h2>
-            <p className="text-lg leading-relaxed text-gray-700">
+            <p className="text-lg leading-relaxed text-gray-900">
               <strong>MixiGui</strong> là nền tảng học nhạc trực tuyến và cửa hàng nhạc cụ chính hãng tại Việt Nam, được thành lập với sứ mệnh <em>giúp mọi người tiếp cận âm nhạc dễ dàng và hiệu quả hơn</em>. Chúng tôi cung cấp các khóa học guitar, piano, trống, ukulele được thiết kế bởi giảng viên có hơn 10 năm kinh nghiệm biểu diễn và giảng dạy chuyên nghiệp.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-gray-700">
