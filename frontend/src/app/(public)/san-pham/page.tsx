@@ -67,21 +67,31 @@ export default async function SanPhamPage() {
 
       <main>
         {/* ── HERO ── */}
-        <section className="border-b bg-gradient-to-r from-green-700 to-green-500 py-14 text-white">
-          <div className="mx-auto max-w-7xl px-4">
-            <nav aria-label="Breadcrumb" className="mb-4 text-sm text-green-200">
-              <Link href="/" className="hover:text-white">Trang chủ</Link>
-              <span className="mx-2">/</span>
-              <span className="text-white">Sản phẩm</span>
-            </nav>
-            <h1 className="text-4xl font-extrabold">Nhạc Cụ Chính Hãng</h1>
-            <p className="mt-3 max-w-2xl text-lg text-green-100">
-              Guitar, piano, trống, ukulele từ các thương hiệu uy tín thế giới — Yamaha, Roland, Casio, Fender. Bảo hành chính hãng, giao hàng toàn quốc.
-            </p>
-            <div className="mt-5 flex flex-wrap gap-3 text-sm">
-              {['✅ 100% chính hãng', '🛡 Bảo hành 12–24 tháng', '🚚 Giao toàn quốc', '🔄 Đổi trả 7 ngày', '🏪 Showroom HN & HCM'].map((b) => (
-                <span key={b} className="rounded-full bg-white/20 px-3 py-1">{b}</span>
-              ))}
+        <section className="relative border-b text-white">
+          <div className="leading-[0]">
+            <video
+              src="https://res.cloudinary.com/ddaryoz5b/video/upload/v1773801373/Video_T%C3%A0u_C%C3%A1_Vi%E1%BB%87t_Nam_Vui_Nh%E1%BB%99n_ltfx7m.mp4"
+              autoPlay muted loop playsInline
+              className="block w-full"
+            />
+          </div>
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 flex items-center">
+            <div className="mx-auto w-full max-w-7xl px-4">
+              <nav aria-label="Breadcrumb" className="mb-4 text-sm text-gray-300">
+                <Link href="/" className="hover:text-white">Trang chủ</Link>
+                <span className="mx-2">/</span>
+                <span className="text-white">Sản phẩm</span>
+              </nav>
+              <h1 className="text-4xl font-extrabold drop-shadow">Nhạc Cụ Chính Hãng</h1>
+              <p className="mt-3 max-w-2xl text-lg text-gray-200 drop-shadow">
+                Guitar, piano, trống, ukulele từ các thương hiệu uy tín thế giới — Yamaha, Roland, Casio, Fender. Bảo hành chính hãng, giao hàng toàn quốc.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3 text-sm">
+                {['✅ 100% chính hãng', '🛡 Bảo hành 12–24 tháng', '🚚 Giao toàn quốc', '🔄 Đổi trả 7 ngày', '🏪 Showroom HN & HCM'].map((b) => (
+                  <span key={b} className="rounded-full bg-white/20 px-3 py-1 backdrop-blur-sm">{b}</span>
+                ))}
+              </div>
             </div>
           </div>
         </section>
