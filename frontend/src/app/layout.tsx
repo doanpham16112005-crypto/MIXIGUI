@@ -4,6 +4,7 @@ import './globals.css'
 import { QueryProvider } from '@/providers/query-provider'
 import { AuthProvider } from '@/providers/auth-provider'
 import PersistentPlayer from '@/components/layout/persistent-player'
+import MouseTrailEffect from '@/components/layout/mouse-trail'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -32,6 +33,7 @@ export default function RootLayout({
           <AuthProvider>
             {children}
             <PersistentPlayer />
+            <MouseTrailEffect />
           </AuthProvider>
         </QueryProvider>
       </body>
