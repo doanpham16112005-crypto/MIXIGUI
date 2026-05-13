@@ -19,6 +19,9 @@ backend/.env
 *.log
 npm-debug.log*
 
+# Claude Code (contains tokens/secrets)
+.claude/
+
 # IDE
 .vscode/
 .idea/
