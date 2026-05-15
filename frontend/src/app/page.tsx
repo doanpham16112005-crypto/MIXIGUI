@@ -8,27 +8,27 @@ export const revalidate = 3600
 
 // ─── SEO Metadata ────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: 'Nguyên Tạ Music - Học Nhạc Online & Mua Nhạc Cụ Chính Hãng tại Việt Nam',
+  title: 'MixiGui - Học Nhạc Online & Mua Nhạc Cụ Chính Hãng tại Việt Nam',
   description:
-    'Nguyên Tạ Music — nền tảng học nhạc trực tuyến và mua nhạc cụ chính hãng số 1 Việt Nam. Khóa học guitar, piano, trống từ giảng viên chuyên nghiệp. Nhạc cụ Yamaha, Roland, Casio bảo hành chính hãng.',
+    'MixiGui — nền tảng học nhạc trực tuyến và mua nhạc cụ chính hãng số 1 Việt Nam. Khóa học guitar, piano, trống từ giảng viên chuyên nghiệp. Nhạc cụ Yamaha, Roland, Casio bảo hành chính hãng.',
   keywords: [
     'học nhạc online', 'mua nhạc cụ', 'khóa học guitar', 'khóa học piano',
-    'nhạc cụ chính hãng', 'học đàn guitar', 'học piano online', 'Nguyên Tạ Music',
+    'nhạc cụ chính hãng', 'học đàn guitar', 'học piano online', 'MixiGui',
   ],
   alternates: { canonical: siteConfig.url },
   openGraph: {
     type: 'website',
     url: siteConfig.url,
-    title: 'Nguyên Tạ Music - Học Nhạc Online & Mua Nhạc Cụ Chính Hãng',
+    title: 'MixiGui - Học Nhạc Online & Mua Nhạc Cụ Chính Hãng',
     description:
       'Nền tảng học nhạc trực tuyến và mua nhạc cụ chính hãng số 1 Việt Nam. Khóa học guitar, piano, trống. Nhạc cụ Yamaha, Roland, Casio.',
-    siteName: 'Nguyên Tạ Music',
-    images: [{ url: `${siteConfig.url}/images/og-image.jpg`, width: 1200, height: 630, alt: 'Nguyên Tạ Music - Học nhạc & Mua nhạc cụ' }],
+    siteName: 'MixiGui',
+    images: [{ url: `${siteConfig.url}/images/og-image.jpg`, width: 1200, height: 630, alt: 'MixiGui - Học nhạc & Mua nhạc cụ' }],
     locale: 'vi_VN',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nguyên Tạ Music - Học Nhạc Online & Mua Nhạc Cụ Chính Hãng',
+    title: 'MixiGui - Học Nhạc Online & Mua Nhạc Cụ Chính Hãng',
     description: 'Khóa học guitar, piano, trống từ giảng viên chuyên nghiệp. Nhạc cụ chính hãng bảo hành đầy đủ.',
     images: [`${siteConfig.url}/images/og-image.jpg`],
   },
@@ -59,35 +59,35 @@ async function getFeaturedData() {
 // ─── Static content ───────────────────────────────────────────────────────────
 const FAQS = [
   {
-    q: 'Học nhạc online tại Nguyên Tạ Music có hiệu quả không?',
-    a: 'Hoàn toàn hiệu quả. Các khóa học tại Nguyên Tạ Music được thiết kế bài bản theo lộ trình từ cơ bản đến nâng cao, kết hợp video bài giảng HD, bài tập thực hành và hỗ trợ trực tiếp từ giảng viên. Hơn 90% học viên hoàn thành khóa học đánh giá tiến bộ rõ rệt sau 3 tháng.',
+    q: 'Học nhạc online tại MixiGui có hiệu quả không?',
+    a: 'Hoàn toàn hiệu quả. Các khóa học tại MixiGui được thiết kế bài bản theo lộ trình từ cơ bản đến nâng cao, kết hợp video bài giảng HD, bài tập thực hành và hỗ trợ trực tiếp từ giảng viên. Hơn 90% học viên hoàn thành khóa học đánh giá tiến bộ rõ rệt sau 3 tháng.',
   },
   {
     q: 'Tôi chưa biết gì về nhạc có học được không?',
-    a: 'Được. Nguyên Tạ Music có đầy đủ khóa học dành cho người mới bắt đầu hoàn toàn, không yêu cầu kiến thức âm nhạc trước. Giảng viên sẽ hướng dẫn từng bước từ cách cầm đàn, đọc nốt nhạc đến chơi các bài nhạc hoàn chỉnh.',
+    a: 'Được. MixiGui có đầy đủ khóa học dành cho người mới bắt đầu hoàn toàn, không yêu cầu kiến thức âm nhạc trước. Giảng viên sẽ hướng dẫn từng bước từ cách cầm đàn, đọc nốt nhạc đến chơi các bài nhạc hoàn chỉnh.',
   },
   {
-    q: 'Nhạc cụ tại Nguyên Tạ Music có bảo hành không?',
-    a: 'Tất cả nhạc cụ tại Nguyên Tạ Music đều là hàng chính hãng được nhập khẩu trực tiếp từ nhà sản xuất, bảo hành từ 12 đến 24 tháng tùy sản phẩm. Chúng tôi hỗ trợ bảo hành tận nơi tại Hà Nội và TP.HCM.',
+    q: 'Nhạc cụ tại MixiGui có bảo hành không?',
+    a: 'Tất cả nhạc cụ tại MixiGui đều là hàng chính hãng được nhập khẩu trực tiếp từ nhà sản xuất, bảo hành từ 12 đến 24 tháng tùy sản phẩm. Chúng tôi hỗ trợ bảo hành tận nơi tại Hà Nội và TP.HCM.',
   },
   {
     q: 'Nên học guitar hay piano trước?',
     a: 'Điều này phụ thuộc vào sở thích cá nhân. Guitar phù hợp hơn nếu bạn muốn chơi nhạc pop, rock, dân ca và dễ mang theo. Piano giúp xây dựng nền tảng lý thuyết âm nhạc tốt hơn và phù hợp với nhạc cổ điển, ballad. Cả hai đều có thể bắt đầu từ con số 0.',
   },
   {
-    q: 'Chi phí học nhạc tại Nguyên Tạ Music là bao nhiêu?',
-    a: 'Nguyên Tạ Music cung cấp cả khóa học miễn phí và có phí. Khóa học có phí dao động từ 499.000đ đến 1.500.000đ tùy nội dung và thời lượng. Bạn được học trọn đời sau khi mua, không giới hạn lượt xem.',
+    q: 'Chi phí học nhạc tại MixiGui là bao nhiêu?',
+    a: 'MixiGui cung cấp cả khóa học miễn phí và có phí. Khóa học có phí dao động từ 499.000đ đến 1.500.000đ tùy nội dung và thời lượng. Bạn được học trọn đời sau khi mua, không giới hạn lượt xem.',
   },
   {
     q: 'Làm thế nào để chọn nhạc cụ phù hợp cho người mới bắt đầu?',
-    a: 'Đối với người mới học guitar, chúng tôi khuyên chọn guitar acoustic cỡ vừa (dreadnought) trong tầm giá 1.5–3 triệu đồng như Yamaha F310. Với piano, nên chọn đàn phím điện 61–76 phím để tiết kiệm không gian. Đội ngũ tư vấn Nguyên Tạ Music luôn sẵn sàng hỗ trợ bạn chọn nhạc cụ phù hợp.',
+    a: 'Đối với người mới học guitar, chúng tôi khuyên chọn guitar acoustic cỡ vừa (dreadnought) trong tầm giá 1.5–3 triệu đồng như Yamaha F310. Với piano, nên chọn đàn phím điện 61–76 phím để tiết kiệm không gian. Đội ngũ tư vấn MixiGui luôn sẵn sàng hỗ trợ bạn chọn nhạc cụ phù hợp.',
   },
 ]
 
 const TESTIMONIALS = [
-  { name: 'Minh Tuấn', role: 'Học viên Guitar', avatar: '🧑', rating: 5, text: 'Sau 3 tháng học guitar tại Nguyên Tạ Music, tôi đã có thể tự đệm hát các bài nhạc yêu thích. Giảng viên nhiệt tình, bài học rõ ràng, tiến độ phù hợp với người đi làm như tôi.' },
-  { name: 'Thu Hà', role: 'Học viên Piano', avatar: '👩', rating: 5, text: 'Trước đây tôi rất sợ học nhạc vì nghĩ mình không có năng khiếu. Nhưng với phương pháp dạy của Nguyên Tạ Music, chỉ sau 2 tháng tôi đã chơi được những bản nhạc đơn giản. Rất vui!' },
-  { name: 'Hoàng Phúc', role: 'Phụ huynh học viên', avatar: '👨', rating: 5, text: 'Mua đàn piano cho con tại Nguyên Tạ Music, sản phẩm chính hãng, giá tốt hơn nhiều nơi khác. Đặc biệt đội ngũ tư vấn rất tận tâm, hỗ trợ sau mua hàng chu đáo.' },
+  { name: 'Minh Tuấn', role: 'Học viên Guitar', avatar: '🧑', rating: 5, text: 'Sau 3 tháng học guitar tại MixiGui, tôi đã có thể tự đệm hát các bài nhạc yêu thích. Giảng viên nhiệt tình, bài học rõ ràng, tiến độ phù hợp với người đi làm như tôi.' },
+  { name: 'Thu Hà', role: 'Học viên Piano', avatar: '👩', rating: 5, text: 'Trước đây tôi rất sợ học nhạc vì nghĩ mình không có năng khiếu. Nhưng với phương pháp dạy của MixiGui, chỉ sau 2 tháng tôi đã chơi được những bản nhạc đơn giản. Rất vui!' },
+  { name: 'Hoàng Phúc', role: 'Phụ huynh học viên', avatar: '👨', rating: 5, text: 'Mua đàn piano cho con tại MixiGui, sản phẩm chính hãng, giá tốt hơn nhiều nơi khác. Đặc biệt đội ngũ tư vấn rất tận tâm, hỗ trợ sau mua hàng chu đáo.' },
 ]
 
 const BRANDS = ['Yamaha', 'Roland', 'Casio', 'Fender', 'Gibson', 'Dunlop']
@@ -96,7 +96,7 @@ const BRANDS = ['Yamaha', 'Roland', 'Casio', 'Fender', 'Gibson', 'Dunlop']
 function HomeSchemas({ courses, products }: { courses: any[]; products: any[] }) {
   const org = {
     '@context': 'https://schema.org', '@type': 'Organization',
-    name: 'Nguyên Tạ Music', url: siteConfig.url,
+    name: 'MixiGui', url: siteConfig.url,
     logo: `${siteConfig.url}/images/logo.svg`,
     description: 'Nền tảng học nhạc trực tuyến và mua nhạc cụ chính hãng tại Việt Nam',
     contactPoint: { '@type': 'ContactPoint', contactType: 'customer service', availableLanguage: 'Vietnamese' },
@@ -104,20 +104,20 @@ function HomeSchemas({ courses, products }: { courses: any[]; products: any[] })
   }
   const website = {
     '@context': 'https://schema.org', '@type': 'WebSite',
-    name: 'Nguyên Tạ Music', url: siteConfig.url,
+    name: 'MixiGui', url: siteConfig.url,
     potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: `${siteConfig.url}/khoa-hoc?q={search_term_string}` }, 'query-input': 'required name=search_term_string' },
   }
   const courseList = {
     '@context': 'https://schema.org', '@type': 'ItemList',
-    name: 'Khóa học nhạc nổi bật tại Nguyên Tạ Music',
+    name: 'Khóa học nhạc nổi bật tại MixiGui',
     itemListElement: courses.map((c, i) => ({
       '@type': 'ListItem', position: i + 1,
-      item: { '@type': 'Course', name: c.title, url: `${siteConfig.url}/khoa-hoc/${c.slug}`, provider: { '@type': 'Organization', name: 'Nguyên Tạ Music' }, offers: { '@type': 'Offer', price: c.price, priceCurrency: 'VND', availability: 'https://schema.org/InStock' } },
+      item: { '@type': 'Course', name: c.title, url: `${siteConfig.url}/khoa-hoc/${c.slug}`, provider: { '@type': 'Organization', name: 'MixiGui' }, offers: { '@type': 'Offer', price: c.price, priceCurrency: 'VND', availability: 'https://schema.org/InStock' } },
     })),
   }
   const productList = {
     '@context': 'https://schema.org', '@type': 'ItemList',
-    name: 'Nhạc cụ chính hãng tại Nguyên Tạ Music',
+    name: 'Nhạc cụ chính hãng tại MixiGui',
     itemListElement: products.map((p, i) => ({
       '@type': 'ListItem', position: i + 1,
       item: { '@type': 'Product', name: p.name, url: `${siteConfig.url}/san-pham/${p.slug}`, brand: { '@type': 'Brand', name: p.brand }, offers: { '@type': 'Offer', price: p.price, priceCurrency: 'VND', availability: 'https://schema.org/InStock' } },
@@ -153,7 +153,7 @@ export default async function HomePage() {
 
       <main>
         {/* ── HERO ── */}
-        <section aria-label="Giới thiệu Nguyên Tạ Music" style={{ backgroundImage: 'url(https://res.cloudinary.com/ddaryoz5b/image/upload/v1773716135/Gemini_Generated_Image_9rb159rb159rb159_ewqjfr.png)', backgroundSize: '100% 100%', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', minHeight: '400px' }} className="py-24 text-center text-white">
+        <section aria-label="Giới thiệu MixiGui" style={{ backgroundImage: 'url(https://res.cloudinary.com/ddaryoz5b/image/upload/v1773716135/Gemini_Generated_Image_9rb159rb159rb159_ewqjfr.png)', backgroundSize: '100% 100%', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', minHeight: '400px' }} className="py-24 text-center text-white">
           <div className="mx-auto max-w-3xl px-4">
             <p className="mb-3 text-sm font-medium uppercase tracking-widest text-blue-200">Nền tảng âm nhạc số 1 Việt Nam</p>
             <h1 className="text-4xl font-extrabold leading-tight sm:text-5xl">
@@ -238,12 +238,12 @@ export default async function HomePage() {
           {/* Overlay trắng mờ để chữ dễ đọc */}
           <div className="absolute inset-0 bg-white/40" />
           <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
-            <h2 id="about-heading" className="mb-4 text-3xl font-bold text-gray-900">Nguyên Tạ Music là gì?</h2>
+            <h2 id="about-heading" className="mb-4 text-3xl font-bold text-gray-900">MixiGui là gì?</h2>
             <p className="text-lg leading-relaxed text-gray-900">
-              <strong>Nguyên Tạ Music</strong> là nền tảng học nhạc trực tuyến và cửa hàng nhạc cụ chính hãng tại Việt Nam, được thành lập với sứ mệnh <em>giúp mọi người tiếp cận âm nhạc dễ dàng và hiệu quả hơn</em>. Chúng tôi cung cấp các khóa học guitar, piano, trống, ukulele được thiết kế bởi giảng viên có hơn 10 năm kinh nghiệm biểu diễn và giảng dạy chuyên nghiệp.
+              <strong>MixiGui</strong> là nền tảng học nhạc trực tuyến và cửa hàng nhạc cụ chính hãng tại Việt Nam, được thành lập với sứ mệnh <em>giúp mọi người tiếp cận âm nhạc dễ dàng và hiệu quả hơn</em>. Chúng tôi cung cấp các khóa học guitar, piano, trống, ukulele được thiết kế bởi giảng viên có hơn 10 năm kinh nghiệm biểu diễn và giảng dạy chuyên nghiệp.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-gray-700">
-              Bên cạnh đó, cửa hàng nhạc cụ Nguyên Tạ Music cung cấp đầy đủ các dòng sản phẩm từ <strong>Yamaha, Roland, Casio, Fender, Gibson</strong> — tất cả đều là hàng chính hãng, có tem bảo hành và hóa đơn VAT rõ ràng. Dù bạn là người mới bắt đầu hay nhạc sĩ chuyên nghiệp, Nguyên Tạ Music đều có sản phẩm và dịch vụ phù hợp với nhu cầu của bạn.
+              Bên cạnh đó, cửa hàng nhạc cụ MixiGui cung cấp đầy đủ các dòng sản phẩm từ <strong>Yamaha, Roland, Casio, Fender, Gibson</strong> — tất cả đều là hàng chính hãng, có tem bảo hành và hóa đơn VAT rõ ràng. Dù bạn là người mới bắt đầu hay nhạc sĩ chuyên nghiệp, MixiGui đều có sản phẩm và dịch vụ phù hợp với nhu cầu của bạn.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link href="/ve-chung-toi" className="rounded-full border border-blue-600 px-6 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50 transition">Tìm hiểu thêm về chúng tôi</Link>
@@ -255,7 +255,7 @@ export default async function HomePage() {
         {/* ── WHY MIXIGUI ── */}
         <section aria-labelledby="why-heading" className="bg-gray-50 py-16">
           <div className="mx-auto max-w-7xl px-4">
-            <h2 id="why-heading" className="mb-10 text-center text-3xl font-bold text-gray-900">Tại sao chọn Nguyên Tạ Music?</h2>
+            <h2 id="why-heading" className="mb-10 text-center text-3xl font-bold text-gray-900">Tại sao chọn MixiGui?</h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
                 { icon: '🎓', title: 'Giảng viên chuyên nghiệp', desc: 'Đội ngũ giảng viên có kinh nghiệm biểu diễn và giảng dạy chuyên nghiệp.' },
@@ -353,8 +353,8 @@ export default async function HomePage() {
         {/* ── TESTIMONIALS ── */}
         <section aria-labelledby="testimonials-heading" className="bg-gray-50 py-16">
           <div className="mx-auto max-w-7xl px-4">
-            <h2 id="testimonials-heading" className="mb-2 text-center text-3xl font-bold text-gray-900">Học viên nói gì về Nguyên Tạ Music?</h2>
-            <p className="mb-10 text-center text-gray-500">Hơn {stats.users}+ học viên đã tin tưởng chọn Nguyên Tạ Music</p>
+            <h2 id="testimonials-heading" className="mb-2 text-center text-3xl font-bold text-gray-900">Học viên nói gì về MixiGui?</h2>
+            <p className="mb-10 text-center text-gray-500">Hơn {stats.users}+ học viên đã tin tưởng chọn MixiGui</p>
             <div className="grid gap-6 sm:grid-cols-3">
               {TESTIMONIALS.map((t) => (
                 <blockquote key={t.name} className="rounded-xl border bg-white p-6 shadow-sm">
@@ -411,7 +411,7 @@ export default async function HomePage() {
         <section aria-labelledby="faq-heading" className="py-16">
           <div className="mx-auto max-w-3xl px-4">
             <h2 id="faq-heading" className="mb-2 text-center text-3xl font-bold text-gray-900">Câu hỏi thường gặp</h2>
-            <p className="mb-10 text-center text-gray-500">Giải đáp những thắc mắc phổ biến nhất về Nguyên Tạ Music</p>
+            <p className="mb-10 text-center text-gray-500">Giải đáp những thắc mắc phổ biến nhất về MixiGui</p>
             <div className="space-y-4">
               {FAQS.map((faq, i) => (
                 <details key={i} className="group rounded-xl border bg-white p-5 shadow-sm open:shadow-md">
@@ -544,7 +544,7 @@ export default async function HomePage() {
           <div className="mx-auto max-w-5xl px-4">
             <h2 id="instrument-guide-heading" className="mb-3 text-center text-3xl font-bold text-gray-900">Chọn nhạc cụ nào phù hợp với bạn?</h2>
             <p className="mb-10 text-center text-gray-500 max-w-2xl mx-auto">
-              Mỗi nhạc cụ có đặc điểm và phong cách riêng. Hãy để Nguyên Tạ Music giúp bạn tìm ra nhạc cụ phù hợp nhất với sở thích, ngân sách và mục tiêu âm nhạc của bạn.
+              Mỗi nhạc cụ có đặc điểm và phong cách riêng. Hãy để MixiGui giúp bạn tìm ra nhạc cụ phù hợp nhất với sở thích, ngân sách và mục tiêu âm nhạc của bạn.
             </p>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {[
@@ -584,18 +584,18 @@ export default async function HomePage() {
         {/* ── CAM KẾT MUA HÀNG ── */}
         <section aria-labelledby="commitment-heading" className="bg-white py-16">
           <div className="mx-auto max-w-5xl px-4">
-            <h2 id="commitment-heading" className="mb-3 text-center text-3xl font-bold text-gray-900">Cam kết của Nguyên Tạ Music với bạn</h2>
+            <h2 id="commitment-heading" className="mb-3 text-center text-3xl font-bold text-gray-900">Cam kết của MixiGui với bạn</h2>
             <p className="mb-10 text-center text-gray-500 max-w-2xl mx-auto">
-              Chúng tôi không chỉ bán nhạc cụ hay khóa học — Nguyên Tạ Music cam kết đồng hành cùng bạn trong suốt hành trình âm nhạc với những giá trị cốt lõi sau đây.
+              Chúng tôi không chỉ bán nhạc cụ hay khóa học — MixiGui cam kết đồng hành cùng bạn trong suốt hành trình âm nhạc với những giá trị cốt lõi sau đây.
             </p>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {[
-                { icon: '✅', title: '100% Hàng chính hãng', desc: 'Toàn bộ nhạc cụ tại Nguyên Tạ Music được nhập khẩu trực tiếp từ nhà phân phối chính thức tại Việt Nam. Mỗi sản phẩm đều có tem bảo hành, serial number và hóa đơn VAT đầy đủ. Tuyệt đối không bán hàng fake, hàng nhái hay hàng kém chất lượng.' },
-                { icon: '🔄', title: 'Đổi trả trong 30 ngày', desc: 'Nếu nhạc cụ có lỗi từ nhà sản xuất hoặc bạn không hài lòng vì bất kỳ lý do gì, Nguyên Tạ Music hỗ trợ đổi trả miễn phí trong vòng 30 ngày kể từ ngày mua. Không cần giải thích — chúng tôi tin tưởng khách hàng.' },
-                { icon: '🛠️', title: 'Bảo hành tận nơi', desc: 'Với hệ thống 2 showroom tại Hà Nội và TP.HCM cùng đội ngũ kỹ thuật viên giàu kinh nghiệm, Nguyên Tạ Music cung cấp dịch vụ bảo hành tận nơi, sửa chữa và chỉnh âm thanh cho nhạc cụ của bạn trong suốt thời gian bảo hành.' },
-                { icon: '💰', title: 'Giá tốt nhất thị trường', desc: 'Nhờ quan hệ trực tiếp với nhà phân phối, Nguyên Tạ Music có thể cung cấp nhạc cụ chính hãng với mức giá cạnh tranh nhất. Nếu bạn tìm thấy giá thấp hơn cho cùng sản phẩm chính hãng tại nơi khác, chúng tôi sẽ giảm thêm 5%.' },
-                { icon: '📦', title: 'Giao hàng toàn quốc', desc: 'Nguyên Tạ Music giao hàng đến tất cả 63 tỉnh thành trên toàn quốc. Đối với đơn hàng trên 2 triệu đồng, miễn phí vận chuyển. Nhạc cụ được đóng gói cẩn thận để đảm bảo an toàn trong quá trình vận chuyển.' },
-                { icon: '🎓', title: 'Tư vấn miễn phí', desc: 'Đội ngũ tư vấn của Nguyên Tạ Music đều là những người đam mê và có kiến thức âm nhạc thực sự — không phải nhân viên bán hàng thông thường. Chúng tôi sẽ giúp bạn chọn nhạc cụ và khóa học phù hợp nhất, dù bạn không mua gì.' },
+                { icon: '✅', title: '100% Hàng chính hãng', desc: 'Toàn bộ nhạc cụ tại MixiGui được nhập khẩu trực tiếp từ nhà phân phối chính thức tại Việt Nam. Mỗi sản phẩm đều có tem bảo hành, serial number và hóa đơn VAT đầy đủ. Tuyệt đối không bán hàng fake, hàng nhái hay hàng kém chất lượng.' },
+                { icon: '🔄', title: 'Đổi trả trong 30 ngày', desc: 'Nếu nhạc cụ có lỗi từ nhà sản xuất hoặc bạn không hài lòng vì bất kỳ lý do gì, MixiGui hỗ trợ đổi trả miễn phí trong vòng 30 ngày kể từ ngày mua. Không cần giải thích — chúng tôi tin tưởng khách hàng.' },
+                { icon: '🛠️', title: 'Bảo hành tận nơi', desc: 'Với hệ thống 2 showroom tại Hà Nội và TP.HCM cùng đội ngũ kỹ thuật viên giàu kinh nghiệm, MixiGui cung cấp dịch vụ bảo hành tận nơi, sửa chữa và chỉnh âm thanh cho nhạc cụ của bạn trong suốt thời gian bảo hành.' },
+                { icon: '💰', title: 'Giá tốt nhất thị trường', desc: 'Nhờ quan hệ trực tiếp với nhà phân phối, MixiGui có thể cung cấp nhạc cụ chính hãng với mức giá cạnh tranh nhất. Nếu bạn tìm thấy giá thấp hơn cho cùng sản phẩm chính hãng tại nơi khác, chúng tôi sẽ giảm thêm 5%.' },
+                { icon: '📦', title: 'Giao hàng toàn quốc', desc: 'MixiGui giao hàng đến tất cả 63 tỉnh thành trên toàn quốc. Đối với đơn hàng trên 2 triệu đồng, miễn phí vận chuyển. Nhạc cụ được đóng gói cẩn thận để đảm bảo an toàn trong quá trình vận chuyển.' },
+                { icon: '🎓', title: 'Tư vấn miễn phí', desc: 'Đội ngũ tư vấn của MixiGui đều là những người đam mê và có kiến thức âm nhạc thực sự — không phải nhân viên bán hàng thông thường. Chúng tôi sẽ giúp bạn chọn nhạc cụ và khóa học phù hợp nhất, dù bạn không mua gì.' },
               ].map((item) => (
                 <div key={item.title} className="flex gap-4 rounded-xl border bg-gray-50 p-5">
                   <span className="shrink-0 text-3xl">{item.icon}</span>
@@ -617,7 +617,7 @@ export default async function HomePage() {
                 <span className="mb-3 inline-block rounded-full bg-white/20 px-4 py-1 text-sm font-medium">🆓 Miễn phí hoàn toàn</span>
                 <h2 id="free-trial-heading" className="mb-4 text-3xl font-bold">Học thử 3 bài đầu tiên miễn phí</h2>
                 <p className="mb-6 text-lg text-purple-100 leading-relaxed">
-                  Không cần thẻ tín dụng, không cần cam kết. Đăng ký tài khoản miễn phí để truy cập ngay 3 bài học đầu tiên của bất kỳ khóa học nào — cảm nhận chất lượng giảng dạy của Nguyên Tạ Music trước khi quyết định đăng ký.
+                  Không cần thẻ tín dụng, không cần cam kết. Đăng ký tài khoản miễn phí để truy cập ngay 3 bài học đầu tiên của bất kỳ khóa học nào — cảm nhận chất lượng giảng dạy của MixiGui trước khi quyết định đăng ký.
                 </p>
                 <ul className="mb-8 space-y-3">
                   {['Video bài giảng HD, có thể xem trên mọi thiết bị', 'Tài liệu PDF bài tập đi kèm', 'Hỏi đáp trực tiếp với giảng viên trong 7 ngày', 'Không tự động gia hạn, không thu phí ẩn'].map((item) => (
@@ -662,7 +662,7 @@ export default async function HomePage() {
                 Nhiều người trưởng thành nghĩ rằng họ đã "quá muộn" để học nhạc. Nhưng sự thật là não bộ con người có <em>tính dẻo dai thần kinh (neuroplasticity)</em> — khả năng học hỏi và thích nghi — suốt cả cuộc đời. Nhiều nhạc sĩ nổi tiếng thế giới bắt đầu học nhạc khi đã trưởng thành và vẫn đạt được trình độ xuất sắc. Điều quan trọng không phải là bạn bắt đầu khi nào, mà là bạn có <strong>phương pháp học đúng và sự kiên trì</strong> hay không.
               </p>
               <p>
-                Tại Nguyên Tạ Music, chúng tôi tin rằng mọi người đều có thể học nhạc — từ trẻ em 5 tuổi đến người lớn 60 tuổi. Phương pháp giảng dạy của chúng tôi được xây dựng dựa trên nghiên cứu về khoa học học tập hiện đại: <strong>học từng bước nhỏ, lặp lại có mục đích, và ứng dụng ngay vào bài nhạc thực tế</strong> — thay vì chỉ tập kỹ thuật thuần túy khô khan. Điều này giúp học viên tiến bộ nhanh hơn và quan trọng hơn là <em>duy trì động lực học lâu dài</em>.
+                Tại MixiGui, chúng tôi tin rằng mọi người đều có thể học nhạc — từ trẻ em 5 tuổi đến người lớn 60 tuổi. Phương pháp giảng dạy của chúng tôi được xây dựng dựa trên nghiên cứu về khoa học học tập hiện đại: <strong>học từng bước nhỏ, lặp lại có mục đích, và ứng dụng ngay vào bài nhạc thực tế</strong> — thay vì chỉ tập kỹ thuật thuần túy khô khan. Điều này giúp học viên tiến bộ nhanh hơn và quan trọng hơn là <em>duy trì động lực học lâu dài</em>.
               </p>
             </div>
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -686,14 +686,14 @@ export default async function HomePage() {
           <div className="mx-auto max-w-5xl px-4">
             <h2 id="compare-heading" className="mb-3 text-center text-3xl font-bold text-gray-900">Học nhạc online có thực sự hiệu quả không?</h2>
             <p className="mb-10 text-center text-gray-500 max-w-2xl mx-auto">
-              Câu hỏi này rất phổ biến với người mới bắt đầu. Chúng tôi so sánh trung thực giữa học online tại Nguyên Tạ Music và học trực tiếp tại trung tâm để bạn có thể tự quyết định.
+              Câu hỏi này rất phổ biến với người mới bắt đầu. Chúng tôi so sánh trung thực giữa học online tại MixiGui và học trực tiếp tại trung tâm để bạn có thể tự quyết định.
             </p>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse text-sm">
                 <thead>
                   <tr className="bg-blue-600 text-white">
                     <th className="p-4 text-left font-semibold rounded-tl-xl">Tiêu chí</th>
-                    <th className="p-4 text-center font-semibold">🖥️ Nguyên Tạ Music Online</th>
+                    <th className="p-4 text-center font-semibold">🖥️ MixiGui Online</th>
                     <th className="p-4 text-center font-semibold rounded-tr-xl">🏫 Trung tâm truyền thống</th>
                   </tr>
                 </thead>
@@ -718,7 +718,7 @@ export default async function HomePage() {
               </table>
             </div>
             <p className="mt-6 text-center text-sm text-gray-500">
-              Kết luận: Học online tại Nguyên Tạ Music phù hợp nhất với những ai có lịch bận rộn, muốn tiết kiệm chi phí và học theo tốc độ riêng. Nếu bạn là trẻ em hoặc cần giám sát chặt chẽ, học trực tiếp vẫn có những ưu điểm riêng.
+              Kết luận: Học online tại MixiGui phù hợp nhất với những ai có lịch bận rộn, muốn tiết kiệm chi phí và học theo tốc độ riêng. Nếu bạn là trẻ em hoặc cần giám sát chặt chẽ, học trực tiếp vẫn có những ưu điểm riêng.
             </p>
           </div>
         </section>
@@ -726,9 +726,9 @@ export default async function HomePage() {
         {/* ── GIẢNG VIÊN ── */}
         <section aria-labelledby="instructors-heading" className="bg-white py-16">
           <div className="mx-auto max-w-5xl px-4">
-            <h2 id="instructors-heading" className="mb-3 text-center text-3xl font-bold text-gray-900">Đội ngũ giảng viên của Nguyên Tạ Music</h2>
+            <h2 id="instructors-heading" className="mb-3 text-center text-3xl font-bold text-gray-900">Đội ngũ giảng viên của MixiGui</h2>
             <p className="mb-10 text-center text-gray-500 max-w-2xl mx-auto">
-              Mỗi giảng viên tại Nguyên Tạ Music không chỉ là người giỏi chơi nhạc — họ còn là những người có kinh nghiệm giảng dạy thực tế, hiểu rõ những khó khăn mà học viên mới bắt đầu thường gặp phải.
+              Mỗi giảng viên tại MixiGui không chỉ là người giỏi chơi nhạc — họ còn là những người có kinh nghiệm giảng dạy thực tế, hiểu rõ những khó khăn mà học viên mới bắt đầu thường gặp phải.
             </p>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
@@ -747,7 +747,7 @@ export default async function HomePage() {
               ))}
             </div>
             <p className="mt-8 text-center text-sm text-gray-500">
-              Ngoài 4 giảng viên nổi bật trên, Nguyên Tạ Music còn có đội ngũ <strong>12+ giảng viên chuyên ngành</strong> khác, bao gồm violin, bass guitar, saxophone và sản xuất âm nhạc.{' '}
+              Ngoài 4 giảng viên nổi bật trên, MixiGui còn có đội ngũ <strong>12+ giảng viên chuyên ngành</strong> khác, bao gồm violin, bass guitar, saxophone và sản xuất âm nhạc.{' '}
               <Link href="/ve-chung-toi" className="font-medium text-blue-600 hover:underline">Tìm hiểu thêm →</Link>
             </p>
           </div>
@@ -756,7 +756,7 @@ export default async function HomePage() {
         {/* ── MẸO HỌC NHẠC ── */}
         <section aria-labelledby="tips-heading" className="bg-amber-50 py-16">
           <div className="mx-auto max-w-5xl px-4">
-            <h2 id="tips-heading" className="mb-3 text-center text-3xl font-bold text-gray-900">10 mẹo học nhạc hiệu quả từ chuyên gia Nguyên Tạ Music</h2>
+            <h2 id="tips-heading" className="mb-3 text-center text-3xl font-bold text-gray-900">10 mẹo học nhạc hiệu quả từ chuyên gia MixiGui</h2>
             <p className="mb-10 text-center text-gray-500 max-w-2xl mx-auto">
               Nhiều người học nhạc nhiều năm nhưng tiến bộ chậm vì không có phương pháp đúng. Dưới đây là những bí quyết được đúc kết từ kinh nghiệm giảng dạy của đội ngũ MixiGui.
             </p>
@@ -770,7 +770,7 @@ export default async function HomePage() {
                 { num: '06', title: 'Hiểu lý thuyết cơ bản', desc: 'Bạn không cần học nhạc lý chuyên sâu, nhưng hiểu được hợp âm, quãng và điệu thức cơ bản sẽ giúp bạn học nhanh hơn gấp đôi và tự học bài mới mà không cần hướng dẫn.' },
                 { num: '07', title: 'Tập trước gương hoặc camera', desc: 'Quan sát tư thế, vị trí tay và biểu cảm của bạn khi chơi. Nhiều lỗi kỹ thuật xuất phát từ tư thế sai mà bạn không cảm nhận được — nhưng nhìn lại sẽ thấy ngay.' },
                 { num: '08', title: 'Nghỉ ngơi đúng cách', desc: 'Sau 45–60 phút tập trung, não bộ cần nghỉ ngơi. Đừng tập liên tục quá lâu — chất lượng tập quan trọng hơn số giờ. Ngủ đủ giấc cũng giúp não củng cố ký ức cơ bắp trong khi ngủ.' },
-                { num: '09', title: 'Tham gia cộng đồng nhạc', desc: 'Chơi nhạc cùng người khác — dù chỉ jam session online — giúp bạn nghe nhạc tốt hơn, giữ nhịp tốt hơn và có thêm động lực. Cộng đồng học viên Nguyên Tạ Music luôn chào đón bạn.' },
+                { num: '09', title: 'Tham gia cộng đồng nhạc', desc: 'Chơi nhạc cùng người khác — dù chỉ jam session online — giúp bạn nghe nhạc tốt hơn, giữ nhịp tốt hơn và có thêm động lực. Cộng đồng học viên MixiGui luôn chào đón bạn.' },
                 { num: '10', title: 'Kiên nhẫn với bản thân', desc: 'Học nhạc là một hành trình dài. Sẽ có những tuần bạn cảm thấy không tiến bộ — điều đó hoàn toàn bình thường. Hãy nhìn lại video bạn tập từ 2–3 tháng trước để thấy mình đã tiến bộ bao nhiêu.' },
               ].map((tip) => (
                 <div key={tip.num} className="flex gap-4 rounded-xl bg-white p-5 shadow-sm">
@@ -790,7 +790,7 @@ export default async function HomePage() {
           <div className="mx-auto max-w-5xl px-4">
             <h2 id="age-heading" className="mb-3 text-center text-3xl font-bold text-gray-900">Học nhạc ở độ tuổi nào cũng được</h2>
             <p className="mb-10 text-center text-gray-500 max-w-2xl mx-auto">
-              Nguyên Tạ Music có chương trình học phù hợp với mọi lứa tuổi — từ trẻ em đến người trưởng thành. Mỗi độ tuổi có cách tiếp cận âm nhạc và lợi ích khác nhau.
+              MixiGui có chương trình học phù hợp với mọi lứa tuổi — từ trẻ em đến người trưởng thành. Mỗi độ tuổi có cách tiếp cận âm nhạc và lợi ích khác nhau.
             </p>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {[
@@ -825,9 +825,9 @@ export default async function HomePage() {
           <div className="mx-auto max-w-5xl px-4">
             <div className="grid items-center gap-10 lg:grid-cols-2">
               <div>
-                <h2 id="community-heading" className="mb-4 text-3xl font-bold">Cộng đồng học viên Nguyên Tạ Music</h2>
+                <h2 id="community-heading" className="mb-4 text-3xl font-bold">Cộng đồng học viên MixiGui</h2>
                 <p className="mb-6 text-lg text-blue-100 leading-relaxed">
-                  Học nhạc một mình có thể cô đơn và thiếu động lực. Đó là lý do Nguyên Tạ Music xây dựng một cộng đồng học viên sôi động — nơi bạn có thể chia sẻ tiến trình học, hỏi đáp kỹ thuật, tham gia các thử thách âm nhạc hàng tháng và kết bạn với những người cùng đam mê.
+                  Học nhạc một mình có thể cô đơn và thiếu động lực. Đó là lý do MixiGui xây dựng một cộng đồng học viên sôi động — nơi bạn có thể chia sẻ tiến trình học, hỏi đáp kỹ thuật, tham gia các thử thách âm nhạc hàng tháng và kết bạn với những người cùng đam mê.
                 </p>
                 <div className="grid grid-cols-2 gap-4 mb-8">
                   {[
@@ -874,16 +874,16 @@ export default async function HomePage() {
           <div className="mx-auto max-w-5xl px-4">
             <h2 id="partners-heading" className="mb-3 text-center text-3xl font-bold text-gray-900">Đối tác và chứng nhận</h2>
             <p className="mb-10 text-center text-gray-500 max-w-2xl mx-auto">
-              Nguyên Tạ Music tự hào được hợp tác với các đơn vị uy tín trong ngành âm nhạc và giáo dục tại Việt Nam, đảm bảo chất lượng sản phẩm và dịch vụ đạt tiêu chuẩn cao nhất.
+              MixiGui tự hào được hợp tác với các đơn vị uy tín trong ngành âm nhạc và giáo dục tại Việt Nam, đảm bảo chất lượng sản phẩm và dịch vụ đạt tiêu chuẩn cao nhất.
             </p>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {[
-                { icon: '🏛️', title: 'Nhà phân phối ủy quyền Yamaha', desc: 'Nguyên Tạ Music là đại lý ủy quyền chính thức của Yamaha Music tại Việt Nam — đảm bảo 100% sản phẩm Yamaha tại Nguyên Tạ Music là hàng chính hãng với đầy đủ chính sách bảo hành từ nhà sản xuất.' },
-                { icon: '📜', title: 'Chứng chỉ Roland & Casio', desc: 'Đối tác phân phối được chứng nhận bởi Roland Corporation và Casio Musical Instruments. Toàn bộ đàn phím điện tử và synthesizer tại Nguyên Tạ Music đều được kiểm định chất lượng trước khi đến tay khách hàng.' },
-                { icon: '🎓', title: 'Liên kết Học viện Âm nhạc', desc: 'Nội dung khóa học tại Nguyên Tạ Music được phát triển và thẩm định bởi giảng viên từ Học viện Âm nhạc Quốc gia và Nhạc viện TP.HCM, đảm bảo chương trình giảng dạy đúng chuẩn học thuật.' },
-                { icon: '🔒', title: 'Thanh toán bảo mật', desc: 'Hệ thống thanh toán tại Nguyên Tạ Music được bảo mật bởi SSL 256-bit và tích hợp với các cổng thanh toán uy tín: VNPay, Momo, ZaloPay và cổng thẻ quốc tế Visa/Mastercard.' },
-                { icon: '⭐', title: 'Đánh giá 4.9/5 trên Google', desc: 'Với hơn 2.400 đánh giá trên Google Business và hơn 1.800 đánh giá 5 sao, Nguyên Tạ Music là một trong những nền tảng học nhạc và cửa hàng nhạc cụ được đánh giá cao nhất tại Việt Nam.' },
-                { icon: '📱', title: 'Tương thích đa nền tảng', desc: 'Nền tảng học trực tuyến của Nguyên Tạ Music hoạt động mượt mà trên mọi thiết bị — Windows, macOS, iOS và Android. Không cần cài đặt thêm ứng dụng, học ngay trên trình duyệt web.' },
+                { icon: '🏛️', title: 'Nhà phân phối ủy quyền Yamaha', desc: 'MixiGui là đại lý ủy quyền chính thức của Yamaha Music tại Việt Nam — đảm bảo 100% sản phẩm Yamaha tại MixiGui là hàng chính hãng với đầy đủ chính sách bảo hành từ nhà sản xuất.' },
+                { icon: '📜', title: 'Chứng chỉ Roland & Casio', desc: 'Đối tác phân phối được chứng nhận bởi Roland Corporation và Casio Musical Instruments. Toàn bộ đàn phím điện tử và synthesizer tại MixiGui đều được kiểm định chất lượng trước khi đến tay khách hàng.' },
+                { icon: '🎓', title: 'Liên kết Học viện Âm nhạc', desc: 'Nội dung khóa học tại MixiGui được phát triển và thẩm định bởi giảng viên từ Học viện Âm nhạc Quốc gia và Nhạc viện TP.HCM, đảm bảo chương trình giảng dạy đúng chuẩn học thuật.' },
+                { icon: '🔒', title: 'Thanh toán bảo mật', desc: 'Hệ thống thanh toán tại MixiGui được bảo mật bởi SSL 256-bit và tích hợp với các cổng thanh toán uy tín: VNPay, Momo, ZaloPay và cổng thẻ quốc tế Visa/Mastercard.' },
+                { icon: '⭐', title: 'Đánh giá 4.9/5 trên Google', desc: 'Với hơn 2.400 đánh giá trên Google Business và hơn 1.800 đánh giá 5 sao, MixiGui là một trong những nền tảng học nhạc và cửa hàng nhạc cụ được đánh giá cao nhất tại Việt Nam.' },
+                { icon: '📱', title: 'Tương thích đa nền tảng', desc: 'Nền tảng học trực tuyến của MixiGui hoạt động mượt mà trên mọi thiết bị — Windows, macOS, iOS và Android. Không cần cài đặt thêm ứng dụng, học ngay trên trình duyệt web.' },
               ].map((item) => (
                 <div key={item.title} className="flex gap-4 rounded-xl border p-5 shadow-sm">
                   <span className="shrink-0 text-3xl">{item.icon}</span>
@@ -904,10 +904,10 @@ export default async function HomePage() {
               <svg viewBox="0 0 24 24" fill="#1DB954" className="h-8 w-8">
                 <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
               </svg>
-              <h2 id="spotify-heading" className="text-3xl font-bold text-gray-900">Âm nhạc trên Nguyên Tạ Music</h2>
+              <h2 id="spotify-heading" className="text-3xl font-bold text-gray-900">Âm nhạc trên MixiGui</h2>
             </div>
             <p className="mb-10 text-center text-gray-500 max-w-xl mx-auto">
-              Thư giãn và tìm cảm hứng với những playlist âm nhạc được Nguyên Tạ Music tuyển chọn — phù hợp để học nhạc, luyện tập và thư giãn.
+              Thư giãn và tìm cảm hứng với những playlist âm nhạc được MixiGui tuyển chọn — phù hợp để học nhạc, luyện tập và thư giãn.
             </p>
 
             {/* Mini tracks */}
@@ -949,7 +949,7 @@ export default async function HomePage() {
         <section aria-label="Đăng ký học" className="py-20 text-center" style={{ background: 'linear-gradient(135deg, #1d4ed8, #3b82f6)' }}>
           <div className="mx-auto max-w-2xl px-4">
             <h2 className="text-3xl font-bold text-white">Bắt đầu hành trình âm nhạc ngay hôm nay</h2>
-            <p className="mt-3 text-blue-100">Tham gia cùng hơn {stats.users}+ học viên đang học tại Nguyên Tạ Music. Đăng ký miễn phí, không cần thẻ tín dụng.</p>
+            <p className="mt-3 text-blue-100">Tham gia cùng hơn {stats.users}+ học viên đang học tại MixiGui. Đăng ký miễn phí, không cần thẻ tín dụng.</p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link href="/dang-ky" className="rounded-full bg-white px-10 py-3 font-semibold text-blue-700 shadow transition hover:bg-blue-50">
                 Đăng ký miễn phí
