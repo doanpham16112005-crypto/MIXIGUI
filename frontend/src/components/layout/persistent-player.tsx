@@ -26,7 +26,7 @@ export default function PersistentPlayer() {
 
   return (
     <div
-      className={`fixed bottom-6 left-4 z-50 rounded-2xl bg-gray-900 shadow-2xl transition-all duration-300 ${
+      className={`fixed bottom-6 left-4 z-50 rounded-2xl bg-white border border-gray-200 shadow-2xl transition-all duration-300 ${
         expanded ? 'w-80' : 'w-72'
       }`}
     >
@@ -34,7 +34,7 @@ export default function PersistentPlayer() {
       <div className="flex items-center justify-between px-4 py-3">
         <div className="flex items-center gap-2">
           <Image src="/images/logo.png" alt="MixiGui" width={24} height={24} className="rounded-full object-cover" />
-          <span className="text-sm font-semibold text-white">MixiGui Music</span>
+          <span className="text-sm font-semibold text-gray-800">MixiGui Music</span>
           {started && (
             <span className="flex items-center gap-0.5">
               {[1, 2, 3].map((i) => (
@@ -53,7 +53,7 @@ export default function PersistentPlayer() {
         <div className="flex items-center gap-1">
           <button
             onClick={() => setExpanded((v) => !v)}
-            className="rounded p-1 text-gray-400 hover:text-white transition"
+            className="rounded p-1 text-gray-400 hover:text-gray-700 transition"
             aria-label={expanded ? 'Thu nhỏ' : 'Mở rộng'}
           >
             {expanded ? (
@@ -68,7 +68,7 @@ export default function PersistentPlayer() {
           </button>
           <button
             onClick={() => setHidden(true)}
-            className="rounded p-1 text-gray-400 hover:text-white transition"
+            className="rounded p-1 text-gray-400 hover:text-gray-700 transition"
             aria-label="Ẩn player"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-4 w-4">
@@ -81,15 +81,15 @@ export default function PersistentPlayer() {
       {/* Player content */}
       {!started ? (
         <div className="px-4 pb-4">
-          <div className="flex flex-col items-center gap-3 rounded-xl bg-gray-800 p-5 text-center">
+          <div className="flex flex-col items-center gap-3 rounded-xl bg-gray-50 p-5 text-center border border-gray-100">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-500">
               <svg viewBox="0 0 24 24" fill="white" className="h-6 w-6">
                 <path d="M8 5v14l11-7z" />
               </svg>
             </div>
             <div>
-              <p className="font-semibold text-white text-sm">Phát nhạc nền</p>
-              <p className="text-xs text-gray-400 mt-0.5">Playlist âm nhạc MixiGui</p>
+              <p className="font-semibold text-gray-800 text-sm">Phát nhạc nền</p>
+              <p className="text-xs text-gray-500 mt-0.5">Playlist âm nhạc MixiGui</p>
             </div>
             <button
               onClick={() => { setStarted(true); setExpanded(true) }}
@@ -97,7 +97,7 @@ export default function PersistentPlayer() {
             >
               ▶ Bắt đầu nghe
             </button>
-            <p className="text-xs text-gray-500">Nhạc sẽ tiếp tục khi chuyển trang</p>
+            <p className="text-xs text-gray-400">Nhạc sẽ tiếp tục khi chuyển trang</p>
           </div>
         </div>
       ) : (
