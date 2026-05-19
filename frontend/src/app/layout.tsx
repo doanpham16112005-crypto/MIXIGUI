@@ -17,6 +17,10 @@ const beVietnamPro = Be_Vietnam_Pro({
 export const metadata: Metadata = {
   title: 'MixiGui',
   description: 'Học nhạc và mua nhạc cụ chất lượng cao',
+  icons: {
+    icon: '/images/logo.png',
+    apple: '/images/logo.png',
+  },
 }
 
 export default function RootLayout({
