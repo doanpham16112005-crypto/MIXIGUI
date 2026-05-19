@@ -1,11 +1,12 @@
 import type { MetadataRoute } from 'next'
-import { siteConfig } from '@/config/site'
+
+const SITE = 'https://mixigui.id.vn'
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       { userAgent: '*', allow: '/', disallow: ['/admin/', '/hoc-vien/'] },
     ],
-    sitemap: `${siteConfig.url}/sitemap.xml`,
+    sitemap: `${SITE}/sitemap.xml`,
   }
 }
