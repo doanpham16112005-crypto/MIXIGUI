@@ -5,7 +5,6 @@ import './globals.css'
 import { QueryProvider } from '@/providers/query-provider'
 import { AuthProvider } from '@/providers/auth-provider'
 import PersistentPlayer from '@/components/layout/persistent-player'
-import MouseTrailWrapper from '@/components/layout/mouse-trail-wrapper'
 
 const beVietnamPro = Be_Vietnam_Pro({
   variable: '--font-be-vietnam',
@@ -48,7 +47,6 @@ export default function RootLayout({
           <AuthProvider>
             {children}
             <PersistentPlayer />
-            <MouseTrailWrapper />
           </AuthProvider>
         </QueryProvider>
       </body>
