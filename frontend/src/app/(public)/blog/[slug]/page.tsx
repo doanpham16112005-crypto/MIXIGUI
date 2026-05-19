@@ -81,7 +81,7 @@ export default function BlogDetailPage() {
           supabase.from('courses').select('id, title, slug, thumbnail_url, price')
             .eq('is_published', true).limit(2),
           supabase.from('products').select('id, name, slug, images, price')
-            .eq('is_active', true).limit(2),
+            .eq('is_published', true).limit(2),
         ])
         setRelated(relRes.data ?? [])
         setCourses(courseRes.data ?? [])
