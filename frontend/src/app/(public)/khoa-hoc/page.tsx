@@ -223,6 +223,25 @@ export default async function KhoaHocPage() {
           </div>
         </section>
 
+        {/* ── NHẠC CỤ LIÊN QUAN ── */}
+        <section className="border-t bg-gray-50 py-14">
+          <div className="mx-auto max-w-4xl px-4 text-center">
+            <h2 className="text-2xl font-bold text-gray-900">Cần nhạc cụ để luyện tập?</h2>
+            <p className="mt-2 text-gray-500">MixiGui cung cấp nhạc cụ chính hãng — Yamaha, Roland, Casio bảo hành đầy đủ</p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <Link href="/san-pham" className="rounded-full bg-blue-600 px-8 py-3 font-semibold text-white shadow transition hover:bg-blue-700">
+                Xem nhạc cụ →
+              </Link>
+              <Link href="/san-pham?brand=yamaha" className="rounded-full border border-blue-300 px-8 py-3 font-semibold text-blue-600 transition hover:bg-blue-50">
+                Guitar Yamaha
+              </Link>
+              <Link href="/san-pham?brand=roland" className="rounded-full border border-blue-300 px-8 py-3 font-semibold text-blue-600 transition hover:bg-blue-50">
+                Piano Roland
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* ── CTA ── */}
         <section className="py-16 text-center text-white" style={{ background: 'linear-gradient(135deg, #1d4ed8, #3b82f6)' }}>
           <div className="mx-auto max-w-xl px-4">
