@@ -2,7 +2,6 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { createServerClient } from '@/lib/supabase'
 import { siteConfig } from '@/config/site'
-import FloatingContacts from '@/components/layout/floating-contacts'
 
 export const revalidate = 3600
 
@@ -961,7 +960,6 @@ export default async function HomePage() {
           </div>
         </section>
       </main>
-      <FloatingContacts />
     </>
   )
 }

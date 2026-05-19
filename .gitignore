@@ -42,3 +42,5 @@ backend/*.jar
 # Test
 coverage/
 .nyc_output
+CLASS/API.md
+CLASS/post/
