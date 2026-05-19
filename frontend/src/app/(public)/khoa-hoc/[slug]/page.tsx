@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { supabase } from '@/lib/supabase'
+import { CourseSchema } from '@/components/seo/course-schema'
 
 type Course = {
   id: string
@@ -123,6 +124,13 @@ export default function KhoaHocDetailPage() {
 
   return (
     <main>
+      <CourseSchema
+        title={course.title}
+        description={course.description}
+        slug={course.slug}
+        price={course.price}
+        thumbnail={course.thumbnail_url}
+      />
       {/* ── BREADCRUMB ── */}
       <div className="border-b bg-gray-50 py-3">
         <div className="mx-auto max-w-7xl px-4">

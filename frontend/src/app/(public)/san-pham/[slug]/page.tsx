@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { supabase } from '@/lib/supabase'
+import { ProductSchema } from '@/components/seo/product-schema'
 
 type Product = {
   id: string
@@ -96,6 +97,15 @@ export default function SanPhamDetailPage() {
 
   return (
     <main>
+      <ProductSchema
+        name={product.name}
+        description={product.description}
+        image={images[0] ?? null}
+        price={product.price}
+        slug={product.slug}
+        brand={product.brand}
+        inStock={inStock}
+      />
       {/* ── BREADCRUMB ── */}
       <div className="border-b bg-gray-50 py-3">
         <div className="mx-auto max-w-7xl px-4">
