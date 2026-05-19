@@ -25,6 +25,22 @@ type RelatedPost = {
   published_at: string
 }
 
+type FeaturedCourse = {
+  id: string
+  title: string
+  slug: string
+  thumbnail_url: string | null
+  price: number
+}
+
+type FeaturedProduct = {
+  id: string
+  name: string
+  slug: string
+  images: string[]
+  price: number
+}
+
 function formatDate(d: string) {
   return new Date(d).toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' })
 }
@@ -41,6 +57,8 @@ export default function BlogDetailPage() {
 
   const [post, setPost] = useState<Post | null>(null)
   const [related, setRelated] = useState<RelatedPost[]>([])
+  const [courses, setCourses] = useState<FeaturedCourse[]>([])
+  const [products, setProducts] = useState<FeaturedProduct[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -53,14 +71,21 @@ export default function BlogDetailPage() {
       setPost(data)
 
       if (data) {
-        const { data: rel } = await supabase
-          .from('blog_posts')
-          .select('id, title, slug, excerpt, thumbnail_url, published_at')
-          .eq('is_published', true)
-          .neq('slug', slug)
-          .order('published_at', { ascending: false })
-          .limit(3)
-        setRelated(rel ?? [])
+        document.title = `${data.title} - MixiGui`
+        const metaDesc = document.querySelector('meta[name="description"]')
+        if (metaDesc) metaDesc.setAttribute('content', data.excerpt ?? data.title)
+
+        const [relRes, courseRes, productRes] = await Promise.all([
+          supabase.from('blog_posts').select('id, title, slug, excerpt, thumbnail_url, published_at')
+            .eq('is_published', true).neq('slug', slug).order('published_at', { ascending: false }).limit(3),
+          supabase.from('courses').select('id, title, slug, thumbnail_url, price')
+            .eq('is_published', true).limit(2),
+          supabase.from('products').select('id, name, slug, images, price')
+            .eq('is_active', true).limit(2),
+        ])
+        setRelated(relRes.data ?? [])
+        setCourses(courseRes.data ?? [])
+        setProducts(productRes.data ?? [])
       }
       setLoading(false)
     }
@@ -298,6 +323,78 @@ export default function BlogDetailPage() {
                   </div>
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── INTERNAL LINKS: KHÓA HỌC & SẢN PHẨM ── */}
+      {(courses.length > 0 || products.length > 0) && (
+        <section className="border-t py-12">
+          <div className="mx-auto max-w-5xl px-4">
+            <h2 className="mb-2 text-2xl font-bold text-gray-900">Có thể bạn quan tâm</h2>
+            <p className="mb-8 text-sm text-gray-500">Khóa học và nhạc cụ phù hợp với nội dung bài viết</p>
+            <div className="grid gap-8 md:grid-cols-2">
+
+              {/* Khóa học */}
+              {courses.length > 0 && (
+                <div>
+                  <h3 className="mb-4 flex items-center gap-2 font-bold text-gray-800">
+                    <span className="rounded-full bg-purple-100 p-1.5 text-purple-600">🎓</span>
+                    Khóa học liên quan
+                  </h3>
+                  <div className="space-y-3">
+                    {courses.map((c) => (
+                      <Link key={c.id} href={`/khoa-hoc/${c.slug}`}
+                        className="group flex items-center gap-3 rounded-xl border bg-white p-3 shadow-sm transition hover:border-purple-300 hover:shadow-md">
+                        <div className="h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-purple-50">
+                          {c.thumbnail_url
+                            ? <img src={c.thumbnail_url} alt={c.title} className="h-full w-full object-cover" loading="lazy" />
+                            : <div className="flex h-full items-center justify-center text-2xl">🎓</div>
+                          }
+                        </div>
+                        <div className="min-w-0">
+                          <p className="line-clamp-2 text-sm font-semibold text-gray-800 group-hover:text-purple-600">{c.title}</p>
+                          <p className="mt-0.5 text-xs font-medium text-purple-600">{Number(c.price).toLocaleString('vi-VN')}₫</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                  <Link href="/khoa-hoc" className="mt-3 inline-block text-sm font-medium text-purple-600 hover:underline">
+                    Xem tất cả khóa học →
+                  </Link>
+                </div>
+              )}
+
+              {/* Sản phẩm */}
+              {products.length > 0 && (
+                <div>
+                  <h3 className="mb-4 flex items-center gap-2 font-bold text-gray-800">
+                    <span className="rounded-full bg-blue-100 p-1.5 text-blue-600">🎸</span>
+                    Nhạc cụ liên quan
+                  </h3>
+                  <div className="space-y-3">
+                    {products.map((p) => (
+                      <Link key={p.id} href={`/san-pham/${p.slug}`}
+                        className="group flex items-center gap-3 rounded-xl border bg-white p-3 shadow-sm transition hover:border-blue-300 hover:shadow-md">
+                        <div className="h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-blue-50">
+                          {Array.isArray(p.images) && p.images[0]
+                            ? <img src={p.images[0]} alt={p.name} className="h-full w-full object-contain p-1" loading="lazy" />
+                            : <div className="flex h-full items-center justify-center text-2xl">🎸</div>
+                          }
+                        </div>
+                        <div className="min-w-0">
+                          <p className="line-clamp-2 text-sm font-semibold text-gray-800 group-hover:text-blue-600">{p.name}</p>
+                          <p className="mt-0.5 text-xs font-medium text-blue-600">{Number(p.price).toLocaleString('vi-VN')}₫</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                  <Link href="/san-pham" className="mt-3 inline-block text-sm font-medium text-blue-600 hover:underline">
+                    Xem tất cả sản phẩm →
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </section>

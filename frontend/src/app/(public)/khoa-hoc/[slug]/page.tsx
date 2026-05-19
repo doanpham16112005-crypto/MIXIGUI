@@ -82,6 +82,11 @@ export default function KhoaHocDetailPage() {
         .eq('slug', slug)
         .single()
       setCourse(data)
+      if (data) {
+        document.title = `${data.title} - MixiGui`
+        const metaDesc = document.querySelector('meta[name="description"]')
+        if (metaDesc) metaDesc.setAttribute('content', data.description ?? `Khóa học ${data.title} tại MixiGui. Học nhạc online cùng giảng viên chuyên nghiệp.`)
+      }
 
       if (data?.level) {
         const { data: rel } = await supabase

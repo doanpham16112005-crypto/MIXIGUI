@@ -48,6 +48,11 @@ export default function SanPhamDetailPage() {
         .eq('slug', slug)
         .single()
       setProduct(data)
+      if (data) {
+        document.title = `${data.name} - MixiGui`
+        const metaDesc = document.querySelector('meta[name="description"]')
+        if (metaDesc) metaDesc.setAttribute('content', data.description ?? `Mua ${data.name} chính hãng tại MixiGui. Giao hàng toàn quốc, bảo hành 12-24 tháng.`)
+      }
 
       if (data?.brand) {
         const { data: rel } = await supabase
