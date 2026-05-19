@@ -155,7 +155,7 @@ export default async function HomePage() {
         {/* ── HERO ── */}
         <section aria-label="Giới thiệu MixiGui" className="relative overflow-hidden py-24 text-center text-white" style={{ minHeight: '400px' }}>
           <Image
-            src="https://res.cloudinary.com/ddaryoz5b/image/upload/v1773716135/Gemini_Generated_Image_9rb159rb159rb159_ewqjfr.png"
+            src="https://res.cloudinary.com/ddaryoz5b/image/upload/w_1920,f_auto,q_auto/v1773716135/Gemini_Generated_Image_9rb159rb159rb159_ewqjfr.png"
             alt=""
             fill
             priority
@@ -214,7 +214,7 @@ export default async function HomePage() {
                   <Link href={`/khoa-hoc/${course.slug}`} aria-label={`Khóa học: ${course.title}`}>
                     <div className="relative h-44 overflow-hidden bg-gradient-to-br from-blue-100 to-blue-200">
                       {course.thumbnail_url
-                        ? <img src={course.thumbnail_url} alt={`Khóa học ${course.title}`} className="h-full w-full object-cover transition group-hover:scale-105" loading="lazy" />
+                        ? <Image src={course.thumbnail_url} alt={`Khóa học ${course.title}`} fill className="object-cover transition group-hover:scale-105" sizes="(max-width: 640px) 50vw, 25vw" />
                         : <div className="flex h-full items-center justify-center text-5xl">🎸</div>
                       }
                       <span className="absolute left-2 top-2 rounded bg-blue-600/80 px-2 py-0.5 text-xs text-white">
@@ -235,16 +235,15 @@ export default async function HomePage() {
         </section>
 
         {/* ── ABOUT ── */}
-        <section
-          aria-labelledby="about-heading"
-          className="relative border-t py-16"
-          style={{
-            backgroundImage: 'url(https://res.cloudinary.com/ddaryoz5b/image/upload/v1773731924/Gemini_Generated_Image_bzddftbzddftbzdd_vtsvqs.png)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
-          {/* Overlay trắng mờ để chữ dễ đọc */}
+        <section aria-labelledby="about-heading" className="relative overflow-hidden border-t py-16">
+          <Image
+            src="https://res.cloudinary.com/ddaryoz5b/image/upload/w_1920,f_auto,q_auto/v1773731924/Gemini_Generated_Image_bzddftbzddftbzdd_vtsvqs.png"
+            alt=""
+            fill
+            className="object-cover"
+            sizes="100vw"
+            aria-hidden="true"
+          />
           <div className="absolute inset-0 bg-white/40" />
           <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
             <h2 id="about-heading" className="mb-4 text-3xl font-bold text-gray-900">MixiGui là gì?</h2>
@@ -321,7 +320,7 @@ export default async function HomePage() {
                     <Link href={`/san-pham/${product.slug}`} aria-label={`Sản phẩm: ${product.name}`}>
                       <div className="relative h-44 overflow-hidden bg-gradient-to-br from-green-50 to-green-100">
                         {img
-                          ? <img src={img} alt={`Nhạc cụ ${product.name}`} className="h-full w-full object-cover transition group-hover:scale-105" loading="lazy" />
+                          ? <Image src={img} alt={`Nhạc cụ ${product.name}`} fill className="object-cover transition group-hover:scale-105" sizes="(max-width: 640px) 50vw, 25vw" />
                           : <div className="flex h-full items-center justify-center text-5xl">🎵</div>
                         }
                         {product.brand && (
@@ -397,9 +396,9 @@ export default async function HomePage() {
                 {posts.map((post) => (
                   <article key={post.id} className="group overflow-hidden rounded-xl border bg-white shadow-sm transition hover:shadow-md">
                     <Link href={`/blog/${post.slug}`} aria-label={post.title}>
-                      <div className="h-44 overflow-hidden bg-gradient-to-br from-purple-50 to-purple-100">
+                      <div className="relative h-44 overflow-hidden bg-gradient-to-br from-purple-50 to-purple-100">
                         {post.thumbnail_url
-                          ? <img src={post.thumbnail_url} alt={post.title} className="h-full w-full object-cover transition group-hover:scale-105" loading="lazy" />
+                          ? <Image src={post.thumbnail_url} alt={post.title} fill className="object-cover transition group-hover:scale-105" sizes="(max-width: 640px) 100vw, 33vw" />
                           : <div className="flex h-full items-center justify-center text-5xl">📝</div>
                         }
                       </div>
