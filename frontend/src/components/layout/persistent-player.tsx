@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 const PLAYLIST_ID = '6QL6GIwIiavwNvgU5vVSBV'
 
@@ -32,7 +33,7 @@ export default function PersistentPlayer() {
       {/* Header bar */}
       <div className="flex items-center justify-between px-4 py-3">
         <div className="flex items-center gap-2">
-          <span className="text-xl leading-none select-none">🌼</span>
+          <Image src="/images/logo.png" alt="MixiGui" width={24} height={24} className="rounded-full object-cover" />
           <span className="text-sm font-semibold text-white">MixiGui Music</span>
           {started && (
             <span className="flex items-center gap-0.5">
