@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 import { createServerClient } from '@/lib/supabase'
 import { siteConfig } from '@/config/site'
@@ -152,8 +153,17 @@ export default async function HomePage() {
 
       <main>
         {/* ── HERO ── */}
-        <section aria-label="Giới thiệu MixiGui" style={{ backgroundImage: 'url(https://res.cloudinary.com/ddaryoz5b/image/upload/v1773716135/Gemini_Generated_Image_9rb159rb159rb159_ewqjfr.png)', backgroundSize: '100% 100%', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', minHeight: '400px' }} className="py-24 text-center text-white">
-          <div className="mx-auto max-w-3xl px-4">
+        <section aria-label="Giới thiệu MixiGui" className="relative overflow-hidden py-24 text-center text-white" style={{ minHeight: '400px' }}>
+          <Image
+            src="https://res.cloudinary.com/ddaryoz5b/image/upload/v1773716135/Gemini_Generated_Image_9rb159rb159rb159_ewqjfr.png"
+            alt=""
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+            aria-hidden="true"
+          />
+          <div className="relative z-10 mx-auto max-w-3xl px-4">
             <p className="mb-3 text-sm font-medium uppercase tracking-widest text-blue-200">Nền tảng âm nhạc số 1 Việt Nam</p>
             <h1 className="text-4xl font-extrabold leading-tight sm:text-5xl">
               Học Nhạc Online &amp;<br />Mua Nhạc Cụ Chính Hãng

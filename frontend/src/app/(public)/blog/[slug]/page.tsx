@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { supabase } from '@/lib/supabase'
 
 type Post = {
@@ -154,11 +155,14 @@ export default function BlogDetailPage() {
 
             {/* Thumbnail */}
             {post.thumbnail_url && (
-              <div className="mb-8 overflow-hidden rounded-2xl">
-                <img
+              <div className="relative mb-8 overflow-hidden rounded-2xl h-72 sm:h-96">
+                <Image
                   src={post.thumbnail_url}
                   alt={post.title}
-                  className="h-72 w-full object-cover sm:h-96"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 800px"
                 />
               </div>
             )}
@@ -248,9 +252,9 @@ export default function BlogDetailPage() {
                 <div className="space-y-4">
                   {related.map((p) => (
                     <Link key={p.id} href={`/blog/${p.slug}`} className="group flex gap-3">
-                      <div className="h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-purple-50">
+                      <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-purple-50">
                         {p.thumbnail_url
-                          ? <img src={p.thumbnail_url} alt={p.title} className="h-full w-full object-cover" loading="lazy" />
+                          ? <Image src={p.thumbnail_url} alt={p.title} fill className="object-cover" sizes="56px" />
                           : <div className="flex h-full items-center justify-center text-xl">📝</div>
                         }
                       </div>
@@ -310,9 +314,9 @@ export default function BlogDetailPage() {
               {related.map((p) => (
                 <Link key={p.id} href={`/blog/${p.slug}`}
                   className="group overflow-hidden rounded-xl border bg-white shadow-sm transition hover:shadow-md">
-                  <div className="h-44 overflow-hidden bg-purple-50">
+                  <div className="relative h-44 overflow-hidden bg-purple-50">
                     {p.thumbnail_url
-                      ? <img src={p.thumbnail_url} alt={p.title} className="h-full w-full object-cover transition group-hover:scale-105" loading="lazy" />
+                      ? <Image src={p.thumbnail_url} alt={p.title} fill className="object-cover transition group-hover:scale-105" sizes="(max-width: 640px) 100vw, 33vw" />
                       : <div className="flex h-full items-center justify-center text-5xl">📝</div>
                     }
                   </div>
@@ -347,9 +351,9 @@ export default function BlogDetailPage() {
                     {courses.map((c) => (
                       <Link key={c.id} href={`/khoa-hoc/${c.slug}`}
                         className="group flex items-center gap-3 rounded-xl border bg-white p-3 shadow-sm transition hover:border-purple-300 hover:shadow-md">
-                        <div className="h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-purple-50">
+                        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-purple-50">
                           {c.thumbnail_url
-                            ? <img src={c.thumbnail_url} alt={c.title} className="h-full w-full object-cover" loading="lazy" />
+                            ? <Image src={c.thumbnail_url} alt={c.title} fill className="object-cover" sizes="56px" />
                             : <div className="flex h-full items-center justify-center text-2xl">🎓</div>
                           }
                         </div>
@@ -377,9 +381,9 @@ export default function BlogDetailPage() {
                     {products.map((p) => (
                       <Link key={p.id} href={`/san-pham/${p.slug}`}
                         className="group flex items-center gap-3 rounded-xl border bg-white p-3 shadow-sm transition hover:border-blue-300 hover:shadow-md">
-                        <div className="h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-blue-50">
+                        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-blue-50">
                           {Array.isArray(p.images) && p.images[0]
-                            ? <img src={p.images[0]} alt={p.name} className="h-full w-full object-contain p-1" loading="lazy" />
+                            ? <Image src={p.images[0]} alt={p.name} fill className="object-contain p-1" sizes="56px" />
                             : <div className="flex h-full items-center justify-center text-2xl">🎸</div>
                           }
                         </div>

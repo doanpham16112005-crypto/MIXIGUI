@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import { Be_Vietnam_Pro } from 'next/font/google'
 import Script from 'next/script'
+import dynamic from 'next/dynamic'
 import './globals.css'
 import { QueryProvider } from '@/providers/query-provider'
 import { AuthProvider } from '@/providers/auth-provider'
 import PersistentPlayer from '@/components/layout/persistent-player'
-import MouseTrailEffect from '@/components/layout/mouse-trail'
+
+const MouseTrailEffect = dynamic(() => import('@/components/layout/mouse-trail'), { ssr: false })
 
 const beVietnamPro = Be_Vietnam_Pro({
   variable: '--font-be-vietnam',
