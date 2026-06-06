@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Be_Vietnam_Pro } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
-import { QueryProvider } from '@/providers/query-provider'
 import { AuthProvider } from '@/providers/auth-provider'
 import PersistentPlayerIsland from '@/components/layout/persistent-player-island'
 
@@ -43,12 +42,10 @@ export default function RootLayout({
             </Script>
           </>
         )}
-        <QueryProvider>
-          <AuthProvider>
-            {children}
-            <PersistentPlayerIsland />
-          </AuthProvider>
-        </QueryProvider>
+        <AuthProvider>
+          {children}
+          <PersistentPlayerIsland />
+        </AuthProvider>
       </body>
     </html>
   )
