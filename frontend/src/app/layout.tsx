@@ -3,7 +3,7 @@ import { Be_Vietnam_Pro } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 import { AuthProvider } from '@/providers/auth-provider'
-import { PersistentPlayerIsland } from '@/components/layout/client-islands'
+import PersistentPlayer from '@/components/layout/persistent-player'
 
 const beVietnamPro = Be_Vietnam_Pro({
   variable: '--font-be-vietnam',
@@ -44,7 +44,7 @@ export default function RootLayout({
         )}
         <AuthProvider>
           {children}
-          <PersistentPlayerIsland />
+          <PersistentPlayer />
         </AuthProvider>
       </body>
     </html>

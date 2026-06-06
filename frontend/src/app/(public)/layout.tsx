@@ -1,6 +1,6 @@
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
-import { FloatingContactsIsland } from '@/components/layout/client-islands'
+import FloatingContacts from '@/components/layout/floating-contacts'
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -8,7 +8,7 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
       <Header />
       <main className="min-h-screen">{children}</main>
       <Footer />
-      <FloatingContactsIsland />
+      <FloatingContacts />
     </>
   )
 }
