@@ -1,12 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  webpack(config, { isServer }) {
-    if (!isServer && config.optimization?.splitChunks) {
-      (config.optimization.splitChunks as { maxSize?: number }).maxSize = 200_000
-    }
-    return config
-  },
   experimental: {
     optimizePackageImports: ['lucide-react', '@radix-ui/react-accordion', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-label', '@radix-ui/react-select', '@radix-ui/react-slot', '@radix-ui/react-tabs', '@radix-ui/react-toast'],
     inlineCss: true,
