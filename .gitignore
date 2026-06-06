@@ -43,3 +43,5 @@ backend/*.jar
 coverage/
 .nyc_output
 CLASS/
+GOATWEDDINGS_PROJECT_SETUP_GUIDE.md
+generate_doc_11.py
