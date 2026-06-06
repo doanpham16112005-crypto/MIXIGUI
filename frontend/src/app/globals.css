@@ -21,3 +21,17 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-be-vietnam), Arial, Helvetica, sans-serif;
 }
+
+@keyframes musicBar {
+  from { transform: scaleY(0.4); }
+  to   { transform: scaleY(1.2); }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 1.5s ease-in-out infinite;
+}

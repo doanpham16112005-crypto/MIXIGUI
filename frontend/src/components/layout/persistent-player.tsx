@@ -120,12 +120,6 @@ export default function PersistentPlayer() {
         </div>
       )}
 
-      <style>{`
-        @keyframes musicBar {
-          from { transform: scaleY(0.4); }
-          to   { transform: scaleY(1.2); }
-        }
-      `}</style>
     </div>
   )
 }
