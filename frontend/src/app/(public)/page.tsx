@@ -210,12 +210,12 @@ export default async function HomePage() {
               <Link href="/khoa-hoc" className="text-sm font-medium text-blue-600 hover:underline">Xem tất cả →</Link>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {courses.map((course) => (
+              {courses.map((course, idx) => (
                 <article key={course.id} className="group overflow-hidden rounded-xl border bg-white shadow-sm transition hover:shadow-md">
                   <Link href={`/khoa-hoc/${course.slug}`} aria-label={`Khóa học: ${course.title}`}>
                     <div className="relative h-44 overflow-hidden bg-gradient-to-br from-blue-100 to-blue-200">
                       {course.thumbnail_url
-                        ? <Image src={course.thumbnail_url} alt={`Khóa học ${course.title}`} fill className="object-cover transition group-hover:scale-105" sizes="(max-width: 640px) 50vw, 25vw" />
+                        ? <Image src={course.thumbnail_url} alt={`Khóa học ${course.title}`} fill className="object-cover transition group-hover:scale-105" sizes="(max-width: 640px) 50vw, 25vw" priority={idx === 0} />
                         : <div className="flex h-full items-center justify-center text-5xl">🎸</div>
                       }
                       <span className="absolute left-2 top-2 rounded bg-blue-600/80 px-2 py-0.5 text-xs text-white">

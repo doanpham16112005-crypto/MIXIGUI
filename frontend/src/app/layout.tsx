@@ -32,10 +32,6 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body className={`${beVietnamPro.variable} antialiased`}>
-        <link rel="preconnect" href="https://res.cloudinary.com" />
-        <link rel="preconnect" href="https://vcomczhnpnejndojrqcd.supabase.co" />
-        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
-        <link rel="dns-prefetch" href="https://vcomczhnpnejndojrqcd.supabase.co" />
         {gaId && (
           <>
             <Script
