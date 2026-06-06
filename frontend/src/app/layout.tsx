@@ -1,11 +1,9 @@
 import type { Metadata } from 'next'
 import { Be_Vietnam_Pro } from 'next/font/google'
 import Script from 'next/script'
-import dynamic from 'next/dynamic'
 import './globals.css'
 import { AuthProvider } from '@/providers/auth-provider'
-
-const PersistentPlayer = dynamic(() => import('@/components/layout/persistent-player'), { ssr: false })
+import { PersistentPlayerIsland } from '@/components/layout/client-islands'
 
 const beVietnamPro = Be_Vietnam_Pro({
   variable: '--font-be-vietnam',
@@ -46,7 +44,7 @@ export default function RootLayout({
         )}
         <AuthProvider>
           {children}
-          <PersistentPlayer />
+          <PersistentPlayerIsland />
         </AuthProvider>
       </body>
     </html>

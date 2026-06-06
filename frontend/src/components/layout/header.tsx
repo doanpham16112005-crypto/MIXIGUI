@@ -1,12 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import dynamic from 'next/dynamic'
 import { publicNav } from '@/config/navigation'
-
-const HeaderAuth = dynamic(
-  () => import('./header-auth').then((m) => ({ default: m.HeaderAuth })),
-  { ssr: false, loading: () => <div className="w-20" /> }
-)
+import { HeaderAuthIsland } from './client-islands'
 
 export function Header() {
   return (
@@ -24,7 +19,7 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <HeaderAuth />
+          <HeaderAuthIsland />
         </div>
       </div>
     </header>
