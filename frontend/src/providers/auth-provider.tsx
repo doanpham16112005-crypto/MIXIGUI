@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import { useAuthStore } from '@/stores/auth-store'
+import { authApi } from '@/lib/api/auth'
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const { accessToken, setAuth, clearAuth } = useAuthStore()
@@ -9,11 +10,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (!accessToken) return
     const run = () => {
-      import('@/lib/api/auth').then(({ authApi }) => {
-        authApi.me()
-          .then((res) => setAuth(res.data.data, accessToken))
-          .catch(() => clearAuth())
-      })
+      authApi.me()
+        .then((res) => setAuth(res.data.data, accessToken))
+        .catch(() => clearAuth())
     }
     if (typeof requestIdleCallback !== 'undefined') {
       requestIdleCallback(run)
