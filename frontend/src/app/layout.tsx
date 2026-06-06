@@ -3,7 +3,6 @@ import { Be_Vietnam_Pro } from 'next/font/google'
 import Script from 'next/script'
 import dynamic from 'next/dynamic'
 import './globals.css'
-import { QueryProvider } from '@/providers/query-provider'
 import { AuthProvider } from '@/providers/auth-provider'
 
 const PersistentPlayer = dynamic(() => import('@/components/layout/persistent-player'), { ssr: false })
@@ -45,12 +44,10 @@ export default function RootLayout({
             </Script>
           </>
         )}
-        <QueryProvider>
-          <AuthProvider>
-            {children}
-            <PersistentPlayer />
-          </AuthProvider>
-        </QueryProvider>
+        <AuthProvider>
+          {children}
+          <PersistentPlayer />
+        </AuthProvider>
       </body>
     </html>
   )
