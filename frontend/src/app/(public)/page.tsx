@@ -155,12 +155,13 @@ export default async function HomePage() {
         {/* ── HERO ── */}
         <section aria-label="Giới thiệu MixiGui" className="relative overflow-hidden py-24 text-center text-white" style={{ minHeight: '400px' }}>
           <Image
-            src="https://res.cloudinary.com/ddaryoz5b/image/upload/w_1920,f_auto,q_auto/v1773716135/Gemini_Generated_Image_9rb159rb159rb159_ewqjfr.png"
+            src="https://res.cloudinary.com/ddaryoz5b/image/upload/w_1200,f_auto,q_60/v1773716135/Gemini_Generated_Image_9rb159rb159rb159_ewqjfr.png"
             alt=""
             fill
             priority
+            fetchPriority="high"
             className="object-cover"
-            sizes="100vw"
+            sizes="(max-width: 768px) 768px, 1200px"
             aria-hidden="true"
           />
           <div className="relative z-10 mx-auto max-w-3xl px-4">
