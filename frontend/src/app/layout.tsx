@@ -31,14 +31,11 @@ export default function RootLayout({
 
   return (
     <html lang="vi">
-      <head>
+      <body className={`${beVietnamPro.variable} antialiased`}>
         <link rel="preconnect" href="https://res.cloudinary.com" />
         <link rel="preconnect" href="https://vcomczhnpnejndojrqcd.supabase.co" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
         <link rel="dns-prefetch" href="https://vcomczhnpnejndojrqcd.supabase.co" />
-      </head>
-      <body className={`${beVietnamPro.variable} antialiased`}>
         {gaId && (
           <>
             <Script
