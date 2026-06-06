@@ -238,11 +238,12 @@ export default async function HomePage() {
         {/* ── ABOUT ── */}
         <section aria-labelledby="about-heading" className="relative overflow-hidden border-t py-16">
           <Image
-            src="https://res.cloudinary.com/ddaryoz5b/image/upload/w_1920,f_auto,q_auto/v1773731924/Gemini_Generated_Image_bzddftbzddftbzdd_vtsvqs.png"
+            src="https://res.cloudinary.com/ddaryoz5b/image/upload/w_1200,f_auto,q_50/v1773731924/Gemini_Generated_Image_bzddftbzddftbzdd_vtsvqs.png"
             alt=""
             fill
+            loading="lazy"
             className="object-cover"
-            sizes="100vw"
+            sizes="(max-width: 768px) 768px, 1200px"
             aria-hidden="true"
           />
           <div className="absolute inset-0 bg-white/40" />

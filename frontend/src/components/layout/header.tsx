@@ -5,13 +5,13 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { publicNav } from '@/config/navigation'
 import { useAuthStore } from '@/stores/auth-store'
-import { supabase } from '@/lib/supabase'
 
 export function Header() {
   const router = useRouter()
   const { user, clearAuth } = useAuthStore()
 
   const handleLogout = async () => {
+    const { supabase } = await import('@/lib/supabase')
     await supabase.auth.signOut()
     clearAuth()
     router.push('/')
