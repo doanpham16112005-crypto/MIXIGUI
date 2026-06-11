@@ -1,9 +1,9 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useAuthStore } from '@/stores/auth-store'
 import { supabase } from '@/lib/supabase'
-import { Camera, Mail, User, FileText, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
+import { Camera, Mail, User, FileText, CheckCircle, AlertCircle, Loader2, Lock } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
@@ -11,6 +11,14 @@ import { Label } from '@/components/ui/label'
 export default function ProfilePage() {
   const { user, updateUser } = useAuthStore()
   const fileInputRef = useRef<HTMLInputElement>(null)
+  const [oauthProvider, setOauthProvider] = useState<string | null>(null)
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      const provider = session?.user?.app_metadata?.provider
+      if (provider && provider !== 'email') setOauthProvider(provider)
+    })
+  }, [])
 
   const [fullName, setFullName] = useState(user?.full_name || user?.fullName || '')
   const [bio, setBio] = useState(user?.bio || '')
@@ -66,12 +74,33 @@ export default function ProfilePage() {
 
   const initials = (user?.full_name || user?.fullName || user?.email || 'U')[0].toUpperCase()
 
+  const providerLabel = oauthProvider === 'google' ? 'Google' : oauthProvider === 'facebook' ? 'Facebook' : oauthProvider
+  const isOAuth = !!oauthProvider
+
   return (
     <div className="mx-auto max-w-2xl space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Hồ sơ cá nhân</h1>
-        <p className="mt-1 text-sm text-gray-500">Cập nhật thông tin cá nhân của bạn</p>
+        <p className="mt-1 text-sm text-gray-500">
+          {isOAuth ? 'Thông tin tài khoản của bạn' : 'Cập nhật thông tin cá nhân của bạn'}
+        </p>
       </div>
+
+      {/* OAuth notice */}
+      {isOAuth && (
+        <div className="flex items-start gap-3 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4">
+          <Lock size={18} className="mt-0.5 shrink-0 text-amber-500" />
+          <div>
+            <p className="text-sm font-semibold text-amber-800">
+              Tài khoản được quản lý bởi {providerLabel}
+            </p>
+            <p className="mt-0.5 text-sm text-amber-700">
+              Bạn đã đăng nhập qua {providerLabel}. Để thay đổi tên hoặc ảnh đại diện,
+              vui lòng cập nhật trực tiếp trên tài khoản {providerLabel} của bạn.
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* Avatar */}
       <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
@@ -91,12 +120,14 @@ export default function ProfilePage() {
                 {initials}
               </div>
             )}
-            <button
-              onClick={() => fileInputRef.current?.click()}
-              className="absolute -bottom-1 -right-1 flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 text-white shadow-md hover:bg-blue-700"
-            >
-              <Camera size={13} />
-            </button>
+            {!isOAuth && (
+              <button
+                onClick={() => fileInputRef.current?.click()}
+                className="absolute -bottom-1 -right-1 flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 text-white shadow-md hover:bg-blue-700"
+              >
+                <Camera size={13} />
+              </button>
+            )}
             <input
               ref={fileInputRef}
               type="file"
@@ -141,7 +172,8 @@ export default function ProfilePage() {
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               placeholder="Nguyễn Văn A"
-              className="h-11 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+              disabled={isOAuth}
+              className="h-11 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500"
             />
           </div>
 
@@ -155,9 +187,10 @@ export default function ProfilePage() {
               onChange={(e) => setBio(e.target.value)}
               placeholder="Viết vài dòng về bản thân bạn, sở thích âm nhạc..."
               rows={4}
-              className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm text-gray-700 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 resize-none"
+              disabled={isOAuth}
+              className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm text-gray-700 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 resize-none disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500"
             />
-            <p className="text-xs text-gray-400">{bio.length}/300 ký tự</p>
+            {!isOAuth && <p className="text-xs text-gray-400">{bio.length}/300 ký tự</p>}
           </div>
         </div>
 
@@ -173,32 +206,34 @@ export default function ProfilePage() {
           </div>
         )}
 
-        <div className="mt-6 flex items-center justify-end gap-3">
-          <button
-            type="button"
-            onClick={() => {
-              setFullName(user?.full_name || user?.fullName || '')
-              setBio(user?.bio || '')
-              setAvatarPreview(user?.avatar_url || user?.avatarUrl || '')
-              setAvatarFile(null)
-              setStatus('idle')
-            }}
-            className="rounded-xl border border-gray-200 px-5 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50"
-          >
-            Hủy
-          </button>
-          <Button
-            onClick={handleSave}
-            disabled={saving}
-            className="h-10 rounded-xl bg-blue-600 px-6 text-sm font-semibold hover:bg-blue-700"
-          >
-            {saving ? (
-              <span className="flex items-center gap-2">
-                <Loader2 size={15} className="animate-spin" /> Đang lưu...
-              </span>
-            ) : 'Lưu thay đổi'}
-          </Button>
-        </div>
+        {!isOAuth && (
+          <div className="mt-6 flex items-center justify-end gap-3">
+            <button
+              type="button"
+              onClick={() => {
+                setFullName(user?.full_name || user?.fullName || '')
+                setBio(user?.bio || '')
+                setAvatarPreview(user?.avatar_url || user?.avatarUrl || '')
+                setAvatarFile(null)
+                setStatus('idle')
+              }}
+              className="rounded-xl border border-gray-200 px-5 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50"
+            >
+              Hủy
+            </button>
+            <Button
+              onClick={handleSave}
+              disabled={saving}
+              className="h-10 rounded-xl bg-blue-600 px-6 text-sm font-semibold hover:bg-blue-700"
+            >
+              {saving ? (
+                <span className="flex items-center gap-2">
+                  <Loader2 size={15} className="animate-spin" /> Đang lưu...
+                </span>
+              ) : 'Lưu thay đổi'}
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   )
