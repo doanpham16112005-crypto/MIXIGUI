@@ -12,7 +12,7 @@ import Link from 'next/link'
 
 type ProductRow = {
   id: string; name: string; slug: string; description: string
-  price: number; stock: number; image_url: string | null; published: boolean
+  price: number; stock: number; images: string[]; is_published: boolean; brand: string
 }
 
 export default function EditProductPage() {
@@ -22,15 +22,20 @@ export default function EditProductPage() {
   const [saving, setSaving] = useState(false)
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [form, setForm] = useState<Partial<ProductRow>>({})
+  const [imageInput, setImageInput] = useState('')
   const [notFound, setNotFound] = useState(false)
 
   useEffect(() => {
     supabase.from('products')
-      .select('id,name,slug,description,price,stock,image_url,published')
+      .select('id,name,slug,description,price,stock,images,is_published,brand')
       .eq('id', id).single()
       .then(({ data }) => {
-        if (data) setForm(data)
-        else setNotFound(true)
+        if (data) {
+          setForm(data)
+          setImageInput(data.images?.[0] ?? '')
+        } else {
+          setNotFound(true)
+        }
         setLoading(false)
       })
   }, [id])
@@ -42,8 +47,9 @@ export default function EditProductPage() {
     setSaving(true); setStatus('idle')
     const { error } = await supabase.from('products').update({
       name: form.name, slug: form.slug, description: form.description,
-      price: Number(form.price), stock: Number(form.stock),
-      image_url: form.image_url || null, published: form.published,
+      price: Number(form.price), stock: Number(form.stock), brand: form.brand,
+      images: imageInput ? [imageInput] : (form.images ?? []),
+      is_published: form.is_published,
     }).eq('id', id)
     setSaving(false)
     setStatus(error ? 'error' : 'success')
@@ -87,6 +93,16 @@ export default function EditProductPage() {
             <Input value={form.slug ?? ''} onChange={(e) => set('slug', e.target.value)}
               className="h-11 rounded-xl font-mono text-sm" placeholder="ten-san-pham" />
           </div>
+          <div className="space-y-1.5">
+            <Label>Thương hiệu</Label>
+            <Input value={form.brand ?? ''} onChange={(e) => set('brand', e.target.value)}
+              className="h-11 rounded-xl" placeholder="Brand" />
+          </div>
+          <div className="space-y-1.5">
+            <Label>Số lượng trong kho</Label>
+            <Input type="number" value={form.stock ?? 0} onChange={(e) => set('stock', e.target.value)}
+              className="h-11 rounded-xl" />
+          </div>
           <div className="col-span-2 space-y-1.5">
             <Label>Mô tả</Label>
             <Textarea value={form.description ?? ''} onChange={(e) => set('description', e.target.value)}
@@ -97,28 +113,24 @@ export default function EditProductPage() {
             <Input type="number" value={form.price ?? 0} onChange={(e) => set('price', e.target.value)}
               className="h-11 rounded-xl" />
           </div>
-          <div className="space-y-1.5">
-            <Label>Số lượng trong kho</Label>
-            <Input type="number" value={form.stock ?? 0} onChange={(e) => set('stock', e.target.value)}
-              className="h-11 rounded-xl" />
-          </div>
+          <div className="space-y-1.5" />
           <div className="col-span-2 space-y-1.5">
-            <Label>URL hình ảnh</Label>
-            <Input value={form.image_url ?? ''} onChange={(e) => set('image_url', e.target.value)}
+            <Label>URL hình ảnh chính</Label>
+            <Input value={imageInput} onChange={(e) => setImageInput(e.target.value)}
               className="h-11 rounded-xl" placeholder="https://..." />
-            {form.image_url && (
+            {imageInput && (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={form.image_url} alt="" className="mt-2 h-28 w-28 rounded-xl border object-cover" />
+              <img src={imageInput} alt="" className="mt-2 h-28 w-28 rounded-xl border object-cover" />
             )}
           </div>
           <div className="col-span-2">
             <label className="flex cursor-pointer items-center gap-3">
-              <button type="button" onClick={() => set('published', !form.published)}
-                className={`relative h-6 w-11 rounded-full transition-colors ${form.published ? 'bg-blue-600' : 'bg-gray-200'}`}>
-                <div className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform ${form.published ? 'translate-x-5' : 'translate-x-0.5'}`} />
+              <button type="button" onClick={() => set('is_published', !form.is_published)}
+                className={`relative h-6 w-11 rounded-full transition-colors ${form.is_published ? 'bg-blue-600' : 'bg-gray-200'}`}>
+                <div className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform ${form.is_published ? 'translate-x-5' : 'translate-x-0.5'}`} />
               </button>
               <span className="text-sm font-medium text-gray-700">
-                {form.published ? 'Đang hiển thị trên cửa hàng' : 'Ẩn khỏi cửa hàng'}
+                {form.is_published ? 'Đang hiển thị trên cửa hàng' : 'Ẩn khỏi cửa hàng'}
               </span>
             </label>
           </div>

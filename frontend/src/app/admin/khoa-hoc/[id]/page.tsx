@@ -13,7 +13,7 @@ import Link from 'next/link'
 type CourseRow = {
   id: string; title: string; slug: string; description: string
   thumbnail_url: string | null; price: number
-  level: 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED'; published: boolean
+  level: 'BEGINNER' | 'INTERMEDIATE' | 'ADVANCED'; is_published: boolean
 }
 
 const LEVELS = [
@@ -33,7 +33,7 @@ export default function EditCoursePage() {
 
   useEffect(() => {
     supabase.from('courses')
-      .select('id,title,slug,description,thumbnail_url,price,level,published')
+      .select('id,title,slug,description,thumbnail_url,price,level,is_published')
       .eq('id', id).single()
       .then(({ data }) => {
         if (data) setForm(data)
@@ -50,7 +50,7 @@ export default function EditCoursePage() {
     const { error } = await supabase.from('courses').update({
       title: form.title, slug: form.slug, description: form.description,
       thumbnail_url: form.thumbnail_url || null, price: Number(form.price),
-      level: form.level, published: form.published,
+      level: form.level, is_published: form.is_published,
     }).eq('id', id)
     setSaving(false)
     setStatus(error ? 'error' : 'success')
@@ -127,12 +127,12 @@ export default function EditCoursePage() {
           </div>
           <div className="col-span-2">
             <label className="flex cursor-pointer items-center gap-3">
-              <button type="button" onClick={() => set('published', !form.published)}
-                className={`relative h-6 w-11 rounded-full transition-colors ${form.published ? 'bg-blue-600' : 'bg-gray-200'}`}>
-                <div className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform ${form.published ? 'translate-x-5' : 'translate-x-0.5'}`} />
+              <button type="button" onClick={() => set('is_published', !form.is_published)}
+                className={`relative h-6 w-11 rounded-full transition-colors ${form.is_published ? 'bg-blue-600' : 'bg-gray-200'}`}>
+                <div className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform ${form.is_published ? 'translate-x-5' : 'translate-x-0.5'}`} />
               </button>
               <span className="text-sm font-medium text-gray-700">
-                {form.published ? 'Đang hiển thị công khai' : 'Ẩn khỏi danh sách'}
+                {form.is_published ? 'Đang hiển thị công khai' : 'Ẩn khỏi danh sách'}
               </span>
             </label>
           </div>
