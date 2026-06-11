@@ -6,6 +6,7 @@ export interface User {
   role: 'STUDENT' | 'ADMIN' | 'INSTRUCTOR'
   avatarUrl?: string
   avatar_url?: string
+  bio?: string
   createdAt?: string
 }
 
