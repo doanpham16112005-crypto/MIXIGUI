@@ -41,12 +41,13 @@ export function Header() {
               )}
               <div className="flex items-center gap-2">
                 {(user.avatar_url || user.avatarUrl) ? (
-                  <Image
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
                     src={user.avatar_url || user.avatarUrl || ''}
                     alt={user.full_name || user.fullName || user.email || ''}
                     width={32}
                     height={32}
-                    className="rounded-full object-cover ring-2 ring-blue-100"
+                    className="h-8 w-8 rounded-full object-cover ring-2 ring-blue-100"
                     referrerPolicy="no-referrer"
                   />
                 ) : (
