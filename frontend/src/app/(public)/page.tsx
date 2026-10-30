@@ -733,7 +733,7 @@ export default async function HomePage() {
 
         {/* ── HỌC THỬ MIỄN PHÍ ── */}
         <section aria-labelledby="free-trial-heading" className="relative overflow-hidden bg-gradient-to-r from-wine-800 via-noel-700 to-wine-700 py-16 text-white">
-          <HeroSparkles />
+          <HeroSparkles layout="none" />
           <div className="relative z-10 mx-auto max-w-5xl px-4">
             <div className="grid items-center gap-10 lg:grid-cols-2">
               <div>
@@ -947,7 +947,7 @@ export default async function HomePage() {
 
         {/* ── CỘNG ĐỒNG ── */}
         <section aria-labelledby="community-heading" className="relative overflow-hidden bg-gradient-to-br from-noel-950 via-noel-800 to-wine-800 py-16 text-white">
-          <HeroSparkles />
+          <HeroSparkles layout="none" />
           <div className="relative z-10 mx-auto max-w-5xl px-4">
             <div className="grid items-center gap-10 lg:grid-cols-2">
               <div>

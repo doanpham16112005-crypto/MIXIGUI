@@ -12,6 +12,7 @@ import { authApi } from '@/lib/api/auth'
 import { supabase } from '@/lib/supabase'
 import Link from 'next/link'
 import Image from 'next/image'
+import { ChristmasTreeSVG } from '@/components/layout/festive-ambience'
 
 function GoogleIcon() {
   return (
@@ -63,6 +64,12 @@ export default function DangKyPage() {
         <div className="absolute -left-16 -top-16 h-64 w-64 rounded-full bg-gold-300/15 blur-2xl" />
         <div className="absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-love-400/20 blur-2xl" />
         <div className="absolute left-1/2 top-1/3 h-40 w-40 -translate-x-1/2 rounded-full bg-white/5" />
+        <div aria-hidden="true" className="animate-tree-sway pointer-events-none absolute -bottom-2 left-3 opacity-85">
+          <ChristmasTreeSVG className="h-36 w-28" />
+        </div>
+        <div aria-hidden="true" className="animate-tree-sway pointer-events-none absolute -bottom-2 right-3 opacity-85" style={{ animationDelay: '1.5s' }}>
+          <ChristmasTreeSVG className="h-32 w-24" />
+        </div>
 
         <div className="relative z-10 text-center text-white">
           <div className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-gold-300/40 bg-white/10 px-3.5 py-1 text-xs font-semibold text-gold-200">

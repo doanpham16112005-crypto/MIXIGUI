@@ -152,7 +152,7 @@ export default function KhoaHocDetailPage() {
 
       {/* ── HERO ── */}
       <section className="bg-noel-love relative overflow-hidden py-12 text-white">
-        <HeroSparkles />
+        <HeroSparkles layout="none" />
         <div className="relative z-10 mx-auto max-w-7xl px-4">
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div>

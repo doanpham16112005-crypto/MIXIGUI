@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { ChristmasTreeSVG } from '@/components/layout/festive-ambience'
 
 const footerLinks = {
   courses: [
@@ -88,6 +89,14 @@ export function Footer() {
       <div aria-hidden="true" className="h-1 w-full bg-gradient-to-r from-noel-700 via-gold-400 to-wine-600 opacity-85" />
       <div aria-hidden="true" className="pointer-events-none absolute -top-24 left-1/4 h-64 w-64 rounded-full bg-noel-600/10 blur-3xl" />
       <div aria-hidden="true" className="pointer-events-none absolute -bottom-24 right-1/4 h-72 w-72 rounded-full bg-wine-500/10 blur-3xl" />
+
+      {/* Rừng thông Noel lung linh trang trí hai bên góc Footer */}
+      <div aria-hidden="true" className="pointer-events-none absolute bottom-12 left-4 hidden opacity-25 xl:block">
+        <ChristmasTreeSVG className="h-44 w-32" />
+      </div>
+      <div aria-hidden="true" className="pointer-events-none absolute bottom-12 right-6 hidden opacity-25 xl:block">
+        <ChristmasTreeSVG className="h-44 w-32" />
+      </div>
 
       {/* Main footer content */}
       <div className="relative mx-auto max-w-7xl px-4 py-16">

@@ -87,7 +87,7 @@ export default async function KhoaHocPage() {
           </div>
           {/* Warm Noel & Love overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-noel-950/80 via-wine-950/60 to-noel-900/65" />
-          <HeroSparkles />
+          <HeroSparkles layout="split-left" />
           {/* Content — centered over video */}
           <div className="absolute inset-0 z-10 flex flex-col justify-center px-4 py-10">
             <div className="mx-auto w-full max-w-7xl">

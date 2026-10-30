@@ -21,7 +21,7 @@ export default function LienHePage() {
     <main>
       {/* ── HERO ── */}
       <section className="bg-noel-love relative overflow-hidden border-b border-noel-200/60 py-16 text-white">
-        <HeroSparkles />
+        <HeroSparkles layout="split-left" />
         <div className="relative z-10 mx-auto max-w-7xl px-4">
           <nav aria-label="Breadcrumb" className="mb-3 text-sm text-rose-200">
             <Link href="/" className="hover:text-white">Trang chủ</Link>

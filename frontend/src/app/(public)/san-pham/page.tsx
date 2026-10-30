@@ -77,7 +77,7 @@ export default async function SanPhamPage() {
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-r from-noel-950/80 via-wine-950/60 to-emerald-950/65" />
-          <HeroSparkles />
+          <HeroSparkles layout="split-left" />
           <div className="absolute inset-0 z-10 flex items-center py-10">
             <div className="mx-auto w-full max-w-7xl px-4">
               <nav aria-label="Breadcrumb" className="mb-3 text-sm text-rose-200">
