@@ -36,9 +36,9 @@ export function AdminSidebar() {
     <aside className="flex w-64 flex-shrink-0 flex-col border-r border-gray-200 bg-white">
       {/* Admin badge + user */}
       <div className="border-b border-gray-100 px-5 py-5">
-        <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1">
-          <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
-          <span className="text-xs font-semibold text-blue-600">ADMIN PANEL</span>
+        <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-noel-50 px-3 py-1">
+          <span className="h-1.5 w-1.5 rounded-full bg-noel-500" />
+          <span className="text-xs font-semibold text-noel-600">ADMIN PANEL</span>
         </div>
         <div className="flex items-center gap-3">
           {(user?.avatar_url || user?.avatarUrl) ? (
@@ -46,11 +46,11 @@ export function AdminSidebar() {
             <img
               src={user.avatar_url || user.avatarUrl || ''}
               alt={user.full_name || user.fullName || ''}
-              className="h-9 w-9 rounded-full object-cover ring-2 ring-blue-100"
+              className="h-9 w-9 rounded-full object-cover ring-2 ring-noel-100"
               referrerPolicy="no-referrer"
             />
           ) : (
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-violet-500 text-sm font-bold text-white">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-noel-500 to-wine-500 text-sm font-bold text-white">
               {(user?.full_name || user?.fullName || user?.email || 'A')[0].toUpperCase()}
             </div>
           )}
@@ -77,7 +77,7 @@ export function AdminSidebar() {
               className={cn(
                 'flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all',
                 active
-                  ? 'bg-blue-600 text-white shadow-sm shadow-blue-200'
+                  ? 'bg-noel-600 text-white shadow-sm shadow-noel-200'
                   : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
               )}
             >

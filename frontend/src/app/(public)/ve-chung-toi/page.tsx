@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { siteConfig } from '@/config/site'
+import { HeroSparkles } from '@/components/layout/festive-ambience'
 
 export const metadata: Metadata = {
   title: 'Về Chúng Tôi | MixiGui - Nền Tảng Học Nhạc & Nhạc Cụ Chính Hãng',
@@ -56,14 +57,16 @@ export default function VeChungToiPage() {
       {/* ── HERO ── */}
       <section
         aria-label="Giới thiệu"
-        className="py-20 text-center text-white"
-        style={{ background: 'linear-gradient(135deg, #1d4ed8, #3b82f6)' }}
+        className="bg-noel-love relative overflow-hidden py-20 text-center text-white"
       >
-        <div className="mx-auto max-w-3xl px-4">
-          <p className="mb-3 text-sm font-medium uppercase tracking-widest text-blue-200">Câu chuyện của chúng tôi</p>
+        <HeroSparkles />
+        <div className="relative z-10 mx-auto max-w-3xl px-4">
+          <span className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-gold-300/40 bg-white/15 px-4 py-1 text-xs font-semibold text-gold-200">
+            🎄♥ Câu chuyện của âm nhạc &amp; yêu thương
+          </span>
           <h1 className="text-4xl font-extrabold leading-tight sm:text-5xl">Về MixiGui</h1>
-          <p className="mt-5 text-lg text-blue-100">
-            Chúng tôi tin rằng <strong className="text-white">âm nhạc là ngôn ngữ không biên giới</strong> — và mọi người đều xứng đáng được học nhạc một cách dễ dàng, vui vẻ và hiệu quả.
+          <p className="mt-5 text-lg text-rose-100">
+            Chúng tôi tin rằng <strong className="text-white">âm nhạc là ngôn ngữ của trái tim</strong> — và mọi người đều xứng đáng được học nhạc một cách ấm áp, vui vẻ và tràn đầy cảm hứng.
           </p>
         </div>
       </section>
@@ -73,7 +76,7 @@ export default function VeChungToiPage() {
         <div className="mx-auto grid max-w-4xl grid-cols-2 gap-8 px-4 text-center sm:grid-cols-4">
           {STATS.map((s) => (
             <div key={s.label}>
-              <p className="text-4xl font-extrabold text-blue-600">{s.value}</p>
+              <p className="text-4xl font-extrabold text-noel-600">{s.value}</p>
               <p className="mt-1 text-sm text-gray-500">{s.label}</p>
             </div>
           ))}
@@ -84,7 +87,7 @@ export default function VeChungToiPage() {
       <section aria-labelledby="mission-heading" className="py-16">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-10 lg:grid-cols-2">
-            <div className="rounded-2xl bg-blue-50 p-8">
+            <div className="rounded-2xl bg-noel-50 p-8">
               <div className="mb-4 text-4xl">🎯</div>
               <h2 id="mission-heading" className="mb-3 text-2xl font-bold text-gray-900">Sứ mệnh</h2>
               <p className="leading-relaxed text-gray-600">
@@ -139,7 +142,7 @@ export default function VeChungToiPage() {
               <div key={member.name} className="rounded-xl border bg-white p-6 text-center shadow-sm">
                 <div className="mb-4 text-7xl">{member.avatar}</div>
                 <h3 className="text-lg font-bold text-gray-800">{member.name}</h3>
-                <p className="mb-3 text-sm font-medium text-blue-600">{member.role}</p>
+                <p className="mb-3 text-sm font-medium text-noel-600">{member.role}</p>
                 <p className="text-sm leading-relaxed text-gray-500">{member.bio}</p>
               </div>
             ))}
@@ -151,13 +154,13 @@ export default function VeChungToiPage() {
       <section aria-labelledby="timeline-heading" className="bg-gray-50 py-16">
         <div className="mx-auto max-w-3xl px-4">
           <h2 id="timeline-heading" className="mb-10 text-center text-3xl font-bold text-gray-900">Hành trình phát triển</h2>
-          <div className="relative border-l-2 border-blue-200 pl-8 space-y-8">
+          <div className="relative border-l-2 border-noel-200 pl-8 space-y-8">
             {MILESTONES.map((m) => (
               <div key={m.year} className="relative">
-                <span className="absolute -left-[2.85rem] flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white ring-4 ring-white">
+                <span className="absolute -left-[2.85rem] flex h-8 w-8 items-center justify-center rounded-full bg-noel-600 text-xs font-bold text-white ring-4 ring-white">
                   {m.year.slice(2)}
                 </span>
-                <p className="text-xs font-bold uppercase tracking-widest text-blue-500">{m.year}</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-noel-500">{m.year}</p>
                 <p className="mt-1 text-gray-600">{m.event}</p>
               </div>
             ))}
@@ -168,17 +171,20 @@ export default function VeChungToiPage() {
       {/* ── CTA ── */}
       <section
         aria-label="Kêu gọi hành động"
-        className="py-20 text-center text-white"
-        style={{ background: 'linear-gradient(135deg, #1d4ed8, #3b82f6)' }}
+        className="bg-noel-love relative overflow-hidden py-20 text-center text-white"
       >
-        <div className="mx-auto max-w-2xl px-4">
+        <HeroSparkles />
+        <div className="relative z-10 mx-auto max-w-2xl px-4">
+          <span className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3.5 py-1 text-xs font-semibold text-gold-200">
+            🎄♥ Cùng viết nên giai điệu mùa đông
+          </span>
           <h2 className="text-3xl font-bold">Tham gia cùng chúng tôi ngay hôm nay</h2>
-          <p className="mt-3 text-blue-100">Bắt đầu hành trình âm nhạc của bạn với MixiGui — miễn phí, không cần thẻ tín dụng.</p>
+          <p className="mt-3 text-rose-100">Bắt đầu hành trình âm nhạc của bạn với MixiGui — miễn phí, không cần thẻ tín dụng.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link href="/dang-ky" className="rounded-full bg-white px-8 py-3 font-semibold text-blue-700 shadow transition hover:bg-blue-50">
-              Đăng ký miễn phí
+            <Link href="/dang-ky" className="rounded-full bg-white px-8 py-3 font-bold text-noel-700 shadow-lg ring-2 ring-gold-300/50 transition hover:bg-noel-50">
+              💝 Đăng ký miễn phí
             </Link>
-            <Link href="/lien-he" className="rounded-full border-2 border-white px-8 py-3 font-semibold text-white transition hover:bg-white/10">
+            <Link href="/lien-he" className="rounded-full border-2 border-white/85 bg-white/10 px-8 py-3 font-semibold text-white transition hover:bg-white/20">
               Liên hệ với chúng tôi
             </Link>
           </div>

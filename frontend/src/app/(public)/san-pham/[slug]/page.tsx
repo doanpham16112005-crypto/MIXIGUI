@@ -72,7 +72,7 @@ export default function SanPhamDetailPage() {
   if (loading) {
     return (
       <div className="flex min-h-[60vh] items-center justify-center">
-        <div className="h-10 w-10 animate-spin rounded-full border-4 border-blue-600 border-t-transparent" />
+        <div className="h-10 w-10 animate-spin rounded-full border-4 border-noel-600 border-t-transparent" />
       </div>
     )
   }
@@ -82,7 +82,7 @@ export default function SanPhamDetailPage() {
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 text-center">
         <div className="text-6xl">😕</div>
         <h1 className="text-2xl font-bold text-gray-800">Không tìm thấy sản phẩm</h1>
-        <Link href="/san-pham" className="rounded-full bg-blue-600 px-6 py-2 text-sm font-semibold text-white hover:bg-blue-700">
+        <Link href="/san-pham" className="rounded-full bg-noel-600 px-6 py-2 text-sm font-semibold text-white hover:bg-noel-700">
           Xem tất cả sản phẩm
         </Link>
       </div>
@@ -115,9 +115,9 @@ export default function SanPhamDetailPage() {
       <div className="border-b bg-gray-50 py-3">
         <div className="mx-auto max-w-7xl px-4">
           <nav className="text-sm text-gray-500">
-            <Link href="/" className="hover:text-blue-600">Trang chủ</Link>
+            <Link href="/" className="hover:text-noel-600">Trang chủ</Link>
             <span className="mx-2">/</span>
-            <Link href="/san-pham" className="hover:text-blue-600">Sản phẩm</Link>
+            <Link href="/san-pham" className="hover:text-noel-600">Sản phẩm</Link>
             <span className="mx-2">/</span>
             <span className="text-gray-800">{product.name}</span>
           </nav>
@@ -155,7 +155,7 @@ export default function SanPhamDetailPage() {
                       key={i}
                       onClick={() => setActiveImg(i)}
                       className={`shrink-0 h-16 w-16 overflow-hidden rounded-lg border-2 transition ${
-                        activeImg === i ? 'border-blue-500' : 'border-gray-200 hover:border-gray-400'
+                        activeImg === i ? 'border-noel-500' : 'border-gray-200 hover:border-gray-400'
                       }`}
                     >
                       <img src={img} alt="" className="h-full w-full object-cover" />
@@ -168,7 +168,7 @@ export default function SanPhamDetailPage() {
             {/* Thông tin */}
             <div>
               {product.brand && (
-                <span className="mb-2 inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-600">
+                <span className="mb-2 inline-block rounded-full bg-noel-50 px-3 py-1 text-xs font-semibold text-noel-600">
                   {product.brand}
                 </span>
               )}
@@ -176,7 +176,7 @@ export default function SanPhamDetailPage() {
 
               {/* Giá */}
               <div className="mt-4 flex items-end gap-3">
-                <span className="text-3xl font-extrabold text-blue-600">
+                <span className="text-3xl font-extrabold text-noel-600">
                   {Number(product.price).toLocaleString('vi-VN')}₫
                 </span>
                 {product.discount_price && product.discount_price < product.price && (
@@ -204,15 +204,21 @@ export default function SanPhamDetailPage() {
                 )}
               </div>
 
+              {/* Cam kết & Ưu đãi quà tặng Giáng Sinh */}
+              <div className="mt-4 rounded-xl border border-noel-100 bg-gradient-to-r from-noel-50/80 via-love-50/60 to-gold-50/60 p-3.5 text-xs text-noel-800">
+                <p className="font-semibold">🎁 Ưu đãi mùa Giáng Sinh &amp; Tình Yêu</p>
+                <p className="mt-0.5 text-gray-600">Miễn phí gói nơ nhung đỏ Noel &amp; thiệp viết tay trao gửi yêu thương theo lời nhắn của bạn.</p>
+              </div>
+
               {/* Cam kết */}
-              <div className="mt-5 grid grid-cols-2 gap-2">
+              <div className="mt-4 grid grid-cols-2 gap-2">
                 {[
                   { icon: '✅', text: 'Hàng chính hãng 100%' },
                   { icon: '🔄', text: 'Đổi trả trong 7 ngày' },
                   { icon: '🚚', text: 'Giao hàng toàn quốc' },
                   { icon: '🛠️', text: 'Bảo hành 12–24 tháng' },
                 ].map((c) => (
-                  <div key={c.text} className="flex items-center gap-2 rounded-lg bg-gray-50 px-3 py-2 text-xs text-gray-600">
+                  <div key={c.text} className="flex items-center gap-2 rounded-xl border border-noel-100/70 bg-warm-snow px-3 py-2 text-xs text-gray-600">
                     <span>{c.icon}</span>{c.text}
                   </div>
                 ))}
@@ -243,13 +249,13 @@ export default function SanPhamDetailPage() {
                       added
                         ? 'bg-green-500'
                         : inStock
-                        ? 'bg-blue-600 hover:bg-blue-700'
+                        ? 'bg-noel-600 hover:bg-noel-700'
                         : 'bg-gray-300 cursor-not-allowed'
                     }`}
                   >
                     {added ? '✓ Đã thêm vào giỏ' : '🛒 Thêm vào giỏ hàng'}
                   </button>
-                  <button className="rounded-full border-2 border-blue-600 px-6 py-3 font-semibold text-blue-600 transition hover:bg-blue-50">
+                  <button className="rounded-full border-2 border-noel-600 px-6 py-3 font-semibold text-noel-600 transition hover:bg-noel-50">
                     Mua ngay
                   </button>
                 </div>
@@ -264,7 +270,7 @@ export default function SanPhamDetailPage() {
 
               {/* Mô tả ngắn */}
               {product.description && (
-                <div className="mt-6 rounded-xl bg-blue-50 p-4">
+                <div className="mt-6 rounded-xl bg-noel-50 p-4">
                   <h3 className="mb-2 font-semibold text-gray-800">Mô tả sản phẩm</h3>
                   <p className="text-sm leading-relaxed text-gray-600 whitespace-pre-line">{product.description}</p>
                 </div>
@@ -313,7 +319,7 @@ export default function SanPhamDetailPage() {
                   <span className="text-2xl">{item.icon}</span>
                   <div>
                     <p className="font-semibold text-gray-800 text-sm">{item.title}</p>
-                    <p className="text-sm text-blue-600 font-medium">{item.sub}</p>
+                    <p className="text-sm text-noel-600 font-medium">{item.sub}</p>
                     <p className="text-xs text-gray-400">{item.desc}</p>
                   </div>
                 </div>
@@ -346,8 +352,8 @@ export default function SanPhamDetailPage() {
                       )}
                     </div>
                     <div className="p-4">
-                      <h3 className="line-clamp-2 text-sm font-semibold text-gray-800 group-hover:text-blue-600">{p.name}</h3>
-                      <p className="mt-2 font-bold text-blue-600">{Number(p.price).toLocaleString('vi-VN')}₫</p>
+                      <h3 className="line-clamp-2 text-sm font-semibold text-gray-800 group-hover:text-noel-600">{p.name}</h3>
+                      <p className="mt-2 font-bold text-noel-600">{Number(p.price).toLocaleString('vi-VN')}₫</p>
                     </div>
                   </Link>
                 )
@@ -358,12 +364,12 @@ export default function SanPhamDetailPage() {
       )}
 
       {/* ── CTA ── */}
-      <section className="bg-blue-50 py-10 text-center">
+      <section className="bg-noel-50 py-10 text-center">
         <div className="mx-auto max-w-xl px-4">
           <p className="text-lg font-semibold text-gray-800">Cần tư vấn thêm về sản phẩm?</p>
           <p className="mt-1 text-sm text-gray-500">Đội ngũ MixiGui sẵn sàng hỗ trợ bạn chọn nhạc cụ phù hợp nhất</p>
           <div className="mt-4 flex flex-wrap justify-center gap-3">
-            <Link href="/lien-he" className="rounded-full bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white shadow hover:bg-blue-700 transition">
+            <Link href="/lien-he" className="rounded-full bg-noel-600 px-6 py-2.5 text-sm font-semibold text-white shadow hover:bg-noel-700 transition">
               Liên hệ tư vấn
             </Link>
             <Link href="/san-pham" className="rounded-full border border-gray-300 px-6 py-2.5 text-sm font-semibold text-gray-600 hover:bg-gray-100 transition">

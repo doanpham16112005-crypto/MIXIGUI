@@ -5,15 +5,15 @@ import { useAuthStore } from '@/stores/auth-store'
 import { BookOpen, ShoppingBag, Music2, ChevronRight, Star, Clock } from 'lucide-react'
 
 const stats = [
-  { label: 'Khóa học đã đăng ký', value: '0', icon: BookOpen, color: 'bg-blue-50 text-blue-600', border: 'border-blue-100' },
-  { label: 'Đơn hàng',            value: '0', icon: ShoppingBag, color: 'bg-violet-50 text-violet-600', border: 'border-violet-100' },
+  { label: 'Khóa học đã đăng ký', value: '0', icon: BookOpen, color: 'bg-noel-50 text-noel-600', border: 'border-noel-100' },
+  { label: 'Đơn hàng',            value: '0', icon: ShoppingBag, color: 'bg-wine-50 text-wine-600', border: 'border-wine-100' },
   { label: 'Bài học hoàn thành',  value: '0', icon: Star,        color: 'bg-amber-50 text-amber-600', border: 'border-amber-100' },
   { label: 'Giờ học',             value: '0', icon: Clock,       color: 'bg-green-50 text-green-600', border: 'border-green-100' },
 ]
 
 const quickActions = [
-  { label: 'Khám phá khóa học mới', desc: 'Tìm khóa học phù hợp với bạn', href: '/khoa-hoc', icon: BookOpen, gradient: 'from-blue-500 to-blue-600' },
-  { label: 'Mua nhạc cụ',           desc: 'Nhạc cụ chất lượng, giá tốt',  href: '/san-pham', icon: Music2,   gradient: 'from-violet-500 to-violet-600' },
+  { label: 'Khám phá khóa học mới', desc: 'Tìm khóa học phù hợp với bạn', href: '/khoa-hoc', icon: BookOpen, gradient: 'from-noel-500 to-noel-600' },
+  { label: 'Mua nhạc cụ',           desc: 'Nhạc cụ chất lượng, giá tốt',  href: '/san-pham', icon: Music2,   gradient: 'from-wine-500 to-wine-600' },
 ]
 
 export default function StudentDashboard() {
@@ -25,18 +25,18 @@ export default function StudentDashboard() {
   return (
     <div className="space-y-8">
       {/* Welcome banner */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-violet-600 via-blue-600 to-blue-500 px-8 py-8 text-white">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-wine-600 via-noel-600 to-noel-500 px-8 py-8 text-white">
         <div className="absolute -right-8 -top-8 h-40 w-40 rounded-full bg-white/10" />
         <div className="absolute -bottom-10 right-24 h-32 w-32 rounded-full bg-white/10" />
         <div className="relative z-10">
-          <p className="text-sm text-blue-100">{greeting},</p>
+          <p className="text-sm text-noel-100">{greeting},</p>
           <h1 className="mt-1 text-2xl font-bold">{name} 👋</h1>
-          <p className="mt-2 max-w-md text-sm text-blue-100">
+          <p className="mt-2 max-w-md text-sm text-noel-100">
             Hôm nay bạn muốn học nhạc gì? Tiếp tục hành trình âm nhạc của mình nhé!
           </p>
           <Link
             href="/khoa-hoc"
-            className="mt-5 inline-flex items-center gap-1.5 rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-blue-600 transition hover:bg-blue-50"
+            className="mt-5 inline-flex items-center gap-1.5 rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-noel-600 transition hover:bg-noel-50"
           >
             Xem khóa học <ChevronRight size={16} />
           </Link>
@@ -89,19 +89,19 @@ export default function StudentDashboard() {
       <div>
         <div className="mb-4 flex items-center justify-between">
           <h2 className="text-base font-semibold text-gray-700">Khóa học gần đây</h2>
-          <Link href="/hoc-vien/khoa-hoc-cua-toi" className="text-sm font-medium text-blue-600 hover:underline">
+          <Link href="/hoc-vien/khoa-hoc-cua-toi" className="text-sm font-medium text-noel-600 hover:underline">
             Xem tất cả
           </Link>
         </div>
         <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-gray-200 bg-white py-14 text-center">
-          <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50">
-            <BookOpen size={26} className="text-blue-500" />
+          <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-noel-50">
+            <BookOpen size={26} className="text-noel-500" />
           </div>
           <p className="font-medium text-gray-700">Chưa có khóa học nào</p>
           <p className="mt-1 text-sm text-gray-400">Đăng ký khóa học đầu tiên để bắt đầu học nhạc</p>
           <Link
             href="/khoa-hoc"
-            className="mt-5 inline-flex items-center gap-1.5 rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-700"
+            className="mt-5 inline-flex items-center gap-1.5 rounded-xl bg-noel-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-noel-700"
           >
             Khám phá khóa học <ChevronRight size={16} />
           </Link>

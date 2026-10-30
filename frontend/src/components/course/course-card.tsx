@@ -12,8 +12,8 @@ export function CourseCard({ course }: { course: Course }) {
       <CardContent>
         <Badge>{COURSE_LEVEL_LABELS[course.level]}</Badge>
         <h3 className="mt-2 font-semibold line-clamp-2">{course.title}</h3>
-        <p className="mt-1 text-blue-600 font-bold">{formatPrice(course.price)}</p>
-        <Link href={`/khoa-hoc/${course.slug}`} className="mt-2 block text-sm text-blue-500 hover:underline">Xem chi tiết →</Link>
+        <p className="mt-1 text-noel-600 font-bold">{formatPrice(course.price)}</p>
+        <Link href={`/khoa-hoc/${course.slug}`} className="mt-2 block text-sm text-noel-500 hover:underline">Xem chi tiết →</Link>
       </CardContent>
     </Card>
   )

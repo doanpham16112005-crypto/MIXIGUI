@@ -12,7 +12,7 @@ export function PostCard({ post }: { post: Post }) {
         <p className="mt-1 text-sm text-gray-500 line-clamp-2">{post.excerpt}</p>
         <div className="mt-2 flex items-center justify-between">
           <span className="text-xs text-gray-400">{formatDate(post.createdAt)}</span>
-          <Link href={`/blog/${post.slug}`} className="text-sm text-blue-500 hover:underline">Đọc thêm →</Link>
+          <Link href={`/blog/${post.slug}`} className="text-sm text-noel-500 hover:underline">Đọc thêm →</Link>
         </div>
       </CardContent>
     </Card>

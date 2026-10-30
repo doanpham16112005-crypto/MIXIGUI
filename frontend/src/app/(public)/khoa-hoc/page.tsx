@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { createServerClient } from '@/lib/supabase'
 import { siteConfig } from '@/config/site'
+import { HeroSparkles } from '@/components/layout/festive-ambience'
 
 export const metadata: Metadata = {
   title: 'Khóa Học Nhạc Online | Guitar, Piano, Trống - MixiGui',
@@ -52,8 +53,8 @@ const levelLabel: Record<string, string> = {
 }
 const levelColor: Record<string, string> = {
   BEGINNER: 'bg-green-50 text-green-700',
-  INTERMEDIATE: 'bg-blue-50 text-blue-700',
-  ADVANCED: 'bg-purple-50 text-purple-700',
+  INTERMEDIATE: 'bg-noel-50 text-noel-700',
+  ADVANCED: 'bg-wine-50 text-wine-700',
 }
 
 export default async function KhoaHocPage() {
@@ -72,35 +73,39 @@ export default async function KhoaHocPage() {
 
       <main>
         {/* ── HERO ── */}
-        <section className="relative border-b text-white">
-          {/* Video — full width, natural height (no crop) */}
+        <section className="bg-noel-love relative min-h-[320px] overflow-hidden border-b border-noel-200/60 text-white sm:min-h-[380px]">
+          {/* Video — full width */}
           <div className="leading-[0]">
             <video
               autoPlay
               muted
               loop
               playsInline
-              className="w-full align-top"
+              className="min-h-[320px] w-full object-cover align-top sm:min-h-[380px]"
               src="https://res.cloudinary.com/ddaryoz5b/video/upload/v1773729146/T%E1%BA%A1o_Video_T%E1%BB%AB_%E1%BA%A2nh_d7urwo.mp4"
             />
           </div>
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/45" />
+          {/* Warm Noel & Love overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-noel-950/80 via-wine-950/60 to-noel-900/65" />
+          <HeroSparkles />
           {/* Content — centered over video */}
-          <div className="absolute inset-0 z-10 flex flex-col justify-center px-4">
+          <div className="absolute inset-0 z-10 flex flex-col justify-center px-4 py-10">
             <div className="mx-auto w-full max-w-7xl">
-              <nav aria-label="Breadcrumb" className="mb-4 text-sm text-blue-200">
+              <nav aria-label="Breadcrumb" className="mb-3 text-sm text-rose-200">
                 <Link href="/" className="hover:text-white">Trang chủ</Link>
                 <span className="mx-2">/</span>
                 <span className="text-white">Khóa học</span>
               </nav>
-              <h1 className="text-4xl font-extrabold">Khóa Học Nhạc Online</h1>
-              <p className="mt-3 max-w-2xl text-lg text-blue-100">
-                Học guitar, piano, trống và nhiều nhạc cụ khác từ giảng viên chuyên nghiệp — mọi cấp độ, mọi lứa tuổi, học theo tốc độ của bạn.
+              <span className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-gold-300/40 bg-white/15 px-3.5 py-1 text-xs font-semibold text-gold-200 backdrop-blur-xs">
+                🎄♥ Mùa Đông Ấm Áp • Đàn Hát Cho Người Thương
+              </span>
+              <h1 className="text-3xl font-extrabold sm:text-4xl lg:text-5xl">Khóa Học Nhạc Online</h1>
+              <p className="mt-3 max-w-2xl text-base text-rose-100 sm:text-lg">
+                Học guitar, piano, trống và nhiều nhạc cụ khác từ giảng viên chuyên nghiệp — mọi cấp độ, mọi lứa tuổi, tự tay ngân vang những bản tình ca ngọt ngào nhất.
               </p>
-              <div className="mt-5 flex flex-wrap gap-3 text-sm">
-                {['🎓 50+ khóa học', '⏱ Học trọn đời', '📱 Mọi thiết bị', '💰 Từ 399.000₫', '✅ Hoàn tiền 7 ngày'].map((b) => (
-                  <span key={b} className="rounded-full bg-white/20 px-3 py-1">{b}</span>
+              <div className="mt-5 flex flex-wrap gap-2.5 text-xs sm:text-sm">
+                {['🎓 50+ khóa học', '⏱ Học trọn đời', '📱 Mọi thiết bị', '💝 Học thử miễn phí', '✅ Hoàn tiền 7 ngày'].map((b) => (
+                  <span key={b} className="rounded-full border border-white/20 bg-white/15 px-3 py-1 backdrop-blur-xs">{b}</span>
                 ))}
               </div>
             </div>
@@ -108,14 +113,14 @@ export default async function KhoaHocPage() {
         </section>
 
         {/* ── DANH MỤC NHẠC CỤ ── */}
-        <section aria-labelledby="instruments-heading" className="bg-gray-50 py-12">
+        <section aria-labelledby="instruments-heading" className="bg-warm-snow py-12">
           <div className="mx-auto max-w-7xl px-4">
             <h2 id="instruments-heading" className="mb-6 text-xl font-bold text-gray-800">Chọn nhạc cụ bạn muốn học</h2>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
               {INSTRUMENTS.map((ins) => (
-                <button key={ins.name} className="group rounded-xl border bg-white p-4 text-center shadow-sm transition hover:border-blue-400 hover:shadow-md">
+                <button key={ins.name} className="card-festive group rounded-2xl border border-noel-100/80 bg-white p-4 text-center shadow-xs hover:border-noel-300">
                   <div className="mb-2 text-3xl">{ins.icon}</div>
-                  <p className="text-sm font-semibold text-gray-700 group-hover:text-blue-600">{ins.name}</p>
+                  <p className="text-sm font-semibold text-gray-700 group-hover:text-noel-600">{ins.name}</p>
                   <p className="mt-0.5 text-xs text-gray-400">{ins.desc}</p>
                 </button>
               ))}
@@ -141,33 +146,39 @@ export default async function KhoaHocPage() {
                   <Link
                     key={course.id}
                     href={`/khoa-hoc/${course.slug}`}
-                    className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md"
+                    className="card-festive group overflow-hidden rounded-2xl border border-noel-100/90 bg-white shadow-sm"
                   >
-                    <div className="relative h-44 w-full overflow-hidden bg-gradient-to-br from-blue-100 to-blue-200">
+                    <div className="relative h-44 w-full overflow-hidden bg-gradient-to-br from-noel-100 via-love-100 to-noel-200">
                       {course.thumbnail_url ? (
-                        <img src={course.thumbnail_url} alt={`Khóa học ${course.title}`} className="h-full w-full object-cover transition group-hover:scale-105" loading="lazy" />
+                        <img src={course.thumbnail_url} alt={`Khóa học ${course.title}`} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
                       ) : (
                         <div className="flex h-full items-center justify-center text-5xl">🎸</div>
                       )}
                       {course.level && (
-                        <span className={`absolute left-2 top-2 rounded px-2 py-0.5 text-xs font-medium ${levelColor[course.level] ?? 'bg-gray-100 text-gray-600'}`}>
+                        <span className={`absolute left-2.5 top-2.5 rounded-full px-2.5 py-0.5 text-xs font-semibold shadow-xs ${levelColor[course.level] ?? 'bg-gray-100 text-gray-600'}`}>
                           {levelLabel[course.level] ?? course.level}
                         </span>
                       )}
+                      <span aria-hidden="true" className="absolute right-2.5 top-2.5 rounded-full bg-white/90 px-2 py-0.5 text-[11px] font-semibold text-wine-600 shadow-xs">
+                        ♥ Noel
+                      </span>
                     </div>
                     <div className="p-4">
-                      <h3 className="mb-3 line-clamp-2 font-semibold text-gray-800 group-hover:text-blue-600">
+                      <h3 className="mb-3 line-clamp-2 font-semibold text-gray-800 transition-colors group-hover:text-noel-600">
                         {course.title}
                       </h3>
-                      <div className="flex items-center gap-2">
-                        <span className="text-lg font-bold text-blue-600">
-                          {course.price === 0 ? 'Miễn phí' : Number(course.price).toLocaleString('vi-VN') + '₫'}
-                        </span>
-                        {course.discount_price && course.discount_price < course.price && (
-                          <span className="text-xs text-gray-400 line-through">
-                            {Number(course.discount_price).toLocaleString('vi-VN')}₫
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <span className="text-lg font-bold text-noel-600">
+                            {course.price === 0 ? 'Miễn phí' : Number(course.price).toLocaleString('vi-VN') + '₫'}
                           </span>
-                        )}
+                          {course.discount_price && course.discount_price < course.price && (
+                            <span className="text-xs text-gray-400 line-through">
+                              {Number(course.discount_price).toLocaleString('vi-VN')}₫
+                            </span>
+                          )}
+                        </div>
+                        <span className="text-xs font-medium text-wine-500 opacity-0 transition group-hover:opacity-100">Xem →</span>
                       </div>
                     </div>
                   </Link>
@@ -178,7 +189,7 @@ export default async function KhoaHocPage() {
         </section>
 
         {/* ── TẠI SAO HỌC TẠI MIXIGUI ── */}
-        <section aria-labelledby="why-heading" className="bg-blue-50 py-14">
+        <section aria-labelledby="why-heading" className="bg-noel-50 py-14">
           <div className="mx-auto max-w-7xl px-4">
             <h2 id="why-heading" className="mb-3 text-2xl font-bold text-gray-900">Tại sao nên học nhạc online tại MixiGui?</h2>
             <p className="mb-8 max-w-3xl text-gray-600">
@@ -214,7 +225,7 @@ export default async function KhoaHocPage() {
                 <details key={i} className="group rounded-xl border bg-white p-5 shadow-sm open:shadow-md">
                   <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-gray-800">
                     <span>{faq.q}</span>
-                    <span className="ml-4 shrink-0 text-blue-500 transition group-open:rotate-45">＋</span>
+                    <span className="ml-4 shrink-0 text-noel-500 transition group-open:rotate-45">＋</span>
                   </summary>
                   <p className="mt-3 text-sm leading-relaxed text-gray-500">{faq.a}</p>
                 </details>
@@ -229,13 +240,13 @@ export default async function KhoaHocPage() {
             <h2 className="text-2xl font-bold text-gray-900">Cần nhạc cụ để luyện tập?</h2>
             <p className="mt-2 text-gray-500">MixiGui cung cấp nhạc cụ chính hãng — Yamaha, Roland, Casio bảo hành đầy đủ</p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link href="/san-pham" className="rounded-full bg-blue-600 px-8 py-3 font-semibold text-white shadow transition hover:bg-blue-700">
+              <Link href="/san-pham" className="rounded-full bg-noel-600 px-8 py-3 font-semibold text-white shadow transition hover:bg-noel-700">
                 Xem nhạc cụ →
               </Link>
-              <Link href="/san-pham?brand=yamaha" className="rounded-full border border-blue-300 px-8 py-3 font-semibold text-blue-600 transition hover:bg-blue-50">
+              <Link href="/san-pham?brand=yamaha" className="rounded-full border border-noel-300 px-8 py-3 font-semibold text-noel-600 transition hover:bg-noel-50">
                 Guitar Yamaha
               </Link>
-              <Link href="/san-pham?brand=roland" className="rounded-full border border-blue-300 px-8 py-3 font-semibold text-blue-600 transition hover:bg-blue-50">
+              <Link href="/san-pham?brand=roland" className="rounded-full border border-noel-300 px-8 py-3 font-semibold text-noel-600 transition hover:bg-noel-50">
                 Piano Roland
               </Link>
             </div>
@@ -243,15 +254,19 @@ export default async function KhoaHocPage() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="py-16 text-center text-white" style={{ background: 'linear-gradient(135deg, #1d4ed8, #3b82f6)' }}>
-          <div className="mx-auto max-w-xl px-4">
-            <h2 className="text-2xl font-bold">Chưa biết bắt đầu từ đâu?</h2>
-            <p className="mt-2 text-blue-100">Làm bài kiểm tra trình độ miễn phí để nhận lộ trình học phù hợp với bạn.</p>
+        <section className="bg-noel-love relative overflow-hidden py-16 text-center text-white">
+          <HeroSparkles />
+          <div className="relative z-10 mx-auto max-w-xl px-4">
+            <span className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3.5 py-1 text-xs font-semibold text-gold-200">
+              🎄♥ Giai điệu mùa yêu thương
+            </span>
+            <h2 className="text-2xl font-bold sm:text-3xl">Chưa biết bắt đầu từ đâu?</h2>
+            <p className="mt-2 text-rose-100">Làm bài kiểm tra trình độ miễn phí để nhận lộ trình học phù hợp nhất với bạn mùa lễ hội này.</p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
-              <Link href="/dang-ky" className="rounded-full bg-white px-8 py-3 font-semibold text-blue-700 shadow hover:bg-blue-50 transition">
-                Đăng ký học miễn phí
+              <Link href="/dang-ky" className="rounded-full bg-white px-8 py-3 font-bold text-noel-700 shadow-lg ring-2 ring-gold-300/50 hover:bg-noel-50 transition">
+                💝 Đăng ký học miễn phí
               </Link>
-              <Link href="/lien-he" className="rounded-full border-2 border-white px-8 py-3 font-semibold text-white hover:bg-white/10 transition">
+              <Link href="/lien-he" className="rounded-full border-2 border-white/85 bg-white/10 px-8 py-3 font-semibold text-white hover:bg-white/20 transition">
                 Tư vấn chọn khóa học
               </Link>
             </div>

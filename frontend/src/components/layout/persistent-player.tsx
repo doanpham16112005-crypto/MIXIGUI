@@ -14,33 +14,31 @@ export default function PersistentPlayer() {
     return (
       <button
         onClick={() => setHidden(false)}
-        className="fixed bottom-6 left-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-green-500 text-white shadow-xl transition hover:bg-green-600 hover:scale-110"
-        aria-label="Mở trình phát nhạc"
+        className="fixed bottom-6 left-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-noel-600 via-wine-600 to-noel-700 text-white shadow-xl ring-2 ring-gold-300/70 transition hover:scale-110 hover:shadow-2xl"
+        aria-label="Mở trình phát nhạc Giáng Sinh & Tình Yêu"
       >
-        <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
-          <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
-        </svg>
+        <span className="text-lg" aria-hidden="true">🎄</span>
       </button>
     )
   }
 
   return (
     <div
-      className={`fixed bottom-6 left-4 z-50 rounded-2xl bg-white border border-gray-200 shadow-2xl transition-all duration-300 ${
+      className={`fixed bottom-6 left-4 z-50 overflow-hidden rounded-2xl border border-noel-100 bg-white/95 shadow-2xl backdrop-blur-md transition-all duration-300 ${
         expanded ? 'w-80' : 'w-72'
       }`}
     >
       {/* Header bar */}
-      <div className="flex items-center justify-between px-4 py-3">
+      <div className="flex items-center justify-between bg-gradient-to-r from-noel-700 via-noel-600 to-wine-600 px-4 py-2.5 text-white">
         <div className="flex items-center gap-2">
-          <Image src="/images/logo.png" alt="MixiGui" width={24} height={24} className="rounded-full object-cover" />
-          <span className="text-sm font-semibold text-gray-800">MixiGui Music</span>
+          <Image src="/images/logo.png" alt="MixiGui" width={24} height={24} className="rounded-full object-cover ring-1 ring-gold-300/80" />
+          <span className="text-xs font-semibold tracking-wide">🎄 Giai Điệu Noel &amp; Tình Yêu</span>
           {started && (
             <span className="flex items-center gap-0.5">
               {[1, 2, 3].map((i) => (
                 <span
                   key={i}
-                  className="inline-block w-0.5 rounded-full bg-green-400"
+                  className="inline-block w-0.5 rounded-full bg-gold-200"
                   style={{
                     height: `${8 + i * 4}px`,
                     animation: `musicBar 0.8s ease-in-out ${i * 0.15}s infinite alternate`,
@@ -53,7 +51,7 @@ export default function PersistentPlayer() {
         <div className="flex items-center gap-1">
           <button
             onClick={() => setExpanded((v) => !v)}
-            className="rounded p-1 text-gray-400 hover:text-gray-700 transition"
+            className="rounded p-1 text-white/80 hover:bg-white/15 hover:text-white transition"
             aria-label={expanded ? 'Thu nhỏ' : 'Mở rộng'}
           >
             {expanded ? (
@@ -68,7 +66,7 @@ export default function PersistentPlayer() {
           </button>
           <button
             onClick={() => setHidden(true)}
-            className="rounded p-1 text-gray-400 hover:text-gray-700 transition"
+            className="rounded p-1 text-white/80 hover:bg-white/15 hover:text-white transition"
             aria-label="Ẩn player"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-4 w-4">
@@ -80,24 +78,24 @@ export default function PersistentPlayer() {
 
       {/* Player content */}
       {!started ? (
-        <div className="px-4 pb-4">
-          <div className="flex flex-col items-center gap-3 rounded-xl bg-gray-50 p-5 text-center border border-gray-100">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-500">
-              <svg viewBox="0 0 24 24" fill="white" className="h-6 w-6">
+        <div className="p-3.5">
+          <div className="flex flex-col items-center gap-2.5 rounded-xl border border-noel-100/80 bg-gradient-to-br from-noel-50/90 via-love-50/70 to-gold-50/60 p-4 text-center">
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-noel-600 to-wine-600 text-white shadow-md ring-2 ring-gold-200">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="ml-0.5 h-5 w-5">
                 <path d="M8 5v14l11-7z" />
               </svg>
             </div>
             <div>
-              <p className="font-semibold text-gray-800 text-sm">Phát nhạc nền</p>
-              <p className="text-xs text-gray-500 mt-0.5">Playlist âm nhạc MixiGui</p>
+              <p className="text-sm font-bold text-gray-800">Nhạc nền Mùa Đông Ấm Áp ♥</p>
+              <p className="mt-0.5 text-xs text-gray-500">Bản tình ca Acoustic &amp; Piano Giáng Sinh</p>
             </div>
             <button
               onClick={() => { setStarted(true); setExpanded(true) }}
-              className="w-full rounded-full bg-green-500 py-2 text-sm font-semibold text-white transition hover:bg-green-400"
+              className="w-full rounded-full bg-gradient-to-r from-noel-600 to-wine-600 py-2 text-xs font-semibold text-white shadow-sm transition hover:from-noel-700 hover:to-wine-700"
             >
-              ▶ Bắt đầu nghe
+              ▶ Bật giai điệu yêu thương
             </button>
-            <p className="text-xs text-gray-400">Nhạc sẽ tiếp tục khi chuyển trang</p>
+            <p className="text-[11px] text-gray-400">Nhạc giữ nguyên khi bạn dạo quanh trang</p>
           </div>
         </div>
       ) : (
@@ -106,7 +104,7 @@ export default function PersistentPlayer() {
             expanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="px-3 pb-3">
+          <div className="p-3">
             <iframe
               src={`https://open.spotify.com/embed/playlist/${PLAYLIST_ID}?utm_source=generator&theme=0&autoplay=1`}
               width="100%"

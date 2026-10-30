@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Be_Vietnam_Pro } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
@@ -20,6 +20,10 @@ export const metadata: Metadata = {
     icon: '/images/logo.png',
     apple: '/images/logo.png',
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#c41e3a',
 }
 
 export default function RootLayout({

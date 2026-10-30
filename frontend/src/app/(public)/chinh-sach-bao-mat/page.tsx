@@ -77,7 +77,7 @@ export default function ChinhSachBaoMatPage() {
           <h2 className="mb-3 text-xl font-semibold text-gray-800">7. Liên hệ</h2>
           <p>
             Nếu bạn có bất kỳ câu hỏi nào về chính sách bảo mật này, vui lòng liên hệ với chúng tôi qua email:{' '}
-            <a href="mailto:support@mixigui.id.vn" className="text-blue-600 hover:underline">
+            <a href="mailto:support@mixigui.id.vn" className="text-noel-600 hover:underline">
               support@mixigui.id.vn
             </a>
           </p>

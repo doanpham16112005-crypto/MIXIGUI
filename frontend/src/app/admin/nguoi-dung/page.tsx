@@ -10,7 +10,7 @@ type User = { id: string; email: string; full_name: string; role: string; create
 
 const roleColor: Record<string, string> = {
   ADMIN: 'bg-red-100 text-red-700',
-  INSTRUCTOR: 'bg-blue-100 text-blue-700',
+  INSTRUCTOR: 'bg-amber-100 text-amber-700',
   STUDENT: 'bg-green-100 text-green-700',
 }
 
@@ -54,7 +54,7 @@ export default function AdminUsers() {
                   <td className="px-4 py-3">
                     <Link
                       href={`/admin/nguoi-dung/${u.id}`}
-                      className="inline-flex items-center gap-1.5 rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-600 transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-600"
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-600 transition hover:border-noel-300 hover:bg-noel-50 hover:text-noel-600"
                     >
                       <Pencil size={12} /> Chỉnh sửa
                     </Link>

@@ -17,7 +17,7 @@ type UserRow = {
 
 const ROLES = [
   { value: 'STUDENT',    label: 'Học viên',   color: 'bg-green-100 text-green-700' },
-  { value: 'INSTRUCTOR', label: 'Giảng viên', color: 'bg-blue-100 text-blue-700' },
+  { value: 'INSTRUCTOR', label: 'Giảng viên', color: 'bg-amber-100 text-amber-700' },
   { value: 'ADMIN',      label: 'Admin',      color: 'bg-red-100 text-red-700' },
 ]
 
@@ -58,7 +58,7 @@ export default function EditUserPage() {
 
   if (loading) return (
     <div className="flex items-center justify-center py-24">
-      <Loader2 size={28} className="animate-spin text-blue-500" />
+      <Loader2 size={28} className="animate-spin text-noel-500" />
     </div>
   )
   if (notFound) return (
@@ -79,7 +79,7 @@ export default function EditUserPage() {
           // eslint-disable-next-line @next/next/no-img-element
           <img src={form.avatar_url} alt="" className="h-14 w-14 rounded-full object-cover ring-2 ring-gray-100" referrerPolicy="no-referrer" />
         ) : (
-          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-violet-500 text-xl font-bold text-white">
+          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-noel-500 to-wine-500 text-xl font-bold text-white">
             {(form.full_name || form.email || 'U')[0].toUpperCase()}
           </div>
         )}
@@ -137,7 +137,7 @@ export default function EditUserPage() {
                 onClick={() => set('role', r.value)}
                 className={`rounded-xl border py-2.5 text-sm font-medium transition ${
                   form.role === r.value
-                    ? 'border-blue-500 bg-blue-50 text-blue-700'
+                    ? 'border-noel-500 bg-noel-50 text-noel-700'
                     : 'border-gray-200 text-gray-600 hover:bg-gray-50'
                 }`}
               >
@@ -184,7 +184,7 @@ export default function EditUserPage() {
             Hủy
           </Link>
           <Button onClick={handleSave} disabled={saving}
-            className="h-10 rounded-xl bg-blue-600 px-6 text-sm font-semibold hover:bg-blue-700">
+            className="h-10 rounded-xl bg-noel-600 px-6 text-sm font-semibold hover:bg-noel-700">
             {saving
               ? <span className="flex items-center gap-2"><Loader2 size={14} className="animate-spin" />Đang lưu...</span>
               : 'Lưu thay đổi'}

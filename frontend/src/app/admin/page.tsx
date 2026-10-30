@@ -26,17 +26,17 @@ export default async function AdminDashboard() {
   const stats = await getStats()
 
   const statCards = [
-    { key: 'courses',  label: 'Khóa học',    href: '/admin/khoa-hoc',   icon: BookOpen,     gradient: 'from-blue-500 to-blue-600',   bg: 'bg-blue-50',   text: 'text-blue-600',   border: 'border-blue-100' },
+    { key: 'courses',  label: 'Khóa học',    href: '/admin/khoa-hoc',   icon: BookOpen,     gradient: 'from-noel-500 to-noel-600',   bg: 'bg-noel-50',   text: 'text-noel-600',   border: 'border-noel-100' },
     { key: 'products', label: 'Sản phẩm',    href: '/admin/san-pham',   icon: ShoppingBag,  gradient: 'from-green-500 to-green-600', bg: 'bg-green-50',  text: 'text-green-600',  border: 'border-green-100' },
-    { key: 'posts',    label: 'Bài viết',     href: '/admin/blog',       icon: FileText,     gradient: 'from-violet-500 to-violet-600', bg: 'bg-violet-50', text: 'text-violet-600', border: 'border-violet-100' },
+    { key: 'posts',    label: 'Bài viết',     href: '/admin/blog',       icon: FileText,     gradient: 'from-wine-500 to-wine-600', bg: 'bg-wine-50', text: 'text-wine-600', border: 'border-wine-100' },
     { key: 'users',    label: 'Người dùng',  href: '/admin/nguoi-dung', icon: Users,        gradient: 'from-orange-500 to-orange-600', bg: 'bg-orange-50', text: 'text-orange-600', border: 'border-orange-100' },
     { key: 'orders',   label: 'Đơn hàng',    href: '/admin/don-hang',   icon: ShoppingCart, gradient: 'from-pink-500 to-pink-600',   bg: 'bg-pink-50',   text: 'text-pink-600',   border: 'border-pink-100' },
   ]
 
   const quickActions = [
-    { href: '/admin/khoa-hoc/tao-moi',  label: 'Tạo khóa học mới',  icon: BookOpen,    color: 'text-blue-600',   bg: 'bg-blue-50' },
+    { href: '/admin/khoa-hoc/tao-moi',  label: 'Tạo khóa học mới',  icon: BookOpen,    color: 'text-noel-600',   bg: 'bg-noel-50' },
     { href: '/admin/san-pham/tao-moi',  label: 'Thêm sản phẩm mới', icon: ShoppingBag, color: 'text-green-600',  bg: 'bg-green-50' },
-    { href: '/admin/blog/tao-moi',      label: 'Viết bài blog mới',  icon: FileText,    color: 'text-violet-600', bg: 'bg-violet-50' },
+    { href: '/admin/blog/tao-moi',      label: 'Viết bài blog mới',  icon: FileText,    color: 'text-wine-600', bg: 'bg-wine-50' },
     { href: '/admin/danh-muc',          label: 'Quản lý danh mục',  icon: Tag,         color: 'text-amber-600',  bg: 'bg-amber-50' },
     { href: '/admin/don-hang',          label: 'Xem đơn hàng',       icon: ShoppingCart, color: 'text-pink-600',  bg: 'bg-pink-50' },
     { href: '/admin/danh-gia',          label: 'Xem đánh giá',       icon: Star,        color: 'text-orange-600', bg: 'bg-orange-50' },
@@ -45,13 +45,13 @@ export default async function AdminDashboard() {
   return (
     <div className="space-y-8">
       {/* Header banner */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 via-blue-500 to-violet-500 px-8 py-7 text-white">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-noel-600 via-noel-500 to-wine-500 px-8 py-7 text-white">
         <div className="absolute -right-8 -top-8 h-40 w-40 rounded-full bg-white/10" />
         <div className="absolute -bottom-10 right-32 h-32 w-32 rounded-full bg-white/10" />
         <div className="relative z-10">
-          <p className="text-sm text-blue-100">Xin chào, Admin 👋</p>
+          <p className="text-sm text-noel-100">Xin chào, Admin 👋</p>
           <h1 className="mt-1 text-2xl font-bold">Dashboard MixiGui</h1>
-          <p className="mt-1 text-sm text-blue-100">Tổng quan hệ thống — cập nhật mỗi 60 giây</p>
+          <p className="mt-1 text-sm text-noel-100">Tổng quan hệ thống — cập nhật mỗi 60 giây</p>
         </div>
         <div className="absolute right-8 top-1/2 -translate-y-1/2 text-7xl opacity-10 select-none">♫</div>
       </div>
@@ -105,9 +105,9 @@ export default async function AdminDashboard() {
           <h2 className="mb-4 text-sm font-semibold text-gray-700">Chi tiết thống kê</h2>
           <div className="space-y-3">
             {[
-              { label: 'Khóa học đang hoạt động', value: stats.courses, color: 'text-blue-600',   bg: 'bg-blue-50' },
+              { label: 'Khóa học đang hoạt động', value: stats.courses, color: 'text-noel-600',   bg: 'bg-noel-50' },
               { label: 'Sản phẩm trong kho',       value: stats.products, color: 'text-green-600', bg: 'bg-green-50' },
-              { label: 'Bài viết đã đăng',          value: stats.posts,    color: 'text-violet-600', bg: 'bg-violet-50' },
+              { label: 'Bài viết đã đăng',          value: stats.posts,    color: 'text-wine-600', bg: 'bg-wine-50' },
               { label: 'Đơn hàng',                  value: stats.orders,   color: 'text-pink-600',  bg: 'bg-pink-50' },
               { label: 'Tổng người dùng',            value: stats.users,    color: 'text-orange-600', bg: 'bg-orange-50' },
             ].map(({ label, value, color, bg }) => (
@@ -123,9 +123,9 @@ export default async function AdminDashboard() {
       </div>
 
       {/* Create shortcuts */}
-      <div className="rounded-2xl border border-dashed border-blue-200 bg-blue-50/50 p-5">
+      <div className="rounded-2xl border border-dashed border-noel-200 bg-noel-50/50 p-5">
         <div className="flex flex-wrap items-center gap-3">
-          <span className="text-sm font-medium text-blue-700">Tạo mới nhanh:</span>
+          <span className="text-sm font-medium text-noel-700">Tạo mới nhanh:</span>
           {[
             { href: '/admin/khoa-hoc/tao-moi', label: 'Khóa học' },
             { href: '/admin/san-pham/tao-moi',  label: 'Sản phẩm' },
@@ -134,7 +134,7 @@ export default async function AdminDashboard() {
             <Link
               key={href}
               href={href}
-              className="flex items-center gap-1.5 rounded-xl bg-white px-4 py-2 text-sm font-medium text-blue-600 shadow-sm transition hover:bg-blue-600 hover:text-white"
+              className="flex items-center gap-1.5 rounded-xl bg-white px-4 py-2 text-sm font-medium text-noel-600 shadow-sm transition hover:bg-noel-600 hover:text-white"
             >
               <Plus size={14} /> {label}
             </Link>

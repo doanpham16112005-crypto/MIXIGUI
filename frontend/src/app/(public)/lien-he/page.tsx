@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { HeroSparkles } from '@/components/layout/festive-ambience'
 
 export default function LienHePage() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
@@ -19,16 +20,20 @@ export default function LienHePage() {
   return (
     <main>
       {/* ── HERO ── */}
-      <section className="border-b py-14 text-white" style={{ background: 'linear-gradient(135deg, #0f172a, #1e3a5f)' }}>
-        <div className="mx-auto max-w-7xl px-4">
-          <nav aria-label="Breadcrumb" className="mb-4 text-sm text-blue-300">
+      <section className="bg-noel-love relative overflow-hidden border-b border-noel-200/60 py-16 text-white">
+        <HeroSparkles />
+        <div className="relative z-10 mx-auto max-w-7xl px-4">
+          <nav aria-label="Breadcrumb" className="mb-3 text-sm text-rose-200">
             <Link href="/" className="hover:text-white">Trang chủ</Link>
             <span className="mx-2">/</span>
             <span className="text-white">Liên hệ</span>
           </nav>
-          <h1 className="text-4xl font-extrabold">Liên Hệ Với MixiGui</h1>
-          <p className="mt-3 max-w-2xl text-lg text-blue-200">
-            Bạn có câu hỏi về khóa học, nhạc cụ hay cần tư vấn? Đội ngũ MixiGui luôn sẵn sàng hỗ trợ bạn trong vòng 24 giờ.
+          <span className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-gold-300/40 bg-white/15 px-3.5 py-1 text-xs font-semibold text-gold-200">
+            💌🎄 Lắng nghe &amp; Đồng hành mùa yêu thương
+          </span>
+          <h1 className="text-4xl font-extrabold sm:text-5xl">Liên Hệ Với MixiGui</h1>
+          <p className="mt-3 max-w-2xl text-lg text-rose-100">
+            Bạn có câu hỏi về khóa học, chọn quà tặng nhạc cụ mùa Giáng Sinh hay cần tư vấn lộ trình? Đội ngũ MixiGui luôn sẵn sàng hỗ trợ tận tâm trong vòng 24 giờ.
           </p>
         </div>
       </section>
@@ -77,7 +82,7 @@ export default function LienHePage() {
               </div>
 
               {/* Giờ làm việc */}
-              <div className="mt-8 rounded-xl bg-blue-50 p-5">
+              <div className="mt-8 rounded-xl bg-noel-50 p-5">
                 <h3 className="mb-3 font-semibold text-gray-800">🕐 Giờ làm việc</h3>
                 <table className="w-full text-sm text-gray-600">
                   <tbody>
@@ -86,9 +91,9 @@ export default function LienHePage() {
                       ['Thứ 7', '8:00 – 20:00'],
                       ['Chủ nhật', '9:00 – 18:00'],
                     ].map(([day, time]) => (
-                      <tr key={day} className="border-b border-blue-100 last:border-0">
+                      <tr key={day} className="border-b border-noel-100 last:border-0">
                         <td className="py-2 font-medium">{day}</td>
-                        <td className="py-2 text-right text-blue-600 font-semibold">{time}</td>
+                        <td className="py-2 text-right text-noel-600 font-semibold">{time}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -117,19 +122,19 @@ export default function LienHePage() {
                       <label className="mb-1 block text-sm font-medium text-gray-700">Họ và tên <span className="text-red-500">*</span></label>
                       <input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })}
                         placeholder="Nguyễn Văn A"
-                        className="w-full rounded-lg border px-4 py-2.5 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100" />
+                        className="w-full rounded-lg border px-4 py-2.5 text-sm outline-none focus:border-noel-500 focus:ring-2 focus:ring-noel-100" />
                     </div>
                     <div>
                       <label className="mb-1 block text-sm font-medium text-gray-700">Email <span className="text-red-500">*</span></label>
                       <input required type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })}
                         placeholder="email@example.com"
-                        className="w-full rounded-lg border px-4 py-2.5 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100" />
+                        className="w-full rounded-lg border px-4 py-2.5 text-sm outline-none focus:border-noel-500 focus:ring-2 focus:ring-noel-100" />
                     </div>
                   </div>
                   <div>
                     <label className="mb-1 block text-sm font-medium text-gray-700">Chủ đề</label>
                     <select value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                      className="w-full rounded-lg border px-4 py-2.5 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100">
+                      className="w-full rounded-lg border px-4 py-2.5 text-sm outline-none focus:border-noel-500 focus:ring-2 focus:ring-noel-100">
                       <option value="">-- Chọn chủ đề --</option>
                       <option>Tư vấn khóa học</option>
                       <option>Tư vấn mua nhạc cụ</option>
@@ -142,10 +147,10 @@ export default function LienHePage() {
                     <label className="mb-1 block text-sm font-medium text-gray-700">Nội dung <span className="text-red-500">*</span></label>
                     <textarea required rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })}
                       placeholder="Mô tả chi tiết câu hỏi hoặc yêu cầu của bạn..."
-                      className="w-full rounded-lg border px-4 py-2.5 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 resize-none" />
+                      className="w-full rounded-lg border px-4 py-2.5 text-sm outline-none focus:border-noel-500 focus:ring-2 focus:ring-noel-100 resize-none" />
                   </div>
                   <button type="submit" disabled={loading}
-                    className="w-full rounded-full bg-blue-600 py-3 font-semibold text-white shadow transition hover:bg-blue-700 disabled:opacity-60">
+                    className="w-full rounded-full bg-noel-600 py-3 font-semibold text-white shadow transition hover:bg-noel-700 disabled:opacity-60">
                     {loading ? 'Đang gửi...' : 'Gửi tin nhắn'}
                   </button>
                   <p className="text-center text-xs text-gray-400">Chúng tôi sẽ phản hồi trong vòng 24 giờ làm việc.</p>
@@ -171,7 +176,7 @@ export default function LienHePage() {
                 <div className="mb-3 text-5xl">{item.icon}</div>
                 <h3 className="mb-2 font-bold text-gray-800">{item.title}</h3>
                 <p className="mb-4 text-sm leading-relaxed text-gray-500">{item.desc}</p>
-                <span className="inline-block rounded-full bg-blue-50 px-4 py-1.5 text-sm font-medium text-blue-600">{item.action}</span>
+                <span className="inline-block rounded-full bg-noel-50 px-4 py-1.5 text-sm font-medium text-noel-600">{item.action}</span>
               </div>
             ))}
           </div>
@@ -184,7 +189,7 @@ export default function LienHePage() {
           <h2 className="mb-8 text-center text-2xl font-bold text-gray-900">Tìm chúng tôi tại</h2>
           <div className="grid gap-6 sm:grid-cols-2">
             {[
-              { city: 'Hà Nội', address: '123 Nguyễn Trãi, Thanh Xuân, Hà Nội', hours: '9:00 – 20:00 hàng ngày', phone: '024 1234 5678', color: 'border-blue-400' },
+              { city: 'Hà Nội', address: '123 Nguyễn Trãi, Thanh Xuân, Hà Nội', hours: '9:00 – 20:00 hàng ngày', phone: '024 1234 5678', color: 'border-noel-400' },
               { city: 'TP. Hồ Chí Minh', address: '456 Lê Văn Sỹ, Quận 3, TP.HCM', hours: '9:00 – 20:00 hàng ngày', phone: '028 1234 5678', color: 'border-red-400' },
             ].map((loc) => (
               <div key={loc.city} className={`rounded-xl border-l-4 ${loc.color} bg-white p-6 shadow-sm`}>

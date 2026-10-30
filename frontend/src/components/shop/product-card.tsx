@@ -9,8 +9,8 @@ export function ProductCard({ product }: { product: Product }) {
       <img src={product.imageUrl} alt={product.name} className="h-40 w-full object-cover" />
       <CardContent>
         <h3 className="font-semibold line-clamp-2">{product.name}</h3>
-        <p className="mt-1 text-blue-600 font-bold">{formatPrice(product.price)}</p>
-        <Link href={`/san-pham/${product.slug}`} className="mt-2 block text-sm text-blue-500 hover:underline">Xem chi tiết →</Link>
+        <p className="mt-1 text-noel-600 font-bold">{formatPrice(product.price)}</p>
+        <Link href={`/san-pham/${product.slug}`} className="mt-2 block text-sm text-noel-500 hover:underline">Xem chi tiết →</Link>
       </CardContent>
     </Card>
   )

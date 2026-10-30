@@ -17,7 +17,7 @@ export function HeaderAuth() {
 
   if (!user) {
     return (
-      <Link href="/dang-nhap" className="text-sm text-gray-600 hover:text-blue-600">
+      <Link href="/dang-nhap" className="text-sm text-gray-600 hover:text-noel-600">
         Đăng nhập
       </Link>
     )
@@ -26,9 +26,9 @@ export function HeaderAuth() {
   return (
     <div className="flex items-center gap-3">
       {user.role === 'ADMIN' || user.role === 'INSTRUCTOR' ? (
-        <Link href="/admin" className="text-sm text-blue-600 hover:underline">Admin</Link>
+        <Link href="/admin" className="text-sm text-noel-600 hover:underline">Admin</Link>
       ) : (
-        <Link href="/hoc-vien" className="text-sm text-gray-600 hover:text-blue-600">Tài khoản</Link>
+        <Link href="/hoc-vien" className="text-sm text-gray-600 hover:text-noel-600">Tài khoản</Link>
       )}
       <span className="text-sm font-medium text-gray-700">{user.full_name || user.fullName || user.email}</span>
       <button onClick={handleLogout} className="rounded-md border px-3 py-1.5 text-sm text-gray-600 hover:bg-gray-50">

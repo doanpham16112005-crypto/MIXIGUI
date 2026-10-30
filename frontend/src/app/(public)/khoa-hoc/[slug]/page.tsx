@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { supabase } from '@/lib/supabase'
 import { CourseSchema } from '@/components/seo/course-schema'
+import { HeroSparkles } from '@/components/layout/festive-ambience'
 
 type Course = {
   id: string
@@ -35,8 +36,8 @@ const levelLabel: Record<string, string> = {
 }
 const levelColor: Record<string, string> = {
   BEGINNER: 'bg-green-100 text-green-700',
-  INTERMEDIATE: 'bg-blue-100 text-blue-700',
-  ADVANCED: 'bg-purple-100 text-purple-700',
+  INTERMEDIATE: 'bg-noel-100 text-noel-700',
+  ADVANCED: 'bg-wine-100 text-wine-700',
 }
 
 // Nội dung tĩnh bổ sung cho trang chi tiết
@@ -106,7 +107,7 @@ export default function KhoaHocDetailPage() {
   if (loading) {
     return (
       <div className="flex min-h-[60vh] items-center justify-center">
-        <div className="h-10 w-10 animate-spin rounded-full border-4 border-blue-600 border-t-transparent" />
+        <div className="h-10 w-10 animate-spin rounded-full border-4 border-noel-600 border-t-transparent" />
       </div>
     )
   }
@@ -116,7 +117,7 @@ export default function KhoaHocDetailPage() {
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 text-center">
         <div className="text-6xl">😕</div>
         <h1 className="text-2xl font-bold text-gray-800">Không tìm thấy khóa học</h1>
-        <Link href="/khoa-hoc" className="rounded-full bg-blue-600 px-6 py-2 text-sm font-semibold text-white hover:bg-blue-700">
+        <Link href="/khoa-hoc" className="rounded-full bg-noel-600 px-6 py-2 text-sm font-semibold text-white hover:bg-noel-700">
           Xem tất cả khóa học
         </Link>
       </div>
@@ -140,9 +141,9 @@ export default function KhoaHocDetailPage() {
       <div className="border-b bg-gray-50 py-3">
         <div className="mx-auto max-w-7xl px-4">
           <nav className="text-sm text-gray-500">
-            <Link href="/" className="hover:text-blue-600">Trang chủ</Link>
+            <Link href="/" className="hover:text-noel-600">Trang chủ</Link>
             <span className="mx-2">/</span>
-            <Link href="/khoa-hoc" className="hover:text-blue-600">Khóa học</Link>
+            <Link href="/khoa-hoc" className="hover:text-noel-600">Khóa học</Link>
             <span className="mx-2">/</span>
             <span className="text-gray-800">{course.title}</span>
           </nav>
@@ -150,20 +151,26 @@ export default function KhoaHocDetailPage() {
       </div>
 
       {/* ── HERO ── */}
-      <section className="bg-gradient-to-r from-blue-700 to-blue-500 py-12 text-white">
-        <div className="mx-auto max-w-7xl px-4">
+      <section className="bg-noel-love relative overflow-hidden py-12 text-white">
+        <HeroSparkles />
+        <div className="relative z-10 mx-auto max-w-7xl px-4">
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div>
-              {course.level && (
-                <span className={`mb-3 inline-block rounded-full px-3 py-1 text-xs font-semibold ${levelColor[course.level] ?? 'bg-gray-100 text-gray-600'}`}>
-                  {levelLabel[course.level] ?? course.level}
+              <div className="mb-3 flex flex-wrap items-center gap-2">
+                {course.level && (
+                  <span className={`inline-block rounded-full px-3 py-1 text-xs font-semibold ${levelColor[course.level] ?? 'bg-gray-100 text-gray-600'}`}>
+                    {levelLabel[course.level] ?? course.level}
+                  </span>
+                )}
+                <span className="inline-flex items-center gap-1 rounded-full bg-white/15 px-3 py-1 text-xs font-medium text-gold-200">
+                  🎄♥ Giai điệu mùa yêu
                 </span>
-              )}
+              </div>
               <h1 className="text-3xl font-extrabold leading-tight sm:text-4xl">{course.title}</h1>
               {course.description && (
-                <p className="mt-4 text-lg text-blue-100 leading-relaxed">{course.description}</p>
+                <p className="mt-4 text-lg text-rose-100 leading-relaxed">{course.description}</p>
               )}
-              <div className="mt-5 flex flex-wrap gap-4 text-sm text-blue-100">
+              <div className="mt-5 flex flex-wrap gap-4 text-sm text-rose-100">
                 {['⏱ Học trọn đời', '📱 Mọi thiết bị', '🎓 Chứng chỉ hoàn thành', '💬 Hỏi đáp giảng viên'].map((b) => (
                   <span key={b} className="flex items-center gap-1">{b}</span>
                 ))}
@@ -171,16 +178,16 @@ export default function KhoaHocDetailPage() {
               {/* Rating */}
               <div className="mt-4 flex items-center gap-2">
                 <div className="flex text-yellow-400">{'★'.repeat(5)}</div>
-                <span className="text-sm text-blue-100">4.9/5 ({REVIEWS.length} đánh giá)</span>
+                <span className="text-sm text-rose-100">4.9/5 ({REVIEWS.length} đánh giá)</span>
               </div>
             </div>
 
             {/* Thumbnail */}
-            <div className="overflow-hidden rounded-2xl shadow-2xl">
+            <div className="overflow-hidden rounded-2xl shadow-2xl ring-2 ring-white/20">
               {course.thumbnail_url ? (
                 <img src={course.thumbnail_url} alt={course.title} className="h-64 w-full object-cover" />
               ) : (
-                <div className="flex h-64 items-center justify-center bg-blue-600/50 text-8xl">🎸</div>
+                <div className="flex h-64 items-center justify-center bg-noel-600/50 text-8xl">🎸</div>
               )}
             </div>
           </div>
@@ -228,7 +235,7 @@ export default function KhoaHocDetailPage() {
                         <ul className="divide-y bg-white">
                           {sec.lessons.map((lesson, j) => (
                             <li key={j} className="flex items-center gap-3 px-5 py-3 text-sm text-gray-600">
-                              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xs font-semibold text-blue-600">
+                              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-noel-50 text-xs font-semibold text-noel-600">
                                 {j + 1}
                               </span>
                               <span>▶</span>
@@ -256,7 +263,7 @@ export default function KhoaHocDetailPage() {
                     'Cam kết luyện tập ít nhất 20–30 phút mỗi ngày để đạt kết quả tốt nhất',
                   ].map((req) => (
                     <li key={req} className="flex items-start gap-2 text-sm text-gray-600">
-                      <span className="mt-0.5 shrink-0 text-blue-500">•</span>{req}
+                      <span className="mt-0.5 shrink-0 text-noel-500">•</span>{req}
                     </li>
                   ))}
                 </ul>
@@ -265,9 +272,9 @@ export default function KhoaHocDetailPage() {
               {/* Đánh giá */}
               <div>
                 <h2 className="mb-5 text-xl font-bold text-gray-900">Đánh giá từ học viên</h2>
-                <div className="mb-6 flex items-center gap-6 rounded-2xl bg-blue-50 p-6">
+                <div className="mb-6 flex items-center gap-6 rounded-2xl bg-noel-50 p-6">
                   <div className="text-center">
-                    <p className="text-5xl font-extrabold text-blue-600">4.9</p>
+                    <p className="text-5xl font-extrabold text-noel-600">4.9</p>
                     <div className="mt-1 flex justify-center text-yellow-400 text-xl">{'★'.repeat(5)}</div>
                     <p className="mt-1 text-xs text-gray-500">Đánh giá khóa học</p>
                   </div>
@@ -291,7 +298,7 @@ export default function KhoaHocDetailPage() {
                     <div key={r.name} className="rounded-xl border bg-white p-5">
                       <div className="mb-2 flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-100 font-bold text-blue-600">
+                          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-noel-100 font-bold text-noel-600">
                             {r.name[0]}
                           </div>
                           <div>
@@ -314,7 +321,7 @@ export default function KhoaHocDetailPage() {
                 {/* Giá */}
                 <div className="mb-4">
                   <div className="flex items-end gap-2">
-                    <span className="text-3xl font-extrabold text-blue-600">
+                    <span className="text-3xl font-extrabold text-noel-600">
                       {course.price === 0 ? 'Miễn phí' : Number(course.price).toLocaleString('vi-VN') + '₫'}
                     </span>
                     {course.discount_price && course.discount_price < course.price && (
@@ -332,12 +339,12 @@ export default function KhoaHocDetailPage() {
                 <button
                   onClick={() => setEnrolled(true)}
                   className={`w-full rounded-full py-3.5 font-bold text-white shadow transition text-base ${
-                    enrolled ? 'bg-green-500' : 'bg-blue-600 hover:bg-blue-700'
+                    enrolled ? 'bg-green-500' : 'bg-noel-600 hover:bg-noel-700'
                   }`}
                 >
                   {enrolled ? '✓ Đã đăng ký thành công!' : course.price === 0 ? 'Học miễn phí ngay' : 'Đăng ký khóa học'}
                 </button>
-                <button className="mt-3 w-full rounded-full border-2 border-blue-600 py-3 font-semibold text-blue-600 transition hover:bg-blue-50">
+                <button className="mt-3 w-full rounded-full border-2 border-noel-600 py-3 font-semibold text-noel-600 transition hover:bg-noel-50">
                   Xem thử miễn phí
                 </button>
 
@@ -378,11 +385,11 @@ export default function KhoaHocDetailPage() {
               <div className="mt-4 rounded-2xl border bg-white p-5 shadow-sm">
                 <p className="mb-3 font-semibold text-gray-800">Giảng viên</p>
                 <div className="flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-2xl">🎸</div>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-noel-100 text-2xl">🎸</div>
                   <div>
                     <p className="font-semibold text-gray-800">Giảng viên MixiGui</p>
                     <p className="text-xs text-gray-500">Chuyên gia âm nhạc • 10+ năm kinh nghiệm</p>
-                    <p className="text-xs text-blue-600 mt-0.5">⭐ 4.9 • 2.400+ học viên</p>
+                    <p className="text-xs text-noel-600 mt-0.5">⭐ 4.9 • 2.400+ học viên</p>
                   </div>
                 </div>
               </div>
@@ -400,7 +407,7 @@ export default function KhoaHocDetailPage() {
               {related.map((c) => (
                 <Link key={c.id} href={`/khoa-hoc/${c.slug}`}
                   className="group overflow-hidden rounded-xl border bg-white shadow-sm transition hover:shadow-md">
-                  <div className="relative h-40 overflow-hidden bg-gradient-to-br from-blue-100 to-blue-200">
+                  <div className="relative h-40 overflow-hidden bg-gradient-to-br from-noel-100 to-noel-200">
                     {c.thumbnail_url
                       ? <img src={c.thumbnail_url} alt={c.title} className="h-full w-full object-cover transition group-hover:scale-105" loading="lazy" />
                       : <div className="flex h-full items-center justify-center text-5xl">🎸</div>
@@ -412,8 +419,8 @@ export default function KhoaHocDetailPage() {
                     )}
                   </div>
                   <div className="p-4">
-                    <h3 className="line-clamp-2 text-sm font-semibold text-gray-800 group-hover:text-blue-600">{c.title}</h3>
-                    <p className="mt-2 font-bold text-blue-600">
+                    <h3 className="line-clamp-2 text-sm font-semibold text-gray-800 group-hover:text-noel-600">{c.title}</h3>
+                    <p className="mt-2 font-bold text-noel-600">
                       {c.price === 0 ? 'Miễn phí' : Number(c.price).toLocaleString('vi-VN') + '₫'}
                     </p>
                   </div>
@@ -425,14 +432,14 @@ export default function KhoaHocDetailPage() {
       )}
 
       {/* ── CTA ── */}
-      <section className="bg-blue-600 py-10 text-center text-white">
+      <section className="bg-noel-600 py-10 text-center text-white">
         <div className="mx-auto max-w-xl px-4">
           <h2 className="text-xl font-bold">Sẵn sàng bắt đầu hành trình âm nhạc?</h2>
-          <p className="mt-2 text-sm text-blue-100">Tham gia ngay — hoàn tiền 100% nếu không hài lòng trong 7 ngày</p>
+          <p className="mt-2 text-sm text-noel-100">Tham gia ngay — hoàn tiền 100% nếu không hài lòng trong 7 ngày</p>
           <div className="mt-5 flex flex-wrap justify-center gap-3">
             <button
               onClick={() => setEnrolled(true)}
-              className="rounded-full bg-white px-8 py-3 font-bold text-blue-700 shadow transition hover:bg-blue-50"
+              className="rounded-full bg-white px-8 py-3 font-bold text-noel-700 shadow transition hover:bg-noel-50"
             >
               {enrolled ? '✓ Đã đăng ký!' : 'Đăng ký ngay'}
             </button>

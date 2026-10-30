@@ -96,7 +96,7 @@ export default function BlogDetailPage() {
   if (loading) {
     return (
       <div className="flex min-h-[60vh] items-center justify-center">
-        <div className="h-10 w-10 animate-spin rounded-full border-4 border-purple-600 border-t-transparent" />
+        <div className="h-10 w-10 animate-spin rounded-full border-4 border-wine-600 border-t-transparent" />
       </div>
     )
   }
@@ -106,7 +106,7 @@ export default function BlogDetailPage() {
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 text-center">
         <div className="text-6xl">😕</div>
         <h1 className="text-2xl font-bold text-gray-800">Không tìm thấy bài viết</h1>
-        <Link href="/blog" className="rounded-full bg-purple-600 px-6 py-2 text-sm font-semibold text-white hover:bg-purple-700">
+        <Link href="/blog" className="rounded-full bg-wine-600 px-6 py-2 text-sm font-semibold text-white hover:bg-wine-700">
           Xem tất cả bài viết
         </Link>
       </div>
@@ -119,9 +119,9 @@ export default function BlogDetailPage() {
       <div className="border-b bg-gray-50 py-3">
         <div className="mx-auto max-w-5xl px-4">
           <nav className="text-sm text-gray-500">
-            <Link href="/" className="hover:text-purple-600">Trang chủ</Link>
+            <Link href="/" className="hover:text-wine-600">Trang chủ</Link>
             <span className="mx-2">/</span>
-            <Link href="/blog" className="hover:text-purple-600">Blog</Link>
+            <Link href="/blog" className="hover:text-wine-600">Blog</Link>
             <span className="mx-2">/</span>
             <span className="line-clamp-1 text-gray-800">{post.title}</span>
           </nav>
@@ -136,7 +136,7 @@ export default function BlogDetailPage() {
 
             {/* Meta */}
             <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-gray-500">
-              <span className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-purple-700">Blog Âm Nhạc</span>
+              <span className="rounded-full bg-wine-100 px-3 py-1 text-xs font-semibold text-wine-700">Blog Âm Nhạc</span>
               <span>📅 {formatDate(post.published_at)}</span>
               <span>⏱ {readingTime(post.content)} phút đọc</span>
             </div>
@@ -148,7 +148,7 @@ export default function BlogDetailPage() {
 
             {/* Excerpt */}
             {post.excerpt && (
-              <p className="mb-6 text-lg leading-relaxed text-gray-500 border-l-4 border-purple-400 pl-4 italic">
+              <p className="mb-6 text-lg leading-relaxed text-gray-500 border-l-4 border-wine-400 pl-4 italic">
                 {post.excerpt}
               </p>
             )}
@@ -170,7 +170,7 @@ export default function BlogDetailPage() {
             {/* Nội dung */}
             {post.content ? (
               <div
-                className="prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-600 prose-p:leading-relaxed prose-a:text-purple-600 prose-strong:text-gray-800 prose-li:text-gray-600"
+                className="prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-600 prose-p:leading-relaxed prose-a:text-wine-600 prose-strong:text-gray-800 prose-li:text-gray-600"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
             ) : (
@@ -203,9 +203,9 @@ export default function BlogDetailPage() {
                 <p>
                   <strong>Chọn Guitar nếu:</strong> Bạn muốn học nhạc cụ đa năng lâu dài, thích pop/ballad/rock, muốn đệm hát nhiều bài nhạc Việt và quốc tế, hoặc có kế hoạch học nhạc nghiêm túc.
                 </p>
-                <div className="rounded-xl bg-purple-50 p-5">
-                  <p className="font-semibold text-purple-800">💡 Lời khuyên từ MixiGui:</p>
-                  <p className="mt-2 text-purple-700">
+                <div className="rounded-xl bg-wine-50 p-5">
+                  <p className="font-semibold text-wine-800">💡 Lời khuyên từ MixiGui:</p>
+                  <p className="mt-2 text-wine-700">
                     Nếu bạn thực sự chưa biết chọn gì, hãy thử ukulele trước. Chi phí thấp, học nhanh có kết quả, và nếu bạn yêu thích âm nhạc, việc chuyển sang guitar sau đó sẽ dễ dàng hơn nhiều vì đã có nền tảng nhịp điệu và hợp âm cơ bản.
                   </p>
                 </div>
@@ -217,7 +217,7 @@ export default function BlogDetailPage() {
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="flex flex-wrap gap-2">
                   {['Âm nhạc', 'Guitar', 'Ukulele', 'Người mới bắt đầu'].map((tag) => (
-                    <span key={tag} className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600 hover:bg-purple-100 hover:text-purple-700 cursor-pointer transition">
+                    <span key={tag} className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600 hover:bg-wine-100 hover:text-wine-700 cursor-pointer transition">
                       #{tag}
                     </span>
                   ))}
@@ -233,11 +233,11 @@ export default function BlogDetailPage() {
 
             {/* Tác giả */}
             <div className="mt-8 flex items-center gap-4 rounded-2xl border bg-gray-50 p-5">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-purple-100 text-3xl">🎸</div>
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-wine-100 text-3xl">🎸</div>
               <div>
                 <p className="font-bold text-gray-800">Đội ngũ giảng viên MixiGui</p>
                 <p className="text-xs text-gray-500 mt-0.5">Chuyên gia âm nhạc với 10+ năm kinh nghiệm giảng dạy và biểu diễn chuyên nghiệp</p>
-                <Link href="/ve-chung-toi" className="mt-1 inline-block text-xs font-medium text-purple-600 hover:underline">Xem thêm về chúng tôi →</Link>
+                <Link href="/ve-chung-toi" className="mt-1 inline-block text-xs font-medium text-wine-600 hover:underline">Xem thêm về chúng tôi →</Link>
               </div>
             </div>
           </article>
@@ -252,14 +252,14 @@ export default function BlogDetailPage() {
                 <div className="space-y-4">
                   {related.map((p) => (
                     <Link key={p.id} href={`/blog/${p.slug}`} className="group flex gap-3">
-                      <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-purple-50">
+                      <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-wine-50">
                         {p.thumbnail_url
                           ? <Image src={p.thumbnail_url} alt={p.title} fill className="object-cover" sizes="56px" />
                           : <div className="flex h-full items-center justify-center text-xl">📝</div>
                         }
                       </div>
                       <div>
-                        <p className="line-clamp-2 text-sm font-medium text-gray-800 group-hover:text-purple-600 leading-snug">{p.title}</p>
+                        <p className="line-clamp-2 text-sm font-medium text-gray-800 group-hover:text-wine-600 leading-snug">{p.title}</p>
                         <p className="mt-1 text-xs text-gray-400">{formatDate(p.published_at)}</p>
                       </div>
                     </Link>
@@ -282,7 +282,7 @@ export default function BlogDetailPage() {
                   { icon: '🛒', label: 'Review', slug: 'review' },
                 ].map((t) => (
                   <Link key={t.slug} href={`/blog?chu-de=${t.slug}`}
-                    className="flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium text-gray-600 hover:border-purple-400 hover:text-purple-600 transition">
+                    className="flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium text-gray-600 hover:border-wine-400 hover:text-wine-600 transition">
                     {t.icon} {t.label}
                   </Link>
                 ))}
@@ -290,14 +290,14 @@ export default function BlogDetailPage() {
             </div>
 
             {/* CTA đăng ký */}
-            <div className="rounded-2xl bg-purple-600 p-5 text-white text-center">
+            <div className="rounded-2xl bg-wine-600 p-5 text-white text-center">
               <div className="mb-2 text-3xl">🎓</div>
               <h3 className="font-bold">Muốn học nhạc thực sự?</h3>
-              <p className="mt-2 text-xs text-purple-100 leading-relaxed">
+              <p className="mt-2 text-xs text-wine-100 leading-relaxed">
                 Tham gia khóa học của MixiGui — học từ giảng viên chuyên nghiệp, có lộ trình bài bản.
               </p>
               <Link href="/khoa-hoc"
-                className="mt-4 inline-block rounded-full bg-white px-5 py-2 text-sm font-semibold text-purple-700 hover:bg-purple-50 transition">
+                className="mt-4 inline-block rounded-full bg-white px-5 py-2 text-sm font-semibold text-wine-700 hover:bg-wine-50 transition">
                 Xem khóa học →
               </Link>
             </div>
@@ -314,14 +314,14 @@ export default function BlogDetailPage() {
               {related.map((p) => (
                 <Link key={p.id} href={`/blog/${p.slug}`}
                   className="group overflow-hidden rounded-xl border bg-white shadow-sm transition hover:shadow-md">
-                  <div className="relative h-44 overflow-hidden bg-purple-50">
+                  <div className="relative h-44 overflow-hidden bg-wine-50">
                     {p.thumbnail_url
                       ? <Image src={p.thumbnail_url} alt={p.title} fill className="object-cover transition group-hover:scale-105" sizes="(max-width: 640px) 100vw, 33vw" />
                       : <div className="flex h-full items-center justify-center text-5xl">📝</div>
                     }
                   </div>
                   <div className="p-4">
-                    <h3 className="line-clamp-2 font-semibold text-gray-800 group-hover:text-purple-600">{p.title}</h3>
+                    <h3 className="line-clamp-2 font-semibold text-gray-800 group-hover:text-wine-600">{p.title}</h3>
                     {p.excerpt && <p className="mt-2 line-clamp-2 text-sm text-gray-500">{p.excerpt}</p>}
                     <p className="mt-3 text-xs text-gray-400">{formatDate(p.published_at)}</p>
                   </div>
@@ -344,27 +344,27 @@ export default function BlogDetailPage() {
               {courses.length > 0 && (
                 <div>
                   <h3 className="mb-4 flex items-center gap-2 font-bold text-gray-800">
-                    <span className="rounded-full bg-purple-100 p-1.5 text-purple-600">🎓</span>
+                    <span className="rounded-full bg-wine-100 p-1.5 text-wine-600">🎓</span>
                     Khóa học liên quan
                   </h3>
                   <div className="space-y-3">
                     {courses.map((c) => (
                       <Link key={c.id} href={`/khoa-hoc/${c.slug}`}
-                        className="group flex items-center gap-3 rounded-xl border bg-white p-3 shadow-sm transition hover:border-purple-300 hover:shadow-md">
-                        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-purple-50">
+                        className="group flex items-center gap-3 rounded-xl border bg-white p-3 shadow-sm transition hover:border-wine-300 hover:shadow-md">
+                        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-wine-50">
                           {c.thumbnail_url
                             ? <Image src={c.thumbnail_url} alt={c.title} fill className="object-cover" sizes="56px" />
                             : <div className="flex h-full items-center justify-center text-2xl">🎓</div>
                           }
                         </div>
                         <div className="min-w-0">
-                          <p className="line-clamp-2 text-sm font-semibold text-gray-800 group-hover:text-purple-600">{c.title}</p>
-                          <p className="mt-0.5 text-xs font-medium text-purple-600">{Number(c.price).toLocaleString('vi-VN')}₫</p>
+                          <p className="line-clamp-2 text-sm font-semibold text-gray-800 group-hover:text-wine-600">{c.title}</p>
+                          <p className="mt-0.5 text-xs font-medium text-wine-600">{Number(c.price).toLocaleString('vi-VN')}₫</p>
                         </div>
                       </Link>
                     ))}
                   </div>
-                  <Link href="/khoa-hoc" className="mt-3 inline-block text-sm font-medium text-purple-600 hover:underline">
+                  <Link href="/khoa-hoc" className="mt-3 inline-block text-sm font-medium text-wine-600 hover:underline">
                     Xem tất cả khóa học →
                   </Link>
                 </div>
@@ -374,27 +374,27 @@ export default function BlogDetailPage() {
               {products.length > 0 && (
                 <div>
                   <h3 className="mb-4 flex items-center gap-2 font-bold text-gray-800">
-                    <span className="rounded-full bg-blue-100 p-1.5 text-blue-600">🎸</span>
+                    <span className="rounded-full bg-noel-100 p-1.5 text-noel-600">🎸</span>
                     Nhạc cụ liên quan
                   </h3>
                   <div className="space-y-3">
                     {products.map((p) => (
                       <Link key={p.id} href={`/san-pham/${p.slug}`}
-                        className="group flex items-center gap-3 rounded-xl border bg-white p-3 shadow-sm transition hover:border-blue-300 hover:shadow-md">
-                        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-blue-50">
+                        className="group flex items-center gap-3 rounded-xl border bg-white p-3 shadow-sm transition hover:border-noel-300 hover:shadow-md">
+                        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-noel-50">
                           {Array.isArray(p.images) && p.images[0]
                             ? <Image src={p.images[0]} alt={p.name} fill className="object-contain p-1" sizes="56px" />
                             : <div className="flex h-full items-center justify-center text-2xl">🎸</div>
                           }
                         </div>
                         <div className="min-w-0">
-                          <p className="line-clamp-2 text-sm font-semibold text-gray-800 group-hover:text-blue-600">{p.name}</p>
-                          <p className="mt-0.5 text-xs font-medium text-blue-600">{Number(p.price).toLocaleString('vi-VN')}₫</p>
+                          <p className="line-clamp-2 text-sm font-semibold text-gray-800 group-hover:text-noel-600">{p.name}</p>
+                          <p className="mt-0.5 text-xs font-medium text-noel-600">{Number(p.price).toLocaleString('vi-VN')}₫</p>
                         </div>
                       </Link>
                     ))}
                   </div>
-                  <Link href="/san-pham" className="mt-3 inline-block text-sm font-medium text-blue-600 hover:underline">
+                  <Link href="/san-pham" className="mt-3 inline-block text-sm font-medium text-noel-600 hover:underline">
                     Xem tất cả sản phẩm →
                   </Link>
                 </div>

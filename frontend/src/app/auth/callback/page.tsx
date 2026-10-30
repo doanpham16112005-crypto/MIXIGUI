@@ -72,7 +72,7 @@ export default function AuthCallbackPage() {
   return (
     <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center">
       <div className="text-center">
-        <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-blue-600 border-t-transparent" />
+        <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-4 border-noel-600 border-t-transparent" />
         <p className="text-sm text-gray-500">Đang xử lý đăng nhập...</p>
       </div>
     </div>

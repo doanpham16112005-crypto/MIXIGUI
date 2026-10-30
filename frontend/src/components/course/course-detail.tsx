@@ -9,7 +9,7 @@ export function CourseDetail({ course }: { course: Course }) {
       <Badge>{course.level}</Badge>
       <h1 className="mt-2 text-3xl font-bold">{course.title}</h1>
       <p className="mt-4 text-gray-600">{course.description}</p>
-      <p className="mt-4 text-2xl font-bold text-blue-600">{formatPrice(course.price)}</p>
+      <p className="mt-4 text-2xl font-bold text-noel-600">{formatPrice(course.price)}</p>
     </div>
   )
 }

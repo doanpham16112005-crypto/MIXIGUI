@@ -5,6 +5,52 @@
   --foreground: #171717;
 }
 
+@theme {
+  /* Đỏ Noel — màu chủ đạo (600 = Christmas red #c41e3a) */
+  --color-noel-50: #fef2f3;
+  --color-noel-100: #fee2e5;
+  --color-noel-200: #fdcad0;
+  --color-noel-300: #faa3ae;
+  --color-noel-400: #f46d7f;
+  --color-noel-500: #e83f56;
+  --color-noel-600: #c41e3a;
+  --color-noel-700: #a6162f;
+  --color-noel-800: #8b162d;
+  --color-noel-900: #77172c;
+  --color-noel-950: #420713;
+
+  /* Đỏ rượu vang & Hồng tình yêu — màu phụ (blog, cấp độ nâng cao, gradient lãng mạn) */
+  --color-wine-50: #fdf2f5;
+  --color-wine-100: #fbe5ec;
+  --color-wine-200: #f6c9d7;
+  --color-wine-300: #ee9db6;
+  --color-wine-400: #e0668c;
+  --color-wine-500: #c93e68;
+  --color-wine-600: #a8264f;
+  --color-wine-700: #8c1d42;
+  --color-wine-800: #73193a;
+  --color-wine-900: #5f1733;
+  --color-wine-950: #3a0819;
+
+  /* Hồng phấn lãng mạn (Love blush) */
+  --color-love-50: #fff5f7;
+  --color-love-100: #ffe8ee;
+  --color-love-200: #ffd0dc;
+  --color-love-300: #ffa8bf;
+  --color-love-400: #fb7599;
+  --color-love-500: #f24676;
+  --color-love-600: #de245b;
+
+  /* Vàng ánh nến Giáng Sinh (Champagne Gold) */
+  --color-gold-50: #fefbf2;
+  --color-gold-100: #fcf3d7;
+  --color-gold-200: #f8e4aa;
+  --color-gold-300: #f2cf74;
+  --color-gold-400: #eab543;
+  --color-gold-500: #d49826;
+  --color-gold-600: #b5791a;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -22,6 +68,29 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-be-vietnam), Arial, Helvetica, sans-serif;
 }
 
+/* ── Festive Noel & Love Surfaces ── */
+.bg-noel-love {
+  background: linear-gradient(135deg, #77172c 0%, #c41e3a 48%, #c93e68 100%);
+}
+
+.bg-velvet-night {
+  background: linear-gradient(180deg, #2d0612 0%, #1d040c 55%, #120208 100%);
+}
+
+.bg-warm-snow {
+  background: linear-gradient(180deg, #fffcfd 0%, #fef4f6 100%);
+}
+
+.card-festive {
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.28s ease;
+}
+
+.card-festive:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -10px rgba(196, 30, 58, 0.14), 0 6px 14px -6px rgba(168, 38, 79, 0.08);
+}
+
+/* ── GPU-only Keyframes (PageSpeed safe: transform & opacity only) ── */
 @keyframes musicBar {
   from { transform: scaleY(0.4); }
   to   { transform: scaleY(1.2); }
@@ -32,6 +101,70 @@ h1, h2, h3, h4, h5, h6 {
   50% { transform: translateY(-6px); }
 }
 
+@keyframes snowfall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate3d(18px, 48vh, 0) rotate(180deg);
+  }
+  88% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate3d(-14px, 106vh, 0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes float-love {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0) scale(1.06);
+  }
+}
+
+@keyframes twinkle-soft {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
 .animate-bounce-slow {
-  animation: bounce-slow 1.5s ease-in-out infinite;
+  animation: bounce-slow 1.8s ease-in-out infinite;
+}
+
+.animate-snowfall {
+  animation-name: snowfall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}
+
+.animate-float-love {
+  animation: float-love 4s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle-soft 2.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-snowfall,
+  .animate-float-love,
+  .animate-twinkle,
+  .animate-bounce-slow {
+    animation: none !important;
+  }
 }

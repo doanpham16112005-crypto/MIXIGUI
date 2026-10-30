@@ -45,3 +45,5 @@ coverage/
 CLASS/
 GOATWEDDINGS_PROJECT_SETUP_GUIDE.md
 generate_doc_11.py
+# Claude memory (chứa secrets — repo public)
+CLAUDE.MD

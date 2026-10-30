@@ -35,11 +35,11 @@ export function StudentSidebar() {
             <img
               src={user.avatar_url || user.avatarUrl || ''}
               alt={user.full_name || user.fullName || ''}
-              className="h-10 w-10 rounded-full object-cover ring-2 ring-blue-100"
+              className="h-10 w-10 rounded-full object-cover ring-2 ring-noel-100"
               referrerPolicy="no-referrer"
             />
           ) : (
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-blue-500 text-sm font-bold text-white">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-wine-500 to-noel-500 text-sm font-bold text-white">
               {(user?.full_name || user?.fullName || user?.email || 'U')[0].toUpperCase()}
             </div>
           )}
@@ -66,7 +66,7 @@ export function StudentSidebar() {
               className={cn(
                 'flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all',
                 active
-                  ? 'bg-blue-600 text-white shadow-sm shadow-blue-200'
+                  ? 'bg-noel-600 text-white shadow-sm shadow-noel-200'
                   : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
               )}
             >

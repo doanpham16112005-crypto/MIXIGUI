@@ -67,11 +67,11 @@ export default function FloatingContacts() {
       {/* Nút toggle */}
       <button
         onClick={() => setOpen((v) => !v)}
-        aria-label={open ? 'Đóng liên hệ' : 'Mở liên hệ'}
-        className={`flex h-14 w-14 items-center justify-center rounded-full shadow-xl transition-all duration-300 hover:scale-110 ${
+        aria-label={open ? 'Đóng liên hệ' : 'Mở liên hệ tư vấn mùa lễ hội'}
+        className={`flex h-14 w-14 items-center justify-center rounded-full shadow-xl ring-2 ring-gold-200/75 transition-all duration-300 hover:scale-110 ${
           open
-            ? 'bg-gray-700 hover:bg-gray-800 rotate-45'
-            : 'bg-blue-600 hover:bg-blue-700 animate-bounce-slow'
+            ? 'bg-wine-900 hover:bg-wine-950 rotate-45'
+            : 'bg-gradient-to-br from-noel-600 via-noel-500 to-wine-600 animate-bounce-slow'
         } text-white`}
       >
         {open ? (
@@ -80,14 +80,14 @@ export default function FloatingContacts() {
           </svg>
         ) : (
           <svg viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7">
-            <path d="M20 2H4C2.897 2 2 2.897 2 4v18l4-4h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
           </svg>
         )}
       </button>
 
       {/* Gợn sóng khi đóng */}
       {!open && (
-        <span className="pointer-events-none absolute bottom-0 right-0 h-14 w-14 animate-ping rounded-full bg-blue-400 opacity-30" />
+        <span className="pointer-events-none absolute bottom-0 right-0 h-14 w-14 animate-ping rounded-full bg-love-400 opacity-30" />
       )}
     </div>
   )

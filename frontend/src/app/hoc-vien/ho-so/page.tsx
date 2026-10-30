@@ -116,14 +116,14 @@ export default function ProfilePage() {
                 referrerPolicy="no-referrer"
               />
             ) : (
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-blue-500 text-2xl font-bold text-white ring-4 ring-gray-100">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-wine-500 to-noel-500 text-2xl font-bold text-white ring-4 ring-gray-100">
                 {initials}
               </div>
             )}
             {!isOAuth && (
               <button
                 onClick={() => fileInputRef.current?.click()}
-                className="absolute -bottom-1 -right-1 flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 text-white shadow-md hover:bg-blue-700"
+                className="absolute -bottom-1 -right-1 flex h-7 w-7 items-center justify-center rounded-full bg-noel-600 text-white shadow-md hover:bg-noel-700"
               >
                 <Camera size={13} />
               </button>
@@ -173,7 +173,7 @@ export default function ProfilePage() {
               onChange={(e) => setFullName(e.target.value)}
               placeholder="Nguyễn Văn A"
               disabled={isOAuth}
-              className="h-11 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500"
+              className="h-11 rounded-xl border-gray-200 focus:border-noel-500 focus:ring-noel-500 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500"
             />
           </div>
 
@@ -188,7 +188,7 @@ export default function ProfilePage() {
               placeholder="Viết vài dòng về bản thân bạn, sở thích âm nhạc..."
               rows={4}
               disabled={isOAuth}
-              className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm text-gray-700 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 resize-none disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500"
+              className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm text-gray-700 outline-none transition focus:border-noel-500 focus:ring-2 focus:ring-noel-500/20 resize-none disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500"
             />
             {!isOAuth && <p className="text-xs text-gray-400">{bio.length}/300 ký tự</p>}
           </div>
@@ -224,7 +224,7 @@ export default function ProfilePage() {
             <Button
               onClick={handleSave}
               disabled={saving}
-              className="h-10 rounded-xl bg-blue-600 px-6 text-sm font-semibold hover:bg-blue-700"
+              className="h-10 rounded-xl bg-noel-600 px-6 text-sm font-semibold hover:bg-noel-700"
             >
               {saving ? (
                 <span className="flex items-center gap-2">

@@ -58,31 +58,35 @@ export default function DangKyPage() {
 
   return (
     <div className="flex min-h-[calc(100vh-4rem)]">
-      {/* Panel trái — branding */}
-      <div className="relative hidden flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-violet-600 via-blue-600 to-blue-500 px-12 lg:flex lg:w-5/12">
-        <div className="absolute -left-16 -top-16 h-64 w-64 rounded-full bg-white/10" />
-        <div className="absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-white/10" />
+      {/* Panel trái — branding Noel & Tình Yêu */}
+      <div className="relative hidden flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-noel-950 via-noel-700 to-wine-600 px-12 lg:flex lg:w-5/12">
+        <div className="absolute -left-16 -top-16 h-64 w-64 rounded-full bg-gold-300/15 blur-2xl" />
+        <div className="absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-love-400/20 blur-2xl" />
         <div className="absolute left-1/2 top-1/3 h-40 w-40 -translate-x-1/2 rounded-full bg-white/5" />
 
         <div className="relative z-10 text-center text-white">
+          <div className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-gold-300/40 bg-white/10 px-3.5 py-1 text-xs font-semibold text-gold-200">
+            🎁♥ Quà tặng học thử 3 bài miễn phí
+          </div>
           <div className="mb-6 flex justify-center">
-            <div className="flex items-center gap-3 rounded-2xl bg-white/15 px-5 py-3 backdrop-blur-sm">
-              <Image src="/images/logo.png" alt="MixiGui" width={40} height={40} className="rounded-full" />
+            <div className="flex items-center gap-3 rounded-2xl border border-white/20 bg-white/15 px-5 py-3 backdrop-blur-sm">
+              <Image src="/images/logo.png" alt="MixiGui" width={40} height={40} className="rounded-full ring-2 ring-gold-300/60" />
               <span className="text-2xl font-bold">MixiGui</span>
             </div>
           </div>
           <h2 className="mb-3 text-3xl font-bold leading-tight">
-            Bắt đầu<br />hành trình nhạc!
+            Đánh thức giai điệu<br />yêu thương!
           </h2>
-          <p className="mb-8 text-base text-blue-100">
-            Tham gia cùng hàng nghìn học viên<br />đang học nhạc tại MixiGui
+          <p className="mb-8 text-base text-rose-100">
+            Tham gia cùng hàng nghìn trái tim yêu nhạc<br />trong mùa Giáng Sinh ấm áp này
           </p>
 
-          <div className="flex justify-center gap-4 text-4xl text-white/30 select-none">
-            <span className="animate-bounce" style={{ animationDelay: '0ms' }}>♩</span>
+          <div className="flex justify-center gap-4 text-3xl text-gold-200/65 select-none">
+            <span className="animate-bounce" style={{ animationDelay: '0ms' }}>❄</span>
             <span className="animate-bounce" style={{ animationDelay: '150ms' }}>♪</span>
-            <span className="animate-bounce" style={{ animationDelay: '300ms' }}>♫</span>
-            <span className="animate-bounce" style={{ animationDelay: '450ms' }}>♬</span>
+            <span className="animate-bounce text-love-300/80" style={{ animationDelay: '300ms' }}>♥</span>
+            <span className="animate-bounce" style={{ animationDelay: '450ms' }}>♫</span>
+            <span className="animate-bounce" style={{ animationDelay: '600ms' }}>🎄</span>
           </div>
         </div>
 
@@ -93,9 +97,9 @@ export default function DangKyPage() {
             { value: '10K+', label: 'Học viên' },
             { value: '50+', label: 'Giảng viên' },
           ].map((s) => (
-            <div key={s.label} className="rounded-2xl bg-white/10 p-3 text-center backdrop-blur-sm">
-              <div className="text-lg font-bold text-white">{s.value}</div>
-              <div className="text-xs text-blue-200">{s.label}</div>
+            <div key={s.label} className="rounded-2xl border border-white/15 bg-white/10 p-3 text-center backdrop-blur-sm">
+              <div className="text-lg font-bold text-gold-200">{s.value}</div>
+              <div className="text-xs text-rose-200">{s.label}</div>
             </div>
           ))}
         </div>
@@ -144,7 +148,7 @@ export default function DangKyPage() {
               <Input
                 {...register('fullName')}
                 placeholder="Nguyễn Văn A"
-                className="h-11 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                className="h-11 rounded-xl border-gray-200 focus:border-noel-500 focus:ring-noel-500"
               />
               {errors.fullName && <p className="text-xs text-red-500">{errors.fullName.message}</p>}
             </div>
@@ -155,7 +159,7 @@ export default function DangKyPage() {
                 type="email"
                 {...register('email')}
                 placeholder="email@example.com"
-                className="h-11 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                className="h-11 rounded-xl border-gray-200 focus:border-noel-500 focus:ring-noel-500"
               />
               {errors.email && <p className="text-xs text-red-500">{errors.email.message}</p>}
             </div>
@@ -166,14 +170,14 @@ export default function DangKyPage() {
                 type="password"
                 {...register('password')}
                 placeholder="••••••••"
-                className="h-11 rounded-xl border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                className="h-11 rounded-xl border-gray-200 focus:border-noel-500 focus:ring-noel-500"
               />
               {errors.password && <p className="text-xs text-red-500">{errors.password.message}</p>}
             </div>
 
             <Button
               type="submit"
-              className="h-11 w-full rounded-xl bg-blue-600 text-sm font-semibold hover:bg-blue-700"
+              className="h-11 w-full rounded-xl bg-noel-600 text-sm font-semibold hover:bg-noel-700"
               disabled={isSubmitting}
             >
               {isSubmitting ? 'Đang đăng ký...' : 'Tạo tài khoản miễn phí'}
@@ -182,7 +186,7 @@ export default function DangKyPage() {
 
           <p className="mt-6 text-center text-sm text-gray-500">
             Đã có tài khoản?{' '}
-            <Link href="/dang-nhap" className="font-medium text-blue-600 hover:underline">
+            <Link href="/dang-nhap" className="font-medium text-noel-600 hover:underline">
               Đăng nhập
             </Link>
           </p>

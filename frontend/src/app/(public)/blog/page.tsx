@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { createServerClient } from '@/lib/supabase'
 import { siteConfig } from '@/config/site'
+import { HeroSparkles } from '@/components/layout/festive-ambience'
 
 export const metadata: Metadata = {
   title: 'Blog Âm Nhạc | Kiến Thức Guitar, Piano, Trống - MixiGui',
@@ -71,33 +72,37 @@ export default async function BlogPage() {
 
       <main>
         {/* ── HERO ── */}
-        <section className="border-b bg-gradient-to-r from-purple-700 to-purple-500 py-14 text-white">
-          <div className="mx-auto max-w-7xl px-4">
-            <nav aria-label="Breadcrumb" className="mb-4 text-sm text-purple-200">
+        <section className="relative overflow-hidden border-b border-wine-200/60 bg-gradient-to-r from-noel-900 via-wine-700 to-wine-600 py-16 text-white">
+          <HeroSparkles />
+          <div className="relative z-10 mx-auto max-w-7xl px-4">
+            <nav aria-label="Breadcrumb" className="mb-3 text-sm text-rose-200">
               <Link href="/" className="hover:text-white">Trang chủ</Link>
               <span className="mx-2">/</span>
               <span className="text-white">Blog</span>
             </nav>
-            <h1 className="text-4xl font-extrabold">Blog Âm Nhạc</h1>
-            <p className="mt-3 max-w-2xl text-lg text-purple-100">
-              Kiến thức học đàn, tips luyện tập, review nhạc cụ và tin tức âm nhạc — được chia sẻ bởi giảng viên và chuyên gia của MixiGui.
+            <span className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-gold-300/40 bg-white/15 px-3.5 py-1 text-xs font-semibold text-gold-200">
+              💌🎄 Chuyện Âm Nhạc &amp; Giai Điệu Mùa Yêu
+            </span>
+            <h1 className="text-4xl font-extrabold sm:text-5xl">Blog Âm Nhạc</h1>
+            <p className="mt-3 max-w-2xl text-lg text-rose-100">
+              Kiến thức học đàn, tips luyện tập, bản tab tình ca mùa đông và review nhạc cụ — được chia sẻ tận tâm bởi giảng viên MixiGui.
             </p>
             <div className="mt-5 flex flex-wrap gap-3 text-sm">
-              {['📚 Cập nhật hàng tuần', '🎓 Từ giảng viên chuyên nghiệp', '🆓 Miễn phí 100%'].map((b) => (
-                <span key={b} className="rounded-full bg-white/20 px-3 py-1">{b}</span>
+              {['📚 Cập nhật hàng tuần', '🎓 Từ giảng viên chuyên nghiệp', '💝 Cảm hứng âm nhạc miễn phí'].map((b) => (
+                <span key={b} className="rounded-full border border-white/20 bg-white/15 px-3 py-1 backdrop-blur-xs">{b}</span>
               ))}
             </div>
           </div>
         </section>
 
         {/* ── CHỦ ĐỀ ── */}
-        <section aria-labelledby="topics-heading" className="bg-gray-50 py-10">
+        <section aria-labelledby="topics-heading" className="bg-warm-snow py-10">
           <div className="mx-auto max-w-7xl px-4">
             <h2 id="topics-heading" className="mb-5 text-lg font-bold text-gray-800">Chủ đề</h2>
             <div className="flex flex-wrap gap-3">
               {BLOG_TOPICS.map((t) => (
                 <Link key={t.slug} href={`/blog?chu-de=${t.slug}`}
-                  className="flex items-center gap-2 rounded-full border bg-white px-4 py-2 text-sm font-medium text-gray-600 shadow-sm transition hover:border-purple-400 hover:text-purple-600">
+                  className="flex items-center gap-2 rounded-full border border-wine-100 bg-white px-4 py-2 text-sm font-medium text-gray-600 shadow-xs transition hover:-translate-y-0.5 hover:border-wine-300 hover:bg-wine-50/50 hover:text-wine-600">
                   <span>{t.icon}</span>{t.label}
                 </Link>
               ))}
@@ -111,20 +116,22 @@ export default async function BlogPage() {
             <div className="mx-auto max-w-7xl px-4">
               <h2 id="featured-heading" className="mb-6 text-2xl font-bold text-gray-900">Bài viết nổi bật</h2>
               <Link href={`/blog/${featured.slug}`}
-                className="group grid overflow-hidden rounded-2xl border bg-white shadow-sm transition hover:shadow-lg sm:grid-cols-2">
-                <div className="h-64 overflow-hidden bg-purple-100 sm:h-auto">
+                className="card-festive group grid overflow-hidden rounded-2xl border border-wine-100 bg-white shadow-sm sm:grid-cols-2">
+                <div className="h-64 overflow-hidden bg-gradient-to-br from-wine-50 via-love-50 to-wine-100 sm:h-auto">
                   {featured.thumbnail_url
-                    ? <img src={featured.thumbnail_url} alt={featured.title} className="h-full w-full object-cover transition group-hover:scale-105" />
+                    ? <img src={featured.thumbnail_url} alt={featured.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                     : <div className="flex h-full items-center justify-center text-7xl">📝</div>
                   }
                 </div>
                 <div className="flex flex-col justify-center p-8">
-                  <span className="mb-3 inline-block rounded-full bg-purple-100 px-3 py-1 text-xs font-medium text-purple-700">Bài viết mới nhất</span>
-                  <h3 className="mb-3 text-2xl font-bold text-gray-900 group-hover:text-purple-600">{featured.title}</h3>
+                  <span className="mb-3 inline-flex w-fit items-center gap-1 rounded-full bg-wine-50 px-3 py-1 text-xs font-semibold text-wine-700">
+                    ♥ Bài viết mới nhất
+                  </span>
+                  <h3 className="mb-3 text-2xl font-bold text-gray-900 transition-colors group-hover:text-wine-600">{featured.title}</h3>
                   {featured.excerpt && <p className="mb-4 text-gray-500 line-clamp-3">{featured.excerpt}</p>}
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-400">{formatDate(featured.published_at)}</span>
-                    <span className="text-sm font-semibold text-purple-600 group-hover:underline">Đọc ngay →</span>
+                    <span className="text-sm font-semibold text-wine-600 group-hover:underline">Đọc ngay →</span>
                   </div>
                 </div>
               </Link>
@@ -148,15 +155,15 @@ export default async function BlogPage() {
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {rest.map((post) => (
                   <Link key={post.id} href={`/blog/${post.slug}`}
-                    className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
-                    <div className="h-48 w-full overflow-hidden bg-gradient-to-br from-purple-50 to-purple-100">
+                    className="card-festive group overflow-hidden rounded-2xl border border-wine-100 bg-white shadow-sm">
+                    <div className="h-48 w-full overflow-hidden bg-gradient-to-br from-wine-50 via-love-50 to-wine-100">
                       {post.thumbnail_url
-                        ? <img src={post.thumbnail_url} alt={post.title} className="h-full w-full object-cover transition group-hover:scale-105" loading="lazy" />
+                        ? <img src={post.thumbnail_url} alt={post.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
                         : <div className="flex h-full items-center justify-center text-5xl">📝</div>
                       }
                     </div>
                     <div className="p-4">
-                      <h3 className="mb-2 line-clamp-2 font-semibold text-gray-800 group-hover:text-purple-600">{post.title}</h3>
+                      <h3 className="mb-2 line-clamp-2 font-semibold text-gray-800 transition-colors group-hover:text-wine-600">{post.title}</h3>
                       {post.excerpt && <p className="mb-3 line-clamp-2 text-sm text-gray-500">{post.excerpt}</p>}
                       <p className="text-xs text-gray-400">{formatDate(post.published_at)}</p>
                     </div>
@@ -168,7 +175,7 @@ export default async function BlogPage() {
         </section>
 
         {/* ── VỀ BLOG ── */}
-        <section aria-labelledby="about-blog-heading" className="bg-purple-50 py-14">
+        <section aria-labelledby="about-blog-heading" className="bg-wine-50 py-14">
           <div className="mx-auto max-w-4xl px-4">
             <h2 id="about-blog-heading" className="mb-4 text-2xl font-bold text-gray-900">Về Blog Âm Nhạc MixiGui</h2>
             <div className="space-y-4 text-gray-600">
@@ -207,11 +214,11 @@ export default async function BlogPage() {
                 { title: 'Review nhạc cụ cho người mới', desc: 'Đánh giá chi tiết các dòng đàn guitar, piano, trống phổ biến — giúp bạn chọn đúng nhạc cụ phù hợp ngân sách.', href: '/blog?chu-de=review', tag: '🛒 Review' },
               ].map((item) => (
                 <Link key={item.title} href={item.href}
-                  className="group rounded-xl border bg-white p-5 shadow-sm transition hover:border-purple-300 hover:shadow-md">
-                  <span className="mb-3 inline-block rounded-full bg-purple-50 px-3 py-1 text-xs font-medium text-purple-600">{item.tag}</span>
-                  <h3 className="mb-2 font-semibold text-gray-800 group-hover:text-purple-600">{item.title}</h3>
+                  className="group rounded-xl border bg-white p-5 shadow-sm transition hover:border-wine-300 hover:shadow-md">
+                  <span className="mb-3 inline-block rounded-full bg-wine-50 px-3 py-1 text-xs font-medium text-wine-600">{item.tag}</span>
+                  <h3 className="mb-2 font-semibold text-gray-800 group-hover:text-wine-600">{item.title}</h3>
                   <p className="text-sm leading-relaxed text-gray-500">{item.desc}</p>
-                  <p className="mt-3 text-sm font-medium text-purple-600 group-hover:underline">Khám phá →</p>
+                  <p className="mt-3 text-sm font-medium text-wine-600 group-hover:underline">Khám phá →</p>
                 </Link>
               ))}
             </div>
@@ -219,15 +226,19 @@ export default async function BlogPage() {
         </section>
 
         {/* ── NEWSLETTER / CTA ── */}
-        <section className="py-16 text-center text-white" style={{ background: 'linear-gradient(135deg, #6d28d9, #8b5cf6)' }}>
-          <div className="mx-auto max-w-xl px-4">
-            <h2 className="text-2xl font-bold">Không bỏ lỡ bài viết nào</h2>
-            <p className="mt-2 text-purple-100">Đăng ký tài khoản MixiGui để nhận thông báo khi có bài viết mới và khóa học ưu đãi.</p>
+        <section className="bg-noel-love relative overflow-hidden py-16 text-center text-white">
+          <HeroSparkles />
+          <div className="relative z-10 mx-auto max-w-xl px-4">
+            <span className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3.5 py-1 text-xs font-semibold text-gold-200">
+              💌♥ Nhận cảm hứng âm nhạc mỗi tuần
+            </span>
+            <h2 className="text-2xl font-bold sm:text-3xl">Không bỏ lỡ bài viết nào</h2>
+            <p className="mt-2 text-rose-100">Đăng ký tài khoản MixiGui để nhận thông báo bài viết mới, tab nhạc mùa lễ hội và khóa học ưu đãi.</p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
-              <Link href="/dang-ky" className="rounded-full bg-white px-8 py-3 font-semibold text-purple-700 shadow hover:bg-purple-50 transition">
-                Đăng ký miễn phí
+              <Link href="/dang-ky" className="rounded-full bg-white px-8 py-3 font-bold text-wine-700 shadow-lg ring-2 ring-gold-300/50 hover:bg-wine-50 transition">
+                💝 Đăng ký miễn phí
               </Link>
-              <Link href="/khoa-hoc" className="rounded-full border-2 border-white px-8 py-3 font-semibold text-white hover:bg-white/10 transition">
+              <Link href="/khoa-hoc" className="rounded-full border-2 border-white/85 bg-white/10 px-8 py-3 font-semibold text-white hover:bg-white/20 transition">
                 Xem khóa học
               </Link>
             </div>

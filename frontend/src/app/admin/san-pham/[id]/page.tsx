@@ -63,7 +63,7 @@ export default function EditProductPage() {
 
   if (loading) return (
     <div className="flex items-center justify-center py-24">
-      <Loader2 size={28} className="animate-spin text-blue-500" />
+      <Loader2 size={28} className="animate-spin text-noel-500" />
     </div>
   )
   if (notFound) return (
@@ -126,7 +126,7 @@ export default function EditProductPage() {
           <div className="col-span-2">
             <label className="flex cursor-pointer items-center gap-3">
               <button type="button" onClick={() => set('is_published', !form.is_published)}
-                className={`relative h-6 w-11 rounded-full transition-colors ${form.is_published ? 'bg-blue-600' : 'bg-gray-200'}`}>
+                className={`relative h-6 w-11 rounded-full transition-colors ${form.is_published ? 'bg-noel-600' : 'bg-gray-200'}`}>
                 <div className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform ${form.is_published ? 'translate-x-5' : 'translate-x-0.5'}`} />
               </button>
               <span className="text-sm font-medium text-gray-700">
@@ -158,7 +158,7 @@ export default function EditProductPage() {
               Hủy
             </Link>
             <Button onClick={handleSave} disabled={saving}
-              className="h-10 rounded-xl bg-blue-600 px-6 text-sm font-semibold hover:bg-blue-700">
+              className="h-10 rounded-xl bg-noel-600 px-6 text-sm font-semibold hover:bg-noel-700">
               {saving
                 ? <span className="flex items-center gap-2"><Loader2 size={14} className="animate-spin" />Đang lưu...</span>
                 : 'Lưu thay đổi'}

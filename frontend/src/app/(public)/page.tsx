@@ -3,6 +3,7 @@ import Image from 'next/image'
 import type { Metadata } from 'next'
 import { createServerClient } from '@/lib/supabase'
 import { siteConfig } from '@/config/site'
+import { HeroSparkles } from '@/components/layout/festive-ambience'
 
 export const revalidate = 3600
 
@@ -152,8 +153,8 @@ export default async function HomePage() {
       <HomeSchemas courses={courses} products={products} />
 
       <main>
-        {/* ── HERO ── */}
-        <section aria-label="Giới thiệu MixiGui" className="relative overflow-hidden py-24 text-center text-white" style={{ minHeight: '400px' }}>
+        {/* ── HERO: NOEL & TÌNH YÊU ── */}
+        <section aria-label="Giới thiệu MixiGui" className="relative overflow-hidden py-24 text-center text-white sm:py-28" style={{ minHeight: '440px' }}>
           <Image
             src="https://res.cloudinary.com/ddaryoz5b/image/upload/w_1200,f_auto,q_60/v1773716135/Gemini_Generated_Image_9rb159rb159rb159_ewqjfr.png"
             alt=""
@@ -164,38 +165,116 @@ export default async function HomePage() {
             sizes="(max-width: 768px) 768px, 1200px"
             aria-hidden="true"
           />
+          {/* Lớp phủ nhung đỏ Giáng Sinh & ánh nến lãng mạn */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-gradient-to-b from-noel-950/75 via-wine-950/55 to-noel-950/80"
+          />
+          <HeroSparkles />
+
           <div className="relative z-10 mx-auto max-w-3xl px-4">
-            <p className="mb-3 text-sm font-medium uppercase tracking-widest text-blue-200">Nền tảng âm nhạc số 1 Việt Nam</p>
-            <h1 className="text-4xl font-extrabold leading-tight sm:text-5xl">
-              Học Nhạc Online &amp;<br />Mua Nhạc Cụ Chính Hãng
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold-300/40 bg-white/12 px-4 py-1.5 text-xs font-semibold tracking-wide text-gold-200 backdrop-blur-xs">
+              <span aria-hidden="true">🎄</span>
+              <span>Mùa Giáng Sinh Ấm Áp &amp; Giai Điệu Tình Yêu</span>
+              <span aria-hidden="true" className="text-love-300">♥</span>
+            </div>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-noel-200">
+              Nền tảng âm nhạc số 1 Việt Nam
+            </p>
+            <h1 className="text-4xl font-extrabold leading-tight drop-shadow-sm sm:text-5xl lg:text-6xl">
+              Học Nhạc Online &amp;<br />
+              <span className="bg-gradient-to-r from-white via-gold-100 to-love-200 bg-clip-text text-transparent">
+                Mua Nhạc Cụ Chính Hãng
+              </span>
             </h1>
-            <p className="mt-5 text-lg text-blue-100">
-              Khóa học guitar, piano, trống từ giảng viên chuyên nghiệp — nhạc cụ Yamaha, Roland, Casio bảo hành đầy đủ.
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-rose-100/95">
+              Khóa học guitar, piano, trống từ giảng viên chuyên nghiệp — nhạc cụ Yamaha, Roland, Casio bảo hành đầy đủ. Đánh thức giai điệu mùa đông và trao gửi yêu thương qua từng nốt nhạc.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link href="/khoa-hoc" className="rounded-full bg-white px-8 py-3 font-semibold text-blue-700 shadow transition hover:bg-blue-50">
-                Xem khóa học
+              <Link
+                href="/khoa-hoc"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 font-bold text-noel-700 shadow-lg ring-2 ring-gold-300/60 transition hover:-translate-y-0.5 hover:bg-noel-50 hover:shadow-xl"
+              >
+                <span aria-hidden="true">🎁</span> Xem khóa học
               </Link>
-              <Link href="/san-pham" className="rounded-full border-2 border-white px-8 py-3 font-semibold text-white transition hover:bg-white/10">
-                Mua nhạc cụ
+              <Link
+                href="/san-pham"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-white/85 bg-white/10 px-8 py-3.5 font-semibold text-white backdrop-blur-xs transition hover:-translate-y-0.5 hover:bg-white/20"
+              >
+                <span aria-hidden="true">💝</span> Mua nhạc cụ
               </Link>
+            </div>
+            <div className="mt-7 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-rose-100/85">
+              <span>❄️ Học thử 3 bài miễn phí</span>
+              <span className="hidden sm:inline">•</span>
+              <span>🎀 Miễn phí gói quà &amp; thiệp Giáng Sinh</span>
+              <span className="hidden sm:inline">•</span>
+              <span>❤️ 15.000+ trái tim yêu nhạc</span>
             </div>
           </div>
         </section>
 
         {/* ── STATS ── */}
-        <section aria-label="Thống kê" className="border-b bg-white py-10">
-          <div className="mx-auto grid max-w-4xl grid-cols-3 gap-6 px-4 text-center">
+        <section aria-label="Thống kê" className="border-b border-noel-100/80 bg-warm-snow py-10">
+          <div className="mx-auto grid max-w-4xl grid-cols-3 gap-4 px-4 text-center sm:gap-6">
             {[
-              { value: `${stats.courses}+`, label: 'Khóa học' },
-              { value: `${stats.products}+`, label: 'Nhạc cụ' },
-              { value: `${stats.users}+`, label: 'Học viên' },
+              { icon: '🎄', value: `${stats.courses}+`, label: 'Khóa học ấm áp' },
+              { icon: '🎁', value: `${stats.products}+`, label: 'Nhạc cụ & Quà tặng' },
+              { icon: '❤️', value: `${stats.users}+`, label: 'Học viên yêu nhạc' },
             ].map((s) => (
-              <div key={s.label}>
-                <p className="text-3xl font-extrabold text-blue-600">{s.value}</p>
-                <p className="text-sm text-gray-500">{s.label}</p>
+              <div key={s.label} className="rounded-2xl border border-noel-100/80 bg-white px-3 py-4 shadow-xs">
+                <span aria-hidden="true" className="mb-1 block text-lg">{s.icon}</span>
+                <p className="bg-gradient-to-r from-noel-700 to-wine-600 bg-clip-text text-3xl font-extrabold text-transparent">
+                  {s.value}
+                </p>
+                <p className="mt-0.5 text-xs font-medium text-gray-500 sm:text-sm">{s.label}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* ── SPECIAL SEASONAL BANNER: QUÀ TẶNG NOEL & TÌNH YÊU ── */}
+        <section aria-label="Mùa lễ hội Giáng Sinh và Tình Yêu" className="pt-14 pb-4">
+          <div className="mx-auto max-w-7xl px-4">
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="card-festive relative overflow-hidden rounded-2xl border border-noel-200/70 bg-gradient-to-br from-noel-50 via-love-50 to-white p-6 sm:p-7">
+                <span aria-hidden="true" className="pointer-events-none absolute -right-4 -top-4 text-7xl opacity-15">💝</span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-noel-600/10 px-3 py-1 text-xs font-semibold text-noel-700">
+                  ♥ Giai điệu cho người thương
+                </span>
+                <h2 className="mt-3 text-xl font-bold text-gray-900 sm:text-2xl">
+                  Đệm đàn bản tình ca đêm Giáng Sinh
+                </h2>
+                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                  Chỉ với 20 phút mỗi ngày, tự tay đàn hát tặng người thương những giai điệu Acoustic &amp; Piano ngọt ngào nhất mùa đông này.
+                </p>
+                <Link
+                  href="/khoa-hoc"
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-noel-600 hover:text-noel-700 hover:underline"
+                >
+                  Chọn khóa học lãng mạn →
+                </Link>
+              </div>
+
+              <div className="card-festive relative overflow-hidden rounded-2xl border border-gold-300/60 bg-gradient-to-br from-gold-50 via-noel-50/50 to-white p-6 sm:p-7">
+                <span aria-hidden="true" className="pointer-events-none absolute -right-4 -top-4 text-7xl opacity-15">🎄</span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/15 px-3 py-1 text-xs font-semibold text-amber-800">
+                  🎁 Quà tặng mùa lễ hội
+                </span>
+                <h2 className="mt-3 text-xl font-bold text-gray-900 sm:text-2xl">
+                  Hộp quà nhạc cụ &amp; Thiệp tay yêu thương
+                </h2>
+                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                  Tặng kèm nơ nhung đỏ Noel, thiệp viết tay theo lời nhắn riêng và gói bảo hành chính hãng 12–24 tháng cho mọi đơn nhạc cụ.
+                </p>
+                <Link
+                  href="/san-pham"
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-wine-600 hover:text-wine-700 hover:underline"
+                >
+                  Khám phá quà tặng nhạc cụ →
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -204,29 +283,40 @@ export default async function HomePage() {
           <div className="mx-auto max-w-7xl px-4">
             <div className="mb-8 flex items-end justify-between">
               <div>
+                <span className="mb-1.5 inline-block text-xs font-semibold uppercase tracking-widest text-noel-600">
+                  🎄 Ấm áp từng phím đàn
+                </span>
                 <h2 id="courses-heading" className="text-3xl font-bold text-gray-900">Khóa học nổi bật</h2>
                 <p className="mt-1 text-gray-500">Học nhạc cùng giảng viên chuyên nghiệp, mọi lúc mọi nơi</p>
               </div>
-              <Link href="/khoa-hoc" className="text-sm font-medium text-blue-600 hover:underline">Xem tất cả →</Link>
+              <Link href="/khoa-hoc" className="rounded-full bg-noel-50 px-4 py-1.5 text-sm font-semibold text-noel-600 transition hover:bg-noel-100">
+                Xem tất cả →
+              </Link>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {courses.map((course) => (
-                <article key={course.id} className="group overflow-hidden rounded-xl border bg-white shadow-sm transition hover:shadow-md">
+                <article key={course.id} className="card-festive group overflow-hidden rounded-2xl border border-noel-100/90 bg-white shadow-sm">
                   <Link href={`/khoa-hoc/${course.slug}`} aria-label={`Khóa học: ${course.title}`}>
-                    <div className="relative h-44 overflow-hidden bg-gradient-to-br from-blue-100 to-blue-200">
+                    <div className="relative h-44 overflow-hidden bg-gradient-to-br from-noel-100 via-love-100 to-noel-200">
                       {course.thumbnail_url
-                        ? <Image src={course.thumbnail_url} alt={`Khóa học ${course.title}`} fill className="object-cover transition group-hover:scale-105" sizes="(max-width: 640px) 50vw, 25vw" />
+                        ? <Image src={course.thumbnail_url} alt={`Khóa học ${course.title}`} fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(max-width: 640px) 50vw, 25vw" />
                         : <div className="flex h-full items-center justify-center text-5xl">🎸</div>
                       }
-                      <span className="absolute left-2 top-2 rounded bg-blue-600/80 px-2 py-0.5 text-xs text-white">
+                      <span className="absolute left-2.5 top-2.5 rounded-full bg-noel-600/90 px-2.5 py-0.5 text-xs font-medium text-white shadow-xs backdrop-blur-xs">
                         {levelLabel[course.level] ?? course.level}
+                      </span>
+                      <span aria-hidden="true" className="absolute right-2.5 top-2.5 rounded-full bg-white/90 px-2 py-0.5 text-[11px] font-semibold text-wine-600 shadow-xs">
+                        ♥ Yêu thích
                       </span>
                     </div>
                     <div className="p-4">
-                      <h3 className="line-clamp-2 font-semibold text-gray-800 group-hover:text-blue-600">{course.title}</h3>
-                      <p className="mt-3 text-lg font-bold text-blue-600">
-                        {course.price === 0 ? 'Miễn phí' : Number(course.price).toLocaleString('vi-VN') + '₫'}
-                      </p>
+                      <h3 className="line-clamp-2 font-semibold text-gray-800 transition-colors group-hover:text-noel-600">{course.title}</h3>
+                      <div className="mt-3 flex items-center justify-between">
+                        <p className="text-lg font-bold text-noel-600">
+                          {course.price === 0 ? 'Miễn phí' : Number(course.price).toLocaleString('vi-VN') + '₫'}
+                        </p>
+                        <span className="text-xs font-medium text-wine-500 opacity-0 transition group-hover:opacity-100">Học ngay →</span>
+                      </div>
                     </div>
                   </Link>
                 </article>
@@ -236,7 +326,7 @@ export default async function HomePage() {
         </section>
 
         {/* ── ABOUT ── */}
-        <section aria-labelledby="about-heading" className="relative overflow-hidden border-t py-16">
+        <section aria-labelledby="about-heading" className="relative overflow-hidden border-t border-noel-100 py-16">
           <Image
             src="https://res.cloudinary.com/ddaryoz5b/image/upload/w_1200,f_auto,q_50/v1773731924/Gemini_Generated_Image_bzddftbzddftbzdd_vtsvqs.png"
             alt=""
@@ -246,8 +336,11 @@ export default async function HomePage() {
             sizes="(max-width: 768px) 768px, 1200px"
             aria-hidden="true"
           />
-          <div className="absolute inset-0 bg-white/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-love-50/75 to-white/80" />
           <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
+            <span className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-noel-200 bg-white/90 px-3.5 py-1 text-xs font-semibold text-noel-700 shadow-xs">
+              ♥ Câu chuyện âm nhạc &amp; yêu thương
+            </span>
             <h2 id="about-heading" className="mb-4 text-3xl font-bold text-gray-900">MixiGui là gì?</h2>
             <p className="text-lg leading-relaxed text-gray-900">
               <strong>MixiGui</strong> là nền tảng học nhạc trực tuyến và cửa hàng nhạc cụ chính hãng tại Việt Nam, được thành lập với sứ mệnh <em>giúp mọi người tiếp cận âm nhạc dễ dàng và hiệu quả hơn</em>. Chúng tôi cung cấp các khóa học guitar, piano, trống, ukulele được thiết kế bởi giảng viên có hơn 10 năm kinh nghiệm biểu diễn và giảng dạy chuyên nghiệp.
@@ -256,27 +349,28 @@ export default async function HomePage() {
               Bên cạnh đó, cửa hàng nhạc cụ MixiGui cung cấp đầy đủ các dòng sản phẩm từ <strong>Yamaha, Roland, Casio, Fender, Gibson</strong> — tất cả đều là hàng chính hãng, có tem bảo hành và hóa đơn VAT rõ ràng. Dù bạn là người mới bắt đầu hay nhạc sĩ chuyên nghiệp, MixiGui đều có sản phẩm và dịch vụ phù hợp với nhu cầu của bạn.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link href="/ve-chung-toi" className="rounded-full border border-blue-600 px-6 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50 transition">Tìm hiểu thêm về chúng tôi</Link>
-              <Link href="/lien-he" className="rounded-full border border-gray-300 px-6 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 transition">Liên hệ tư vấn</Link>
+              <Link href="/ve-chung-toi" className="rounded-full bg-noel-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-noel-700">Tìm hiểu thêm về chúng tôi</Link>
+              <Link href="/lien-he" className="rounded-full border border-noel-200 bg-white/90 px-6 py-2.5 text-sm font-semibold text-noel-700 hover:bg-noel-50 transition">Liên hệ tư vấn</Link>
             </div>
           </div>
         </section>
 
         {/* ── WHY MIXIGUI ── */}
-        <section aria-labelledby="why-heading" className="bg-gray-50 py-16">
+        <section aria-labelledby="why-heading" className="bg-warm-snow py-16">
           <div className="mx-auto max-w-7xl px-4">
+            <p className="mb-2 text-center text-xs font-semibold uppercase tracking-widest text-wine-600">✨ Trải nghiệm tận tâm</p>
             <h2 id="why-heading" className="mb-10 text-center text-3xl font-bold text-gray-900">Tại sao chọn MixiGui?</h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
                 { icon: '🎓', title: 'Giảng viên chuyên nghiệp', desc: 'Đội ngũ giảng viên có kinh nghiệm biểu diễn và giảng dạy chuyên nghiệp.' },
                 { icon: '🎸', title: 'Nhạc cụ chính hãng', desc: 'Nhạc cụ được nhập khẩu chính hãng, bảo hành đầy đủ 12-24 tháng.' },
                 { icon: '📱', title: 'Học mọi lúc mọi nơi', desc: 'Truy cập khóa học trên mọi thiết bị, học theo tốc độ của bạn.' },
-                { icon: '💬', title: 'Hỗ trợ 24/7', desc: 'Đội ngũ hỗ trợ luôn sẵn sàng giải đáp mọi thắc mắc của bạn.' },
+                { icon: '💝', title: 'Hỗ trợ tận tình 24/7', desc: 'Đội ngũ hỗ trợ luôn sẵn sàng lắng nghe và giải đáp mọi thắc mắc của bạn.' },
               ].map((f) => (
-                <div key={f.title} className="rounded-xl border bg-white p-6 shadow-sm transition hover:shadow-md">
-                  <div className="mb-3 text-4xl">{f.icon}</div>
+                <div key={f.title} className="card-festive rounded-2xl border border-noel-100/80 bg-white p-6 shadow-sm">
+                  <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-noel-50 text-3xl">{f.icon}</div>
                   <h3 className="mb-2 font-semibold text-gray-800">{f.title}</h3>
-                  <p className="text-sm text-gray-500">{f.desc}</p>
+                  <p className="text-sm leading-relaxed text-gray-500">{f.desc}</p>
                 </div>
               ))}
             </div>
@@ -284,18 +378,21 @@ export default async function HomePage() {
         </section>
 
         {/* ── HOW IT WORKS ── */}
-        <section aria-labelledby="how-heading" className="bg-blue-50 py-16">
+        <section aria-labelledby="how-heading" className="bg-gradient-to-b from-noel-50/70 to-love-50/60 py-16">
           <div className="mx-auto max-w-7xl px-4">
             <h2 id="how-heading" className="mb-2 text-center text-3xl font-bold text-gray-900">Bắt đầu học nhạc chỉ trong 3 bước</h2>
-            <p className="mb-10 text-center text-gray-500">Đơn giản, nhanh chóng — bạn có thể học ngay hôm nay</p>
+            <p className="mb-10 text-center text-gray-500">Đơn giản, nhanh chóng — bạn có thể đánh lên giai điệu đầu tiên ngay hôm nay</p>
             <div className="grid gap-8 sm:grid-cols-3">
               {[
-                { step: '01', title: 'Chọn khóa học phù hợp', desc: 'Duyệt qua danh sách khóa học guitar, piano, trống, ukulele. Lọc theo cấp độ — cơ bản, trung cấp hay nâng cao — để tìm khóa học phù hợp nhất với bạn.' },
-                { step: '02', title: 'Đăng ký và thanh toán dễ dàng', desc: 'Tạo tài khoản miễn phí, chọn khóa học và thanh toán an toàn qua các phương thức phổ biến: chuyển khoản, Momo, VNPay, thẻ tín dụng.' },
-                { step: '03', title: 'Học ngay, học mọi lúc', desc: 'Truy cập toàn bộ nội dung khóa học ngay lập tức. Video HD, bài tập thực hành, tài liệu PDF — học theo tốc độ của bạn, xem lại không giới hạn.' },
+                { step: '01', badge: '🎄', title: 'Chọn khóa học phù hợp', desc: 'Duyệt qua danh sách khóa học guitar, piano, trống, ukulele. Lọc theo cấp độ — cơ bản, trung cấp hay nâng cao — để tìm khóa học phù hợp nhất với bạn.' },
+                { step: '02', badge: '💝', title: 'Đăng ký và thanh toán dễ dàng', desc: 'Tạo tài khoản miễn phí, chọn khóa học và thanh toán an toàn qua các phương thức phổ biến: chuyển khoản, Momo, VNPay, thẻ tín dụng.' },
+                { step: '03', badge: '🎶', title: 'Học ngay, học mọi lúc', desc: 'Truy cập toàn bộ nội dung khóa học ngay lập tức. Video HD, bài tập thực hành, tài liệu PDF — học theo tốc độ của bạn, xem lại không giới hạn.' },
               ].map((item) => (
-                <div key={item.step} className="relative rounded-xl bg-white p-6 shadow-sm">
-                  <span className="mb-4 block text-5xl font-extrabold text-blue-100">{item.step}</span>
+                <div key={item.step} className="card-festive relative rounded-2xl border border-noel-100/80 bg-white p-6 shadow-sm">
+                  <div className="mb-4 flex items-center justify-between">
+                    <span className="text-5xl font-extrabold text-noel-100">{item.step}</span>
+                    <span aria-hidden="true" className="text-2xl">{item.badge}</span>
+                  </div>
                   <h3 className="mb-2 text-lg font-semibold text-gray-800">{item.title}</h3>
                   <p className="text-sm leading-relaxed text-gray-500">{item.desc}</p>
                 </div>
@@ -309,30 +406,38 @@ export default async function HomePage() {
           <div className="mx-auto max-w-7xl px-4">
             <div className="mb-8 flex items-end justify-between">
               <div>
+                <span className="mb-1.5 inline-block text-xs font-semibold uppercase tracking-widest text-green-700">
+                  🎁 Quà tặng nhạc cụ mùa lễ hội
+                </span>
                 <h2 id="products-heading" className="text-3xl font-bold text-gray-900">Nhạc cụ nổi bật</h2>
-                <p className="mt-1 text-gray-500">Yamaha, Roland, Casio — chính hãng, bảo hành đầy đủ</p>
+                <p className="mt-1 text-gray-500">Yamaha, Roland, Casio — chính hãng, gói quà Giáng Sinh miễn phí</p>
               </div>
-              <Link href="/san-pham" className="text-sm font-medium text-blue-600 hover:underline">Xem tất cả →</Link>
+              <Link href="/san-pham" className="rounded-full bg-noel-50 px-4 py-1.5 text-sm font-semibold text-noel-600 transition hover:bg-noel-100">
+                Xem tất cả →
+              </Link>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {products.map((product) => {
                 const img = Array.isArray(product.images) ? product.images[0] : null
                 return (
-                  <article key={product.id} className="group overflow-hidden rounded-xl border bg-white shadow-sm transition hover:shadow-md">
+                  <article key={product.id} className="card-festive group overflow-hidden rounded-2xl border border-noel-100/90 bg-white shadow-sm">
                     <Link href={`/san-pham/${product.slug}`} aria-label={`Sản phẩm: ${product.name}`}>
-                      <div className="relative h-44 overflow-hidden bg-gradient-to-br from-green-50 to-green-100">
+                      <div className="relative h-44 overflow-hidden bg-gradient-to-br from-noel-50 via-gold-50 to-green-50">
                         {img
-                          ? <Image src={img} alt={`Nhạc cụ ${product.name}`} fill className="object-cover transition group-hover:scale-105" sizes="(max-width: 640px) 50vw, 25vw" />
+                          ? <Image src={img} alt={`Nhạc cụ ${product.name}`} fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(max-width: 640px) 50vw, 25vw" />
                           : <div className="flex h-full items-center justify-center text-5xl">🎵</div>
                         }
                         {product.brand && (
-                          <span className="absolute left-2 top-2 rounded bg-white/90 px-2 py-0.5 text-xs font-medium text-gray-700">{product.brand}</span>
+                          <span className="absolute left-2.5 top-2.5 rounded-full bg-white/95 px-2.5 py-0.5 text-xs font-semibold text-gray-700 shadow-xs">{product.brand}</span>
                         )}
+                        <span aria-hidden="true" className="absolute right-2.5 top-2.5 rounded-full bg-noel-600/90 px-2 py-0.5 text-[11px] font-medium text-white shadow-xs">
+                          🎁 Quà Noel
+                        </span>
                       </div>
                       <div className="p-4">
-                        <h3 className="line-clamp-2 font-semibold text-gray-800 group-hover:text-blue-600">{product.name}</h3>
+                        <h3 className="line-clamp-2 font-semibold text-gray-800 transition-colors group-hover:text-noel-600">{product.name}</h3>
                         <div className="mt-3 flex items-center gap-2">
-                          <span className="text-lg font-bold text-blue-600">{Number(product.price).toLocaleString('vi-VN')}₫</span>
+                          <span className="text-lg font-bold text-noel-600">{Number(product.price).toLocaleString('vi-VN')}₫</span>
                           {product.discount_price && product.discount_price < product.price && (
                             <span className="text-xs text-gray-400 line-through">{Number(product.discount_price).toLocaleString('vi-VN')}₫</span>
                           )}
@@ -347,12 +452,12 @@ export default async function HomePage() {
         </section>
 
         {/* ── BRANDS ── */}
-        <section aria-label="Thương hiệu đối tác" className="border-y bg-white py-10">
+        <section aria-label="Thương hiệu đối tác" className="border-y border-noel-100/80 bg-white py-10">
           <div className="mx-auto max-w-5xl px-4">
             <p className="mb-6 text-center text-sm font-medium uppercase tracking-widest text-gray-400">Nhạc cụ chính hãng từ các thương hiệu uy tín</p>
-            <div className="flex flex-wrap items-center justify-center gap-6">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
               {BRANDS.map((brand) => (
-                <Link key={brand} href={`/san-pham?brand=${brand.toLowerCase()}`} className="rounded-lg border px-6 py-3 text-base font-bold text-gray-500 transition hover:border-blue-300 hover:text-blue-600">
+                <Link key={brand} href={`/san-pham?brand=${brand.toLowerCase()}`} className="rounded-xl border border-noel-100 bg-warm-snow px-6 py-3 text-base font-bold text-gray-600 transition hover:-translate-y-0.5 hover:border-noel-300 hover:bg-noel-50 hover:text-noel-600">
                   {brand}
                 </Link>
               ))}
@@ -361,20 +466,22 @@ export default async function HomePage() {
         </section>
 
         {/* ── TESTIMONIALS ── */}
-        <section aria-labelledby="testimonials-heading" className="bg-gray-50 py-16">
+        <section aria-labelledby="testimonials-heading" className="bg-warm-snow py-16">
           <div className="mx-auto max-w-7xl px-4">
+            <p className="mb-2 text-center text-xs font-semibold uppercase tracking-widest text-wine-600">💝 Cảm nhận từ trái tim</p>
             <h2 id="testimonials-heading" className="mb-2 text-center text-3xl font-bold text-gray-900">Học viên nói gì về MixiGui?</h2>
             <p className="mb-10 text-center text-gray-500">Hơn {stats.users}+ học viên đã tin tưởng chọn MixiGui</p>
             <div className="grid gap-6 sm:grid-cols-3">
               {TESTIMONIALS.map((t) => (
-                <blockquote key={t.name} className="rounded-xl border bg-white p-6 shadow-sm">
+                <blockquote key={t.name} className="card-festive relative rounded-2xl border border-noel-100/80 bg-white p-6 shadow-sm">
+                  <span aria-hidden="true" className="absolute right-5 top-4 text-xl text-love-200">♥</span>
                   <div className="mb-3 flex text-yellow-400">{'★'.repeat(t.rating)}</div>
                   <p className="mb-4 text-sm leading-relaxed text-gray-600 italic">"{t.text}"</p>
                   <footer className="flex items-center gap-3">
-                    <span className="text-3xl">{t.avatar}</span>
+                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-noel-50 text-2xl">{t.avatar}</span>
                     <div>
                       <cite className="block font-semibold text-gray-800 not-italic">{t.name}</cite>
-                      <span className="text-xs text-gray-400">{t.role}</span>
+                      <span className="text-xs text-wine-500">{t.role}</span>
                     </div>
                   </footer>
                 </blockquote>
@@ -385,27 +492,32 @@ export default async function HomePage() {
 
         {/* ── BLOG ── */}
         {posts.length > 0 && (
-          <section aria-labelledby="blog-heading" className="bg-gray-50 py-16">
+          <section aria-labelledby="blog-heading" className="bg-white py-16">
             <div className="mx-auto max-w-7xl px-4">
               <div className="mb-8 flex items-end justify-between">
                 <div>
+                  <span className="mb-1.5 inline-block text-xs font-semibold uppercase tracking-widest text-wine-600">
+                    💌 Góc chia sẻ &amp; Cảm hứng
+                  </span>
                   <h2 id="blog-heading" className="text-3xl font-bold text-gray-900">Kiến thức âm nhạc</h2>
                   <p className="mt-1 text-gray-500">Bài viết hữu ích từ các chuyên gia âm nhạc</p>
                 </div>
-                <Link href="/blog" className="text-sm font-medium text-blue-600 hover:underline">Xem tất cả →</Link>
+                <Link href="/blog" className="rounded-full bg-wine-50 px-4 py-1.5 text-sm font-semibold text-wine-600 transition hover:bg-wine-100">
+                  Xem tất cả →
+                </Link>
               </div>
               <div className="grid gap-6 sm:grid-cols-3">
                 {posts.map((post) => (
-                  <article key={post.id} className="group overflow-hidden rounded-xl border bg-white shadow-sm transition hover:shadow-md">
+                  <article key={post.id} className="card-festive group overflow-hidden rounded-2xl border border-wine-100 bg-white shadow-sm">
                     <Link href={`/blog/${post.slug}`} aria-label={post.title}>
-                      <div className="relative h-44 overflow-hidden bg-gradient-to-br from-purple-50 to-purple-100">
+                      <div className="relative h-44 overflow-hidden bg-gradient-to-br from-wine-50 via-love-50 to-wine-100">
                         {post.thumbnail_url
-                          ? <Image src={post.thumbnail_url} alt={post.title} fill className="object-cover transition group-hover:scale-105" sizes="(max-width: 640px) 100vw, 33vw" />
+                          ? <Image src={post.thumbnail_url} alt={post.title} fill className="object-cover transition duration-500 group-hover:scale-105" sizes="(max-width: 640px) 100vw, 33vw" />
                           : <div className="flex h-full items-center justify-center text-5xl">📝</div>
                         }
                       </div>
                       <div className="p-4">
-                        <h3 className="line-clamp-2 font-semibold text-gray-800 group-hover:text-blue-600">{post.title}</h3>
+                        <h3 className="line-clamp-2 font-semibold text-gray-800 transition-colors group-hover:text-wine-600">{post.title}</h3>
                         {post.excerpt && <p className="mt-2 line-clamp-2 text-sm text-gray-500">{post.excerpt}</p>}
                         <p className="mt-3 text-xs text-gray-400">{new Date(post.published_at).toLocaleDateString('vi-VN')}</p>
                       </div>
@@ -427,7 +539,7 @@ export default async function HomePage() {
                 <details key={i} className="group rounded-xl border bg-white p-5 shadow-sm open:shadow-md">
                   <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-gray-800">
                     <span>{faq.q}</span>
-                    <span className="ml-4 shrink-0 text-blue-500 transition group-open:rotate-45">＋</span>
+                    <span className="ml-4 shrink-0 text-noel-500 transition group-open:rotate-45">＋</span>
                   </summary>
                   <p className="mt-3 text-sm leading-relaxed text-gray-500">{faq.a}</p>
                 </details>
@@ -435,16 +547,16 @@ export default async function HomePage() {
             </div>
             <p className="mt-8 text-center text-sm text-gray-500">
               Còn thắc mắc khác?{' '}
-              <Link href="/lien-he" className="font-medium text-blue-600 hover:underline">Liên hệ với chúng tôi</Link>
+              <Link href="/lien-he" className="font-medium text-noel-600 hover:underline">Liên hệ với chúng tôi</Link>
             </p>
           </div>
         </section>
 
         {/* ── LỘ TRÌNH HỌC NHẠC ── */}
-        <section aria-labelledby="roadmap-heading" className="bg-gradient-to-b from-white to-blue-50 py-20">
+        <section aria-labelledby="roadmap-heading" className="bg-gradient-to-b from-white to-noel-50 py-20">
           <div className="mx-auto max-w-6xl px-4">
             <div className="mb-4 flex justify-center">
-              <span className="rounded-full bg-blue-100 px-4 py-1 text-sm font-semibold text-blue-700">Lộ trình học</span>
+              <span className="rounded-full bg-noel-100 px-4 py-1 text-sm font-semibold text-noel-700">Lộ trình học</span>
             </div>
             <h2 id="roadmap-heading" className="mb-3 text-center text-3xl font-bold text-gray-900">
               Từ 0 đến chuyên nghiệp — chỉ 7 tháng
@@ -456,7 +568,7 @@ export default async function HomePage() {
             {/* Timeline ngang */}
             <div className="relative">
               {/* Đường kẻ ngang nối các bước */}
-              <div className="absolute left-0 right-0 top-10 hidden h-0.5 bg-gradient-to-r from-blue-200 via-blue-400 to-blue-200 lg:block" />
+              <div className="absolute left-0 right-0 top-10 hidden h-0.5 bg-gradient-to-r from-noel-200 via-noel-400 to-noel-200 lg:block" />
 
               <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
                 {[
@@ -476,10 +588,10 @@ export default async function HomePage() {
                     phase: 'Tháng 2–3',
                     title: 'Hợp âm & nhịp điệu',
                     icon: '🎵',
-                    color: 'from-blue-400 to-cyan-500',
-                    bg: 'bg-blue-50',
-                    border: 'border-blue-200',
-                    badge: 'text-blue-700 bg-blue-100',
+                    color: 'from-noel-400 to-noel-500',
+                    bg: 'bg-noel-50',
+                    border: 'border-noel-200',
+                    badge: 'text-noel-700 bg-noel-100',
                     points: ['Hợp âm Am, Em, C, G, D, F', 'Strumming & fingerpicking', 'Chuyển hợp âm mượt mà', 'Đệm hát bài hoàn chỉnh'],
                   },
                   {
@@ -487,10 +599,10 @@ export default async function HomePage() {
                     phase: 'Tháng 4–6',
                     title: 'Nâng cao kỹ thuật',
                     icon: '🎸',
-                    color: 'from-purple-400 to-violet-500',
-                    bg: 'bg-purple-50',
-                    border: 'border-purple-200',
-                    badge: 'text-purple-700 bg-purple-100',
+                    color: 'from-wine-400 to-wine-500',
+                    bg: 'bg-wine-50',
+                    border: 'border-wine-200',
+                    badge: 'text-wine-700 bg-wine-100',
                     points: ['Barre chord, power chord', 'Fingerstyle cơ bản → nâng cao', 'Đọc tab & sheet music', 'Chơi 10+ bài yêu thích'],
                   },
                   {
@@ -534,7 +646,7 @@ export default async function HomePage() {
 
                     {/* Arrow between steps (mobile) */}
                     {i < 3 && (
-                      <div className="my-2 text-2xl text-blue-300 lg:hidden">↓</div>
+                      <div className="my-2 text-2xl text-noel-300 lg:hidden">↓</div>
                     )}
                   </div>
                 ))}
@@ -542,7 +654,7 @@ export default async function HomePage() {
             </div>
 
             <div className="mt-12 text-center">
-              <Link href="/khoa-hoc" className="inline-block rounded-full bg-gradient-to-r from-blue-600 to-blue-500 px-8 py-3 font-semibold text-white shadow-md transition hover:shadow-lg hover:from-blue-700 hover:to-blue-600">
+              <Link href="/khoa-hoc" className="inline-block rounded-full bg-gradient-to-r from-noel-600 to-noel-500 px-8 py-3 font-semibold text-white shadow-md transition hover:shadow-lg hover:from-noel-700 hover:to-noel-600">
                 Bắt đầu lộ trình học ngay →
               </Link>
             </div>
@@ -559,10 +671,10 @@ export default async function HomePage() {
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {[
                 { icon: '🎸', name: 'Guitar Acoustic', price: 'Từ 1.500.000₫', level: 'Dễ bắt đầu', best: 'Nhạc pop, ballad, dân ca', pros: ['Không cần bộ khuếch đại', 'Dễ mang theo, học mọi nơi', 'Phù hợp đệm hát', 'Chi phí ban đầu thấp'], color: 'border-yellow-300 bg-yellow-50' },
-                { icon: '🎹', name: 'Piano / Keyboard', price: 'Từ 3.000.000₫', level: 'Trung bình', best: 'Nhạc cổ điển, ballad, jazz', pros: ['Nền tảng lý thuyết âm nhạc tốt', 'Học nhạc lý nhanh hơn', 'Phù hợp mọi thể loại', 'Không cần chỉnh dây'], color: 'border-blue-300 bg-blue-50' },
+                { icon: '🎹', name: 'Piano / Keyboard', price: 'Từ 3.000.000₫', level: 'Trung bình', best: 'Nhạc cổ điển, ballad, jazz', pros: ['Nền tảng lý thuyết âm nhạc tốt', 'Học nhạc lý nhanh hơn', 'Phù hợp mọi thể loại', 'Không cần chỉnh dây'], color: 'border-noel-300 bg-noel-50' },
                 { icon: '🥁', name: 'Trống / Drums', price: 'Từ 5.000.000₫', level: 'Trung bình', best: 'Rock, pop, jazz', pros: ['Phát triển cảm giác nhịp điệu', 'Giải phóng năng lượng tốt', 'Được chào đón trong mọi ban nhạc', 'Có thể dùng trống điện tử yên tĩnh'], color: 'border-red-300 bg-red-50' },
                 { icon: '🎵', name: 'Ukulele', price: 'Từ 500.000₫', level: 'Rất dễ', best: 'Nhạc nhẹ, Hawaii, indie', pros: ['Nhỏ gọn, dễ mang', 'Chỉ 4 dây, học nhanh', 'Âm thanh vui tươi', 'Giá thành thấp nhất'], color: 'border-green-300 bg-green-50' },
-                { icon: '🎸', name: 'Guitar Điện', price: 'Từ 3.000.000₫', level: 'Trung bình', best: 'Rock, metal, blues', pros: ['Âm thanh đa dạng qua effect', 'Dây mềm, ít đau tay', 'Phù hợp ban nhạc', 'Nhiều phong cách biểu diễn'], color: 'border-purple-300 bg-purple-50' },
+                { icon: '🎸', name: 'Guitar Điện', price: 'Từ 3.000.000₫', level: 'Trung bình', best: 'Rock, metal, blues', pros: ['Âm thanh đa dạng qua effect', 'Dây mềm, ít đau tay', 'Phù hợp ban nhạc', 'Nhiều phong cách biểu diễn'], color: 'border-wine-300 bg-wine-50' },
                 { icon: '🎻', name: 'Bass Guitar', price: 'Từ 3.500.000₫', level: 'Trung bình', best: 'Funk, rock, jazz', pros: ['Nền tảng của mọi ban nhạc', 'Kỹ thuật slap thú vị', 'Ít cạnh tranh hơn lead guitar', 'Groove và rhythm là chủ đạo'], color: 'border-gray-300 bg-gray-50' },
               ].map((ins) => (
                 <div key={ins.name} className={`rounded-xl border-2 ${ins.color} p-5`}>
@@ -584,7 +696,7 @@ export default async function HomePage() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="/san-pham" className="mt-4 block text-center text-sm font-medium text-blue-600 hover:underline">Xem nhạc cụ →</Link>
+                  <Link href="/san-pham" className="mt-4 block text-center text-sm font-medium text-noel-600 hover:underline">Xem nhạc cụ →</Link>
                 </div>
               ))}
             </div>
@@ -620,25 +732,28 @@ export default async function HomePage() {
         </section>
 
         {/* ── HỌC THỬ MIỄN PHÍ ── */}
-        <section aria-labelledby="free-trial-heading" className="bg-gradient-to-r from-purple-600 to-purple-800 py-16 text-white">
-          <div className="mx-auto max-w-5xl px-4">
+        <section aria-labelledby="free-trial-heading" className="relative overflow-hidden bg-gradient-to-r from-wine-800 via-noel-700 to-wine-700 py-16 text-white">
+          <HeroSparkles />
+          <div className="relative z-10 mx-auto max-w-5xl px-4">
             <div className="grid items-center gap-10 lg:grid-cols-2">
               <div>
-                <span className="mb-3 inline-block rounded-full bg-white/20 px-4 py-1 text-sm font-medium">🆓 Miễn phí hoàn toàn</span>
+                <span className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-gold-300/40 bg-white/15 px-4 py-1 text-sm font-medium text-gold-200">
+                  🎁 Món quà làm quen • Miễn phí 100%
+                </span>
                 <h2 id="free-trial-heading" className="mb-4 text-3xl font-bold">Học thử 3 bài đầu tiên miễn phí</h2>
-                <p className="mb-6 text-lg text-purple-100 leading-relaxed">
+                <p className="mb-6 text-lg text-rose-100 leading-relaxed">
                   Không cần thẻ tín dụng, không cần cam kết. Đăng ký tài khoản miễn phí để truy cập ngay 3 bài học đầu tiên của bất kỳ khóa học nào — cảm nhận chất lượng giảng dạy của MixiGui trước khi quyết định đăng ký.
                 </p>
                 <ul className="mb-8 space-y-3">
                   {['Video bài giảng HD, có thể xem trên mọi thiết bị', 'Tài liệu PDF bài tập đi kèm', 'Hỏi đáp trực tiếp với giảng viên trong 7 ngày', 'Không tự động gia hạn, không thu phí ẩn'].map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-purple-100">
-                      <span className="mt-0.5 shrink-0 text-green-400">✓</span>
+                    <li key={item} className="flex items-start gap-3 text-rose-100">
+                      <span className="mt-0.5 shrink-0 text-gold-300">♥</span>
                       <span className="text-sm">{item}</span>
                     </li>
                   ))}
                 </ul>
-                <Link href="/dang-ky" className="inline-block rounded-full bg-white px-8 py-3 font-semibold text-purple-700 shadow transition hover:bg-purple-50">
-                  Đăng ký học thử ngay — Miễn phí
+                <Link href="/dang-ky" className="inline-block rounded-full bg-white px-8 py-3.5 font-bold text-noel-700 shadow-lg ring-2 ring-gold-300/50 transition hover:-translate-y-0.5 hover:bg-noel-50">
+                  💝 Đăng ký học thử ngay — Miễn phí
                 </Link>
               </div>
               <div className="grid grid-cols-2 gap-4">
@@ -648,11 +763,11 @@ export default async function HomePage() {
                   { icon: '🥁', label: 'Trống cơ bản', lessons: '3 bài học thử', students: '650+ học viên' },
                   { icon: '🎵', label: 'Ukulele', lessons: '3 bài học thử', students: '870+ học viên' },
                 ].map((course) => (
-                  <div key={course.label} className="rounded-xl bg-white/10 p-4 text-center backdrop-blur-sm">
+                  <div key={course.label} className="rounded-2xl border border-white/15 bg-white/10 p-4 text-center backdrop-blur-xs transition hover:bg-white/15">
                     <div className="mb-2 text-3xl">{course.icon}</div>
                     <p className="font-semibold text-white">{course.label}</p>
-                    <p className="mt-1 text-xs text-purple-200">{course.lessons}</p>
-                    <p className="text-xs text-purple-300">{course.students}</p>
+                    <p className="mt-1 text-xs text-gold-200">{course.lessons}</p>
+                    <p className="text-xs text-rose-200">{course.students}</p>
                   </div>
                 ))}
               </div>
@@ -681,7 +796,7 @@ export default async function HomePage() {
                 { icon: '😌', title: 'Giảm căng thẳng', desc: 'Chơi nhạc giải phóng endorphin, giảm cortisol — hormone stress — hiệu quả không kém thiền định.' },
                 { icon: '🤝', title: 'Kết nối xã hội', desc: 'Biết chơi nhạc cụ mở ra cơ hội tham gia ban nhạc, gặp gỡ bạn bè cùng sở thích và biểu diễn trước công chúng.' },
               ].map((item) => (
-                <div key={item.title} className="rounded-xl bg-blue-50 p-5">
+                <div key={item.title} className="rounded-xl bg-noel-50 p-5">
                   <div className="mb-2 text-3xl">{item.icon}</div>
                   <h3 className="mb-1 font-semibold text-gray-800">{item.title}</h3>
                   <p className="text-sm text-gray-500">{item.desc}</p>
@@ -701,7 +816,7 @@ export default async function HomePage() {
             <div className="overflow-x-auto">
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="bg-blue-600 text-white">
+                  <tr className="bg-noel-600 text-white">
                     <th className="p-4 text-left font-semibold rounded-tl-xl">Tiêu chí</th>
                     <th className="p-4 text-center font-semibold">🖥️ MixiGui Online</th>
                     <th className="p-4 text-center font-semibold rounded-tr-xl">🏫 Trung tâm truyền thống</th>
@@ -748,9 +863,9 @@ export default async function HomePage() {
                 { name: 'Thầy Việt Anh', role: 'Ukulele & Guitar điện', exp: '7 năm kinh nghiệm', badge: '🎵', students: '1.100+ học viên', bio: 'Chuyên gia ukulele và guitar điện, nổi tiếng với các video hướng dẫn viral trên YouTube. Cách dạy vui nhộn, phù hợp mọi lứa tuổi.' },
               ].map((ins) => (
                 <div key={ins.name} className="rounded-xl border bg-white p-5 shadow-sm text-center">
-                  <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-4xl">{ins.badge}</div>
+                  <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-noel-100 text-4xl">{ins.badge}</div>
                   <h3 className="font-bold text-gray-800">{ins.name}</h3>
-                  <p className="text-xs font-medium text-blue-600">{ins.role}</p>
+                  <p className="text-xs font-medium text-noel-600">{ins.role}</p>
                   <p className="mt-1 text-xs text-gray-400">{ins.exp} • {ins.students}</p>
                   <p className="mt-3 text-xs leading-relaxed text-gray-500">{ins.bio}</p>
                 </div>
@@ -758,7 +873,7 @@ export default async function HomePage() {
             </div>
             <p className="mt-8 text-center text-sm text-gray-500">
               Ngoài 4 giảng viên nổi bật trên, MixiGui còn có đội ngũ <strong>12+ giảng viên chuyên ngành</strong> khác, bao gồm violin, bass guitar, saxophone và sản xuất âm nhạc.{' '}
-              <Link href="/ve-chung-toi" className="font-medium text-blue-600 hover:underline">Tìm hiểu thêm →</Link>
+              <Link href="/ve-chung-toi" className="font-medium text-noel-600 hover:underline">Tìm hiểu thêm →</Link>
             </p>
           </div>
         </section>
@@ -805,7 +920,7 @@ export default async function HomePage() {
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {[
                 { age: '5 – 10 tuổi', icon: '👶', color: 'bg-pink-50 border-pink-200', tag: 'text-pink-600', title: 'Nền tảng sớm', points: ['Phát triển tai nghe âm nhạc tự nhiên', 'Tăng khả năng tập trung và kỷ luật', 'Piano và ukulele là lựa chọn tốt nhất', 'Học qua trò chơi, nhạc thiếu nhi vui nhộn'] },
-                { age: '11 – 17 tuổi', icon: '🧑', color: 'bg-blue-50 border-blue-200', tag: 'text-blue-600', title: 'Phát triển nhanh', points: ['Não bộ đang trong giai đoạn phát triển mạnh', 'Học nhanh nhất trong tất cả độ tuổi', 'Guitar và piano phổ biến nhất', 'Xây dựng bản sắc cá nhân qua âm nhạc'] },
+                { age: '11 – 17 tuổi', icon: '🧑', color: 'bg-noel-50 border-noel-200', tag: 'text-noel-600', title: 'Phát triển nhanh', points: ['Não bộ đang trong giai đoạn phát triển mạnh', 'Học nhanh nhất trong tất cả độ tuổi', 'Guitar và piano phổ biến nhất', 'Xây dựng bản sắc cá nhân qua âm nhạc'] },
                 { age: '18 – 35 tuổi', icon: '👨', color: 'bg-green-50 border-green-200', tag: 'text-green-600', title: 'Học có mục tiêu', points: ['Học vì đam mê, không áp lực', 'Dễ tự tổ chức lịch học', 'Tiến bộ rõ rệt trong 3–6 tháng', 'Học online phù hợp nhất với lịch bận'] },
                 { age: '36 tuổi trở lên', icon: '🧓', color: 'bg-amber-50 border-amber-200', tag: 'text-amber-600', title: 'Không bao giờ muộn', points: ['Trí nhớ cơ bắp vẫn hình thành tốt', 'Học chậm hơn nhưng chắc hơn', 'Âm nhạc giảm căng thẳng hiệu quả', 'Piano nhẹ nhàng, ít tác động lên khớp'] },
               ].map((group) => (
@@ -831,12 +946,16 @@ export default async function HomePage() {
         </section>
 
         {/* ── CỘNG ĐỒNG ── */}
-        <section aria-labelledby="community-heading" className="bg-gradient-to-br from-blue-900 to-blue-700 py-16 text-white">
-          <div className="mx-auto max-w-5xl px-4">
+        <section aria-labelledby="community-heading" className="relative overflow-hidden bg-gradient-to-br from-noel-950 via-noel-800 to-wine-800 py-16 text-white">
+          <HeroSparkles />
+          <div className="relative z-10 mx-auto max-w-5xl px-4">
             <div className="grid items-center gap-10 lg:grid-cols-2">
               <div>
+                <span className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3.5 py-1 text-xs font-semibold text-gold-200">
+                  🎄♥ Gắn kết những tâm hồn đồng điệu
+                </span>
                 <h2 id="community-heading" className="mb-4 text-3xl font-bold">Cộng đồng học viên MixiGui</h2>
-                <p className="mb-6 text-lg text-blue-100 leading-relaxed">
+                <p className="mb-6 text-lg text-rose-100 leading-relaxed">
                   Học nhạc một mình có thể cô đơn và thiếu động lực. Đó là lý do MixiGui xây dựng một cộng đồng học viên sôi động — nơi bạn có thể chia sẻ tiến trình học, hỏi đáp kỹ thuật, tham gia các thử thách âm nhạc hàng tháng và kết bạn với những người cùng đam mê.
                 </p>
                 <div className="grid grid-cols-2 gap-4 mb-8">
@@ -846,32 +965,32 @@ export default async function HomePage() {
                     { value: '12', label: 'Thử thách âm nhạc/năm' },
                     { value: '4.9/5', label: 'Đánh giá trung bình' },
                   ].map((s) => (
-                    <div key={s.label} className="rounded-xl bg-white/10 p-4 text-center">
-                      <p className="text-2xl font-extrabold text-white">{s.value}</p>
-                      <p className="text-xs text-blue-200">{s.label}</p>
+                    <div key={s.label} className="rounded-2xl border border-white/15 bg-white/10 p-4 text-center">
+                      <p className="text-2xl font-extrabold text-gold-200">{s.value}</p>
+                      <p className="text-xs text-rose-200">{s.label}</p>
                     </div>
                   ))}
                 </div>
-                <Link href="/dang-ky" className="inline-block rounded-full bg-white px-8 py-3 font-semibold text-blue-700 shadow transition hover:bg-blue-50">
-                  Tham gia cộng đồng ngay
+                <Link href="/dang-ky" className="inline-block rounded-full bg-white px-8 py-3.5 font-bold text-noel-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-noel-50">
+                  Tham gia cộng đồng ngay ♥
                 </Link>
               </div>
               <div className="space-y-4">
                 {[
-                  { name: 'Lan Anh', time: '2 giờ trước', text: 'Hôm nay tôi vừa hoàn thành bài "Tháng Tư Là Lời Nói Dối" trên guitar sau 2 tháng tập. Cảm ơn thầy Minh Khoa đã hướng dẫn! 🎸', likes: 47 },
+                  { name: 'Lan Anh', time: '2 giờ trước', text: 'Hôm nay tôi vừa hoàn thành bài "Tháng Tư Là Lời Nói Dối" trên guitar sau 2 tháng tập để tặng người yêu dịp Giáng Sinh. Cảm ơn thầy Minh Khoa đã hướng dẫn! 🎸❤️', likes: 47 },
                   { name: 'Tuấn Kiệt', time: '5 giờ trước', text: 'Ai đang học piano mà chưa qua được bài Hanon số 5 thì cứ tập chậm bằng 50% rồi tăng dần lên. Tôi đã mắc kẹt 3 tuần với bài này trước khi áp dụng cách này! 😅', likes: 83 },
-                  { name: 'Phương Linh', time: 'Hôm qua', text: 'Mua đàn Yamaha PSR-E373 tại MixiGui, nhân viên tư vấn rất nhiệt tình, đàn chính hãng, giá tốt. Đang học khóa piano cơ bản online song song — tiến bộ rõ rệt! ⭐⭐⭐⭐⭐', likes: 62 },
+                  { name: 'Phương Linh', time: 'Hôm qua', text: 'Mua đàn Yamaha PSR-E373 tại MixiGui làm quà mùa lễ hội, nhân viên gói nơ đỏ rất xinh, đàn chính hãng, giá tốt. Đang học khóa piano cơ bản online song song — tiến bộ rõ rệt! ⭐⭐⭐⭐⭐', likes: 62 },
                 ].map((post) => (
-                  <div key={post.name} className="rounded-xl bg-white/10 p-4 backdrop-blur-sm">
+                  <div key={post.name} className="rounded-2xl border border-white/15 bg-white/10 p-4 backdrop-blur-xs">
                     <div className="mb-2 flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-400 text-sm font-bold text-white">{post.name[0]}</div>
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-noel-400 to-wine-500 text-sm font-bold text-white">{post.name[0]}</div>
                         <span className="font-semibold text-white text-sm">{post.name}</span>
                       </div>
-                      <span className="text-xs text-blue-300">{post.time}</span>
+                      <span className="text-xs text-rose-200/80">{post.time}</span>
                     </div>
-                    <p className="text-sm text-blue-100 leading-relaxed">{post.text}</p>
-                    <p className="mt-2 text-xs text-blue-300">❤️ {post.likes} lượt thích</p>
+                    <p className="text-sm text-rose-100 leading-relaxed">{post.text}</p>
+                    <p className="mt-2 text-xs text-gold-200">❤️ {post.likes} lượt thả tim</p>
                   </div>
                 ))}
               </div>
@@ -895,7 +1014,7 @@ export default async function HomePage() {
                 { icon: '⭐', title: 'Đánh giá 4.9/5 trên Google', desc: 'Với hơn 2.400 đánh giá trên Google Business và hơn 1.800 đánh giá 5 sao, MixiGui là một trong những nền tảng học nhạc và cửa hàng nhạc cụ được đánh giá cao nhất tại Việt Nam.' },
                 { icon: '📱', title: 'Tương thích đa nền tảng', desc: 'Nền tảng học trực tuyến của MixiGui hoạt động mượt mà trên mọi thiết bị — Windows, macOS, iOS và Android. Không cần cài đặt thêm ứng dụng, học ngay trên trình duyệt web.' },
               ].map((item) => (
-                <div key={item.title} className="flex gap-4 rounded-xl border p-5 shadow-sm">
+                <div key={item.title} className="card-festive flex gap-4 rounded-2xl border border-noel-100/80 bg-white p-5 shadow-sm">
                   <span className="shrink-0 text-3xl">{item.icon}</span>
                   <div>
                     <h3 className="mb-1 font-bold text-gray-800">{item.title}</h3>
@@ -908,30 +1027,29 @@ export default async function HomePage() {
         </section>
 
         {/* ── SPOTIFY ── */}
-        <section aria-labelledby="spotify-heading" className="bg-blue-50 py-16">
+        <section aria-labelledby="spotify-heading" className="bg-warm-snow py-16">
           <div className="mx-auto max-w-5xl px-4">
             <div className="mb-3 flex items-center justify-center gap-3">
-              <svg viewBox="0 0 24 24" fill="#1DB954" className="h-8 w-8">
-                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
-              </svg>
-              <h2 id="spotify-heading" className="text-3xl font-bold text-gray-900">Âm nhạc trên MixiGui</h2>
+              <span aria-hidden="true" className="text-2xl">🎄</span>
+              <h2 id="spotify-heading" className="text-3xl font-bold text-gray-900">Giai điệu mùa đông &amp; Tình yêu trên MixiGui</h2>
+              <span aria-hidden="true" className="text-2xl">💝</span>
             </div>
             <p className="mb-10 text-center text-gray-500 max-w-xl mx-auto">
-              Thư giãn và tìm cảm hứng với những playlist âm nhạc được MixiGui tuyển chọn — phù hợp để học nhạc, luyện tập và thư giãn.
+              Thư giãn và tìm cảm hứng với những playlist tình ca ấm áp được MixiGui tuyển chọn — hoàn hảo cho những buổi tối mùa đông luyện đàn và sẻ chia cảm xúc.
             </p>
 
             {/* Mini tracks */}
             <div>
-              <p className="mb-6 text-center text-sm font-semibold uppercase tracking-widest text-green-600">🎸 Bài học nổi bật theo thể loại</p>
+              <p className="mb-6 text-center text-sm font-semibold uppercase tracking-widest text-noel-600">🎸 Playlist lãng mạn theo thể loại</p>
               <div className="grid gap-4 sm:grid-cols-2">
                 {[
-                  { label: 'Guitar Acoustic — Nhạc Việt', id: '5U9KBFZpLJNBktDzJ3oTuA' },
-                  { label: 'Piano Ballad — Thư giãn', id: '37i9dQZF1DX4sWSpwq3LiO' },
-                  { label: 'Fingerstyle Guitar — Instrumental', id: '37i9dQZF1DWWEJlAGA9gs0' },
-                  { label: 'Acoustic Chill — Luyện tập', id: '37i9dQZF1DX4E3UdUs7fUx' },
+                  { label: '♥ Guitar Acoustic — Tình Ca Nhạc Việt', id: '5U9KBFZpLJNBktDzJ3oTuA' },
+                  { label: '❄ Piano Ballad — Đêm Đông Thư Giãn', id: '37i9dQZF1DX4sWSpwq3LiO' },
+                  { label: '🎄 Fingerstyle Guitar — Giai Điệu Ấm Áp', id: '37i9dQZF1DWWEJlAGA9gs0' },
+                  { label: '🕯 Acoustic Chill — Góc Nhỏ Bình Yên', id: '37i9dQZF1DX4E3UdUs7fUx' },
                 ].map((track) => (
-                  <div key={track.id} className="rounded-xl overflow-hidden">
-                    <p className="mb-1.5 text-xs font-medium text-gray-500">{track.label}</p>
+                  <div key={track.id} className="rounded-2xl border border-noel-100/80 bg-white p-3 shadow-xs">
+                    <p className="mb-2 text-xs font-semibold text-wine-700">{track.label}</p>
                     <iframe
                       style={{ borderRadius: '12px' }}
                       src={`https://open.spotify.com/embed/playlist/${track.id}?utm_source=generator&theme=0`}
@@ -948,7 +1066,7 @@ export default async function HomePage() {
 
             <p className="mt-8 text-center text-sm text-gray-500">
               Nghe trọn bài với tài khoản Spotify Premium •{' '}
-              <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">
+              <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" className="font-medium text-noel-600 hover:underline">
                 Mở Spotify
               </a>
             </p>
@@ -956,16 +1074,20 @@ export default async function HomePage() {
         </section>
 
         {/* ── CTA ── */}
-        <section aria-label="Đăng ký học" className="py-20 text-center" style={{ background: 'linear-gradient(135deg, #1d4ed8, #3b82f6)' }}>
-          <div className="mx-auto max-w-2xl px-4">
-            <h2 className="text-3xl font-bold text-white">Bắt đầu hành trình âm nhạc ngay hôm nay</h2>
-            <p className="mt-3 text-blue-100">Tham gia cùng hơn {stats.users}+ học viên đang học tại MixiGui. Đăng ký miễn phí, không cần thẻ tín dụng.</p>
+        <section aria-label="Đăng ký học" className="bg-noel-love relative overflow-hidden py-20 text-center text-white">
+          <HeroSparkles />
+          <div className="relative z-10 mx-auto max-w-2xl px-4">
+            <span className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-gold-300/40 bg-white/15 px-4 py-1 text-xs font-semibold text-gold-200">
+              🎄♥ Mùa yêu thương ngập tràn giai điệu
+            </span>
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">Bắt đầu hành trình âm nhạc ngay hôm nay</h2>
+            <p className="mt-3 text-rose-100">Tham gia cùng hơn {stats.users}+ học viên đang học tại MixiGui. Đăng ký miễn phí, gửi trao những bản nhạc ngọt ngào nhất mùa Giáng Sinh này.</p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link href="/dang-ky" className="rounded-full bg-white px-10 py-3 font-semibold text-blue-700 shadow transition hover:bg-blue-50">
-                Đăng ký miễn phí
+              <Link href="/dang-ky" className="rounded-full bg-white px-10 py-3.5 font-bold text-noel-700 shadow-lg ring-2 ring-gold-300/60 transition hover:-translate-y-0.5 hover:bg-noel-50">
+                💝 Đăng ký miễn phí
               </Link>
-              <Link href="/khoa-hoc" className="rounded-full border-2 border-white px-10 py-3 font-semibold text-white transition hover:bg-white/10">
-                Khám phá khóa học
+              <Link href="/khoa-hoc" className="rounded-full border-2 border-white/85 bg-white/10 px-10 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/20">
+                🎄 Khám phá khóa học
               </Link>
             </div>
           </div>

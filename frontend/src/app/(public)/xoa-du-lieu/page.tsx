@@ -22,7 +22,7 @@ export default function XoaDuLieuPage() {
         <section>
           <h2 className="mb-3 text-xl font-semibold text-gray-800">Cách 1 — Tự xóa trong tài khoản</h2>
           <ol className="list-decimal space-y-2 pl-6">
-            <li>Đăng nhập vào <a href="/dang-nhap" className="text-blue-600 hover:underline">MixiGui</a></li>
+            <li>Đăng nhập vào <a href="/dang-nhap" className="text-noel-600 hover:underline">MixiGui</a></li>
             <li>Vào trang <strong>Tài khoản</strong> của bạn</li>
             <li>Chọn <strong>"Xóa tài khoản"</strong> và xác nhận</li>
           </ol>
@@ -41,7 +41,7 @@ export default function XoaDuLieuPage() {
           <p className="mt-4">
             <a
               href="mailto:support@mixigui.id.vn?subject=Yêu cầu xóa dữ liệu"
-              className="inline-block rounded-md bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700"
+              className="inline-block rounded-md bg-noel-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-noel-700"
             >
               Gửi yêu cầu xóa dữ liệu
             </a>
