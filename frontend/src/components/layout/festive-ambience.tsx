@@ -222,6 +222,173 @@ function RunningReindeerPairSVG() {
   )
 }
 
+/** Ông già Noel rón rén lén lút mang hộp quà tới gốc cây thông (hướng sang phải) */
+function SneakySantaSVG() {
+  return (
+    <svg viewBox="0 0 132 136" fill="none" className="h-24 w-24 sm:h-30 sm:w-30 drop-shadow-md" aria-hidden="true">
+      {/* Bong bóng "Suỵt... 🤫" lén lút */}
+      <g className="animate-santa-whisper">
+        <rect x="20" y="3" width="66" height="20" rx="10" fill="#ffffff" stroke="#fda4af" strokeWidth="1.5" />
+        <polygon points="52,23 58,23 54,29" fill="#ffffff" />
+        <text x="53" y="16.5" textAnchor="middle" fontSize="9.5" fontWeight="700" fill="#be123c">
+          Suỵt... 🎁♥
+        </text>
+      </g>
+
+      {/* Bao tải quà to đeo sau lưng */}
+      <g>
+        <ellipse cx="34" cy="74" rx="20" ry="23" transform="rotate(-18 34 74)" fill="#881337" stroke="#fde68a" strokeWidth="1.5" />
+        <path d="M42 52 L50 46 L53 54 Z" fill="#9f1239" />
+        <circle cx="46" cy="53" r="2.5" fill="#fbbf24" />
+        <text x="24" y="74" fontSize="12" fill="#fde68a">♪</text>
+      </g>
+
+      {/* Chân nhón gót rón rén (Tiptoe boots) */}
+      <g>
+        {/* Chân sau nhón */}
+        <path d="M48 98 L40 114 L46 118" stroke="#c41e3a" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
+        <ellipse cx="47" cy="121" rx="7" ry="4.5" transform="rotate(20 47 121)" fill="#1f2937" />
+        {/* Chân trước nhón mũi giày */}
+        <path d="M64 98 L72 114 L78 117" stroke="#c41e3a" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
+        <ellipse cx="80" cy="120" rx="7.5" ry="4.5" transform="rotate(25 80 120)" fill="#1f2937" />
+        {/* Viền bông trắng cổ giày */}
+        <rect x="38" y="110" width="12" height="4.5" rx="2" fill="#ffffff" />
+        <rect x="67" y="110" width="12" height="4.5" rx="2" fill="#ffffff" />
+      </g>
+
+      {/* Thân áo choàng đỏ hơi khom người lén lút */}
+      <ellipse cx="58" cy="82" rx="20" ry="22" transform="rotate(10 58 82)" fill="#c41e3a" />
+      {/* Viền lông trắng vạt áo */}
+      <path d="M38 98 Q58 106 78 98" stroke="#ffffff" strokeWidth="6" strokeLinecap="round" />
+      <line x1="63" y1="62" x2="60" y2="100" stroke="#ffffff" strokeWidth="5" strokeLinecap="round" />
+      {/* Thắt lưng đen & khóa vàng */}
+      <path d="M39 84 Q58 90 77 83" stroke="#1f2937" strokeWidth="5" strokeLinecap="round" />
+      <rect x="59" y="81" width="8" height="8" rx="1.5" stroke="#fbbf24" strokeWidth="2.2" fill="none" />
+
+      {/* Đầu, Râu trắng xù & Mũ Noel */}
+      <g>
+        {/* Khuôn mặt hồng hào */}
+        <circle cx="67" cy="49" r="12" fill="#fed7aa" />
+        <circle cx="71" cy="51" r="2.8" fill="#fb7185" opacity="0.6" />
+        {/* Mắt liếc lén lút hóm hỉnh */}
+        <circle cx="72" cy="46.5" r="1.7" fill="#1f2937" />
+        <circle cx="72.6" cy="46" r="0.6" fill="#ffffff" />
+        <path d="M69 43 Q72 41.5 75 43" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" />
+        {/* Mũi đỏ tròn */}
+        <circle cx="78" cy="49" r="3" fill="#ef4444" />
+        {/* Bộ râu trắng bồng bềnh */}
+        <path
+          d="M55 49 Q52 64 66 68 Q80 68 81 53 Q75 55 70 52 Q63 54 55 49 Z"
+          fill="#ffffff"
+        />
+        {/* Mũ Ông già Noel rủ ra sau */}
+        <path d="M54 43 Q60 24 42 29 Q54 18 76 34 L79 42 Z" fill="#c41e3a" />
+        <rect x="53" y="39" width="27" height="6.5" rx="3.2" fill="#ffffff" />
+        <circle cx="40" cy="30" r="4.8" fill="#ffffff" />
+      </g>
+
+      {/* Tay Ông già Noel cầm hộp quà (hộp quà biến mất đúng khoảnh khắc đặt xuống gốc cây) */}
+      <g className="animate-santa-held-gift">
+        <rect x="84" y="64" width="24" height="21" rx="3" fill="#15803d" stroke="#fde68a" strokeWidth="1.2" />
+        <rect x="94" y="64" width="4" height="21" fill="#fbbf24" />
+        <rect x="84" y="73" width="24" height="3.8" fill="#fbbf24" />
+        <path d="M96 64 C91 58 87 62 96 64 C105 62 101 58 96 64 Z" fill="#fde68a" stroke="#fbbf24" strokeWidth="1.4" />
+        <text x="92" y="56" fontSize="11" fill="#fb7599">♥</text>
+      </g>
+
+      {/* Cánh tay đỏ & găng trắng đưa ra phía trước */}
+      <path d="M64 70 Q76 76 86 74" stroke="#c41e3a" strokeWidth="7.5" strokeLinecap="round" />
+      <circle cx="88" cy="74" r="4.8" fill="#ffffff" />
+    </svg>
+  )
+}
+
+/** Hộp quà bí mật Ông già Noel vừa đặt lại dưới gốc cây thông */
+function PlacedTreeGiftSVG() {
+  return (
+    <svg viewBox="0 0 60 64" fill="none" className="h-11 w-11 sm:h-14 sm:w-14 drop-shadow" aria-hidden="true">
+      {/* Tia sáng lấp lánh & trái tim bay lên từ hộp quà mới đặt */}
+      <text x="8" y="18" fontSize="11" fill="#fbbf24" className="animate-twinkle">✦</text>
+      <text x="26" y="14" fontSize="13" fill="#fb7599" className="animate-float-love">♥</text>
+      <text x="44" y="21" fontSize="10" fill="#fde68a" className="animate-twinkle">✨</text>
+
+      {/* Hộp quà xanh thông nơ vàng sang trọng */}
+      <rect x="14" y="30" width="32" height="27" rx="4" fill="#15803d" stroke="#fde68a" strokeWidth="1.5" />
+      <rect x="27.5" y="30" width="5" height="27" fill="#fbbf24" />
+      <rect x="14" y="41" width="32" height="4.5" fill="#fbbf24" />
+      <path d="M30 30 C22 21 17 27 30 30 C43 27 38 21 30 30 Z" fill="#fde68a" stroke="#fbbf24" strokeWidth="1.8" />
+    </svg>
+  )
+}
+
+/** Ông già Noel cưỡi xe trượt phép thuật bay vút CHÉO màn hình (hướng sang Trái-Lên) */
+function FlyingDiagonalSantaSVG() {
+  return (
+    <svg viewBox="0 0 260 112" fill="none" className="h-20 w-48 sm:h-28 sm:w-64 drop-shadow-lg" aria-hidden="true">
+      <defs>
+        <linearGradient id="santaComet" x1="120" y1="62" x2="255" y2="62" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#fde68a" stopOpacity="0.9" />
+          <stop offset="55%" stopColor="#fb7599" stopOpacity="0.55" />
+          <stop offset="100%" stopColor="#fb7599" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+
+      {/* Đuôi sao băng phép thuật vàng-hồng kéo dài phía sau */}
+      <path d="M126 60 Q185 64 252 54" stroke="url(#santaComet)" strokeWidth="6" strokeLinecap="round" />
+      <path d="M132 70 Q190 76 245 70" stroke="url(#santaComet)" strokeWidth="3.5" strokeLinecap="round" />
+      <text x="152" y="48" fontSize="13" fill="#fde68a">✦</text>
+      <text x="176" y="84" fontSize="13" fill="#fb7599">♥</text>
+      <text x="200" y="50" fontSize="12" fill="#ffffff">❄</text>
+      <text x="224" y="78" fontSize="13" fill="#fde68a">♪</text>
+
+      {/* Cỗ xe trượt tuyết phép thuật hướng sang Trái */}
+      <g>
+        {/* Thanh trượt vàng uốn cong phía mũi trái */}
+        <path d="M142 84 L38 84 Q20 84 18 68" stroke="#fbbf24" strokeWidth="3.5" strokeLinecap="round" />
+        <line x1="58" y1="74" x2="58" y2="84" stroke="#fbbf24" strokeWidth="2.8" />
+        <line x1="116" y1="74" x2="116" y2="84" stroke="#fbbf24" strokeWidth="2.8" />
+
+        {/* Bao quà đỏ rượu & đàn/nốt nhạc sau lưng Ông già Noel */}
+        <ellipse cx="114" cy="50" rx="20" ry="17" fill="#881337" stroke="#fde68a" strokeWidth="1.4" />
+        <rect x="96" y="34" width="15" height="14" rx="2" fill="#198754" />
+        <line x1="103.5" y1="34" x2="103.5" y2="48" stroke="#fbbf24" strokeWidth="2.2" />
+        <text x="122" y="34" fontSize="14" fill="#fbbf24">♫</text>
+
+        {/* Ông già Noel ngồi vẫy tay chào vui vẻ */}
+        {/* Thân áo đỏ */}
+        <ellipse cx="76" cy="54" rx="17" ry="18" fill="#c41e3a" />
+        <path d="M60 58 Q76 63 92 58" stroke="#1f2937" strokeWidth="4" />
+        {/* Khuôn mặt & Râu trắng bay trong gió */}
+        <circle cx="68" cy="34" r="10.5" fill="#fed7aa" />
+        <circle cx="64" cy="33" r="1.6" fill="#1f2937" />
+        <circle cx="58" cy="35" r="2.8" fill="#ef4444" />
+        <path d="M58 37 Q58 50 72 51 Q84 50 82 38 Q74 41 68 38 Z" fill="#ffffff" />
+        {/* Mũ Noel bay ngược ra sau theo gió */}
+        <path d="M60 28 Q74 14 98 22 Q82 28 77 31 Z" fill="#c41e3a" />
+        <rect x="59" y="25" width="21" height="5.5" rx="2.7" fill="#ffffff" />
+        <circle cx="100" cy="22" r="4.2" fill="#ffffff" />
+        {/* Tay vẫy chào */}
+        <path d="M64 46 L48 32" stroke="#c41e3a" strokeWidth="6.5" strokeLinecap="round" />
+        <circle cx="46" cy="30" r="4.2" fill="#ffffff" />
+
+        {/* Thân cỗ xe nhung đỏ đính trái tim tình yêu */}
+        <path
+          d="M136 50 Q136 75 114 75 L54 75 Q36 75 33 56 L54 56 Q62 62 82 62 L118 54 Z"
+          fill="#c41e3a"
+          stroke="#fde68a"
+          strokeWidth="2"
+        />
+        <path d="M84 62 C81 58 76 60 76 64 C76 68 84 72 84 72 C84 72 92 68 92 64 C92 60 87 58 84 62 Z" fill="#fb7599" />
+      </g>
+
+      {/* Lời chúc nhỏ bay theo */}
+      <text x="16" y="22" fontSize="11" fontWeight="700" fill="#fde68a">
+        Ho ho ho! ♥
+      </text>
+    </svg>
+  )
+}
+
 export function FestiveAmbience() {
   return (
     <div
@@ -243,7 +410,7 @@ export function FestiveAmbience() {
         </span>
       ))}
 
-      {/* 2. Đoàn tuần lộc kéo cỗ xe quà tặng & tình yêu bay ngang màn hình (Trái -> Phải) */}
+      {/* 2. Đoàn tuần lộc kéo cỗ xe quà tặng & tình yêu bay ngang bầu trời (Trái -> Phải) */}
       <div
         className="animate-reindeer-fly absolute top-[11%] left-0 sm:top-[13%]"
         style={{ animationDelay: '0.3s' }}
@@ -261,7 +428,7 @@ export function FestiveAmbience() {
         </div>
       </div>
 
-      {/* 4. Chú tuần lộc nhỏ chạy chiều ngược lại (Trái -> Phải, lệch nhịp để màn hình luôn sinh động) */}
+      {/* 4. Chú tuần lộc nhỏ chạy chiều ngược lại (Trái -> Phải, lệch nhịp) */}
       <div
         className="animate-reindeer-ltr absolute bottom-3 left-0 hidden sm:block"
         style={{ animationDelay: '11s' }}
@@ -269,9 +436,27 @@ export function FestiveAmbience() {
         <RunningReindeerPairSVG />
       </div>
 
-      {/* 5. Cây thông Noel lung linh góc dưới màn hình (cạnh nút tim liên hệ, không che nút bấm) */}
-      <div className="animate-tree-sway absolute bottom-0 right-16 opacity-95 sm:right-20">
-        <ChristmasTreeSVG className="h-24 w-20 sm:h-32 sm:w-24" />
+      {/* 5. SÂN KHẤU KỊCH BẢN NOEL: Cây thông + Ông già Noel rón rén đặt quà + Bay vút chéo màn hình */}
+      <div className="absolute bottom-20 right-3 sm:bottom-0 sm:right-20">
+        {/* Cây thông Noel lung linh */}
+        <div className="animate-tree-sway relative z-10">
+          <ChristmasTreeSVG className="h-32 w-26 sm:h-44 sm:w-36" />
+        </div>
+
+        {/* Hộp quà bí mật xuất hiện ngay gốc cây thông đúng lúc Ông già Noel cúi xuống đặt */}
+        <div className="animate-santa-placed-gift absolute bottom-1 -left-3 z-20 sm:bottom-1.5 sm:-left-4">
+          <PlacedTreeGiftSVG />
+        </div>
+
+        {/* Ông già Noel rón rén đi tới cây thông & cúi xuống đặt hộp quà */}
+        <div className="animate-santa-sneak absolute bottom-0 -left-16 z-30 sm:-left-20">
+          <SneakySantaSVG />
+        </div>
+
+        {/* Ông già Noel cất cánh từ chỗ cây thông & bay vút CHÉO toàn màn hình lên bầu trời góc trái trên */}
+        <div className="animate-santa-diagonal absolute bottom-6 -left-10 z-30 sm:bottom-10 sm:-left-14">
+          <FlyingDiagonalSantaSVG />
+        </div>
       </div>
     </div>
   )
